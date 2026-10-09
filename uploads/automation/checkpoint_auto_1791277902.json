@@ -1,0 +1,40 @@
+{
+  "job_id": "auto_1791277902",
+  "filename": "test_botad.xlsx",
+  "status": "stopped",
+  "total_villages": 11,
+  "completed_count": 2,
+  "failed_count": 0,
+  "workers_count": 2,
+  "current_village": "-",
+  "current_status": "Automation stopped by user.",
+  "results": [
+    {
+      "job_id": "auto_1791277902",
+      "excel_file": "test_botad.xlsx",
+      "row_num": 2,
+      "village_name": "Pipariya",
+      "village_code": "511852",
+      "generated_link": "https://generate.snsies.com/villages/51/review",
+      "status": "SUCCESS",
+      "error": "",
+      "message": "Generated successfully",
+      "started_time": "2026-10-06 14:41:47",
+      "completed_time": "2026-10-06 14:41:53"
+    },
+    {
+      "job_id": "auto_1791277902",
+      "excel_file": "test_botad.xlsx",
+      "row_num": 3,
+      "village_name": "Nabhoi",
+      "village_code": "511850",
+      "generated_link": "https://generate.snsies.com/villages/53/review",
+      "status": "SUCCESS",
+      "error": "",
+      "message": "Generated successfully",
+      "started_time": "2026-10-06 14:41:47",
+      "completed_time": "2026-10-06 14:41:54"
+    }
+  ],
+  "updated_at": "2026-10-06 14:41:56"
+}

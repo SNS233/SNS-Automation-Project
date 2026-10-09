@@ -1,0 +1,18 @@
+{
+  "job_id": "auto_1790944450",
+  "status": "running",
+  "total_villages": 4,
+  "completed_count": 1,
+  "failed_count": 0,
+  "current_village": "Amipura",
+  "results": [
+    {
+      "village_name": "Amipura",
+      "village_id": 32,
+      "kpi_link": "https://generate.snsies.com/villages/32/review",
+      "status": "Success",
+      "error": ""
+    }
+  ],
+  "updated_at": "2026-10-02 18:04:47"
+}

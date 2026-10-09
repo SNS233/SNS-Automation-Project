@@ -1,0 +1,13 @@
+{
+  "timestamp": 1791272305,
+  "village_name": "Bhurakui",
+  "village_code": "516997",
+  "step": "02_after_submit",
+  "current_url": "https://generate.snsies.com/villages/72/review",
+  "page_title": "Review Bhurakui",
+  "page_text_snippet": "Village Well Detector (AI + Human Review)\nHome\nBulk generate\nChange password\nAdmin\nLogout\nGenerated detection for Bhurakui. Review wells before final download.\nBhurakui\nStatus: review\nBack\nDownload KML\nDownload KMZ\nExport Excel\nSave review & rebuild KML\nNavigate / Delete\nAdd dug well\nAdd tube well\nAdjust position\n+\n\u2212\nGoogle Satellite (5m)\nEsri (overzoom from 50m)\n500 m\nLeaflet | Google Satellite\nClick a marker to count it (click again to remove the number). Double-click a marker for details and delete.\nHuman review (wells)\nDug wells: 150\nTube wells: 0\nTotal: 150\nTotal GEB Data\n25\nGEB Dugwell\n0\nGEB Tubewell\n25\nMI-6 Dugwell\n0\nMI-6 Tubewell\n20\nCounted: 0 of 150\nDug 0/150 \u00b7 Tube 0/0\nReset count\nDug well Manual dug\nTube well Manual tube\nAdjust mode\nDW_001 Dug well\n22.421319, 72.733572\nDelete\nDW",
+  "window_handles_count": 1,
+  "error_message": "",
+  "screenshot": "1791272305_516997_02_after_submit.png",
+  "console_errors": []
+}

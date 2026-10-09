@@ -1,0 +1,27 @@
+{
+  "job_id": "auto_1791368486",
+  "filename": "Done.xlsx",
+  "status": "completed",
+  "total_villages": 1,
+  "completed_count": 0,
+  "failed_count": 1,
+  "workers_count": 1,
+  "current_village": "All Villages Completed",
+  "current_status": "Completed processing 1 villages! (0 successful, 1 failed).",
+  "results": [
+    {
+      "job_id": "auto_1791368486",
+      "excel_file": "Done.xlsx",
+      "row_num": 2,
+      "village_name": "Abasna (511459)",
+      "village_code": "",
+      "generated_link": "",
+      "status": "FAILED",
+      "error": "Generation timed out or could not be completed on portal",
+      "message": "Generation timed out or could not be completed on portal",
+      "started_time": "2026-10-07 15:51:27",
+      "completed_time": "2026-10-07 15:53:30"
+    }
+  ],
+  "updated_at": "2026-10-07 15:53:30"
+}
