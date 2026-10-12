@@ -10,8 +10,11 @@ dashboard_bp = Blueprint('dashboard_bp', __name__)
 @dashboard_bp.route('/api/dashboard/metrics', methods=['GET'])
 @login_required
 def dashboard_metrics():
+<<<<<<< HEAD
     if session.get('role') != 'admin':
         return jsonify({'success': False, 'error': 'Unauthorized. Admin access required.'}), 403
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     try:
         zone = request.args.get('zone', '', type=str)
         metrics = get_dashboard_metrics(zone=zone)
@@ -55,6 +58,7 @@ def system_heartbeat():
         })
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
+<<<<<<< HEAD
 
 
 @dashboard_bp.route('/api/dashboard/completed-villages', methods=['GET'])
@@ -111,3 +115,5 @@ def dashboard_completed_villages():
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1

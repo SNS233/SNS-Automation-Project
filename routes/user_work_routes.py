@@ -170,6 +170,7 @@ def mark_read():
     except Exception as e:
         logger.error(f"Error marking notifications as read: {e}")
         return jsonify({'success': False, 'error': str(e)}), 500
+<<<<<<< HEAD
 
 
 @user_work_bp.route('/api/user/history', methods=['GET'])
@@ -212,3 +213,5 @@ def mark_village_completed(village_id):
         logger.error(f"Error marking village completed: {e}")
         return jsonify({'success': False, 'error': str(e)}), 500
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1

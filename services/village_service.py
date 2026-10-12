@@ -43,6 +43,7 @@ def get_villages_paged(
         params.append(subdistrict.strip())
 
     if zone:
+<<<<<<< HEAD
         z_clean = zone.strip()
         if z_clean.upper() in ('GPIC', 'KPIC', 'VPIC', 'RPIC'):
             where_clauses.append("UPPER(TRIM(v.zone)) = ?")
@@ -52,6 +53,10 @@ def get_villages_paged(
         else:
             where_clauses.append("UPPER(TRIM(v.zone)) = ?")
             params.append(z_clean.upper())
+=======
+        where_clauses.append("v.zone = ?")
+        params.append(zone.strip())
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
     if person_id:
         where_clauses.append("v.assigned_person_id = ?")
@@ -67,6 +72,7 @@ def get_villages_paged(
             params.append(assignment_status.strip())
 
     if status:
+<<<<<<< HEAD
         st_clean = status.strip().lower()
         if st_clean == 'completed':
             where_clauses.append("(COALESCE(v.work_status, '') = 'Done' OR COALESCE(v.kml_status, '') IN ('Done', 'Verified', 'Marking Completed', 'Finalized'))")
@@ -85,6 +91,17 @@ def get_villages_paged(
         elif st_clean == 'ready to process':
             where_clauses.append("v.kml_status = 'Ready to Process'")
         elif st_clean not in ('all', ''):
+=======
+        if status.lower() == 'completed':
+            where_clauses.append("v.kml_status IN ('Done', 'Verified', 'Marking Completed', 'Finalized')")
+        elif status.lower() == 'pending':
+            where_clauses.append("v.kml_status IN ('Pending', 'Ready to Process')")
+        elif status.lower() == 'in progress':
+            where_clauses.append("v.kml_status = 'In Progress'")
+        elif status.lower() in ('failed', 'needs review', 'needs_review'):
+            where_clauses.append("v.kml_status IN ('Failed', 'Needs Review')")
+        else:
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             where_clauses.append("v.kml_status = ?")
             params.append(status.strip())
 
@@ -135,11 +152,15 @@ def get_villages_paged(
             v.bores,
             v.kml_status,
             COALESCE(v.work_status, 'Not Done') AS work_status,
+<<<<<<< HEAD
             v.correction_reason,
             v.reopened_at,
             v.reopened_by,
             COALESCE(v.generated_review_url, (SELECT review_url FROM UserCompletionHistory uch WHERE uch.village_id = v.id AND uch.review_url IS NOT NULL ORDER BY uch.id DESC LIMIT 1)) AS generated_review_url,
             (SELECT completion_date FROM UserCompletionHistory uch WHERE uch.village_id = v.id ORDER BY uch.id DESC LIMIT 1) AS completion_date,
+=======
+            v.generated_review_url,
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             v.remark,
             v.assigned_person_id,
             v.assigned_person_name,
@@ -224,7 +245,10 @@ def get_village_by_id(village_id):
 
     village['kml_versions'] = kml_history
     village['history'] = history
+<<<<<<< HEAD
     village['corrections'] = get_village_correction_history(village_id)
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     return village
 
 
@@ -475,6 +499,7 @@ def get_dashboard_metrics(zone: str = ''):
     }
 
     try:
+<<<<<<< HEAD
         # Standardized completion condition: either work_status is Done or kml_status indicates completion
         comp_cond = "(COALESCE(work_status, '') = 'Done' OR COALESCE(kml_status, '') IN ('Done', 'Verified', 'Marking Completed', 'Finalized'))"
         assign_cond = "assigned_person_id IS NOT NULL"
@@ -485,10 +510,53 @@ def get_dashboard_metrics(zone: str = ''):
             COUNT(*) AS total_villages,
             SUM(CASE WHEN {comp_cond} THEN 1 ELSE 0 END) AS completed_villages,
             SUM(CASE WHEN {assign_cond} THEN 1 ELSE 0 END) AS assigned_villages,
+=======
+        # Build zone filter clause for summary KPIs if a specific zone is selected
+        z_where = ""
+        z_params = []
+        if zone:
+            if zone == 'Unassigned Zone':
+                z_where = "WHERE (zone IS NULL OR TRIM(zone) = '')"
+            else:
+                z_where = "WHERE zone = ?"
+                z_params = [zone]
+
+        # 1. Total Villages & Assignment KPI counts (respecting active zone filter)
+        total_sql = f"SELECT COUNT(*) AS c FROM Villages {z_where}"
+        total_row = db.query_one(total_sql, z_params)
+        total_villages = total_row['c'] if total_row else 0
+
+        # Completed Villages: strictly checked by completion flag
+        comp_cond = "(COALESCE(work_status, '') = 'Done' OR COALESCE(kml_status, '') IN ('Done', 'Verified', 'Marking Completed', 'Finalized'))"
+        comp_where = f"WHERE {comp_cond}" if not z_where else f"{z_where} AND {comp_cond}"
+        completed_row = db.query_one(f"SELECT COUNT(*) AS c FROM Villages {comp_where}", z_params)
+        completed_villages = completed_row['c'] if completed_row else 0
+
+        # Pending Villages (Not Done): Strictly Total - Completed
+        pending_villages = max(0, total_villages - completed_villages)
+
+        assign_where = "WHERE assigned_person_id IS NOT NULL" if not z_where else f"{z_where} AND assigned_person_id IS NOT NULL"
+        assigned_row = db.query_one(f"SELECT COUNT(*) AS c FROM Villages {assign_where}", z_params)
+        assigned_villages = assigned_row['c'] if assigned_row else 0
+
+        unassign_where = "WHERE assigned_person_id IS NULL" if not z_where else f"{z_where} AND assigned_person_id IS NULL"
+        unassigned_row = db.query_one(f"SELECT COUNT(*) AS c FROM Villages {unassign_where}", z_params)
+        unassigned_villages = unassigned_row['c'] if unassigned_row else 0
+
+        persons_row = db.query_one("SELECT COUNT(*) AS c FROM Persons WHERE is_active = 1")
+        persons_count = persons_row['c'] if persons_row else 0
+
+        # Status aggregates
+        stats_sql = f"""
+        SELECT 
+            kml_status,
+            COUNT(*) AS count,
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             COALESCE(SUM(CAST(dugwells AS BIGINT)), 0) AS sum_dugwells,
             COALESCE(SUM(CAST(bores AS BIGINT)), 0) AS sum_bores,
             COALESCE(SUM(CAST(total_wells AS BIGINT)), 0) AS sum_total_wells
         FROM Villages
+<<<<<<< HEAD
         """
         overall_row = db.query_one(overall_sql) or {}
         overall_total = overall_row.get('total_villages') or 0
@@ -608,11 +676,97 @@ def get_dashboard_metrics(zone: str = ''):
         zones = ['GPIC', 'KPIC', 'VPIC', 'RPIC']
         if other_zones_data["total_villages"] > 0:
             zones.append('Other / Unassigned')
+=======
+        {z_where}
+        GROUP BY kml_status
+        """
+        stats = db.query_all(stats_sql, z_params)
+
+        status_map = {r['kml_status']: r['count'] for r in stats}
+        total_dugwells = sum(r['sum_dugwells'] for r in stats)
+        total_bores = sum(r['sum_bores'] for r in stats)
+        total_wells = sum(r['sum_total_wells'] for r in stats)
+
+        in_progress = status_map.get('In Progress', 0)
+        marking_completed = status_map.get('Marking Completed', 0)
+        kml_downloaded = status_map.get('KML Downloaded', 0)
+        failed_review = status_map.get('Failed', 0) + status_map.get('Needs Review', 0)
+
+        # Active KML count
+        kml_count_row = db.query_one("SELECT COUNT(*) AS c FROM KMLFiles WHERE is_active = 1")
+        kml_count = kml_count_row['c'] if kml_count_row else 0
+
+        # Progress percentage
+        progress_pct = round((completed_villages / total_villages * 100), 1) if total_villages > 0 else 0.0
+
+        # Recent villages (fast limited query for lightweight dashboard)
+        recent_where = z_where.replace('zone', 'v.zone')
+        recent_villages = db.query_all(f"""
+        SELECT TOP 6 
+            v.id, v.village_name, v.village_code, v.district_name, v.subdistrict_name, v.zone,
+            v.kml_status, v.work_status, v.total_wells, v.bores, v.dugwells, v.updated_at,
+            k.id AS kml_id
+        FROM Villages v
+        LEFT JOIN KMLFiles k ON v.id = k.village_id AND k.is_active = 1
+        {recent_where}
+        ORDER BY v.updated_at DESC
+        """, z_params)
+
+        # Fast filter options for UI
+        districts = [r['district_name'] for r in db.query_all("SELECT DISTINCT district_name FROM Villages WHERE district_name IS NOT NULL ORDER BY district_name")]
+        zones = [r['zone'] for r in db.query_all("SELECT DISTINCT zone FROM Villages WHERE zone IS NOT NULL AND zone <> '' ORDER BY zone")]
+
+        # Zone-wise Insights & Progress breakdown (across all zones)
+        zone_rows = db.query_all("""
+        SELECT 
+            COALESCE(NULLIF(TRIM(zone), ''), 'Unassigned Zone') AS zone_name,
+            COUNT(*) AS total_villages,
+            SUM(CASE WHEN (COALESCE(work_status, '') = 'Done' OR COALESCE(kml_status, '') IN ('Done', 'Verified', 'Marking Completed', 'Finalized')) THEN 1 ELSE 0 END) AS completed_villages,
+            SUM(CASE WHEN kml_status = 'In Progress' AND COALESCE(work_status, '') != 'Done' THEN 1 ELSE 0 END) AS in_progress_villages,
+            SUM(CASE WHEN (COALESCE(work_status, '') != 'Done' AND COALESCE(kml_status, '') NOT IN ('Done', 'Verified', 'Marking Completed', 'Finalized')) THEN 1 ELSE 0 END) AS pending_villages
+        FROM Villages
+        GROUP BY COALESCE(NULLIF(TRIM(zone), ''), 'Unassigned Zone')
+        ORDER BY zone_name ASC
+        """)
+
+        zone_insights = []
+        for r in zone_rows:
+            tot = r['total_villages'] or 0
+            comp = r['completed_villages'] or 0
+            in_prog = r['in_progress_villages'] or 0
+            pend = r['pending_villages'] or 0
+            comp_pct = round((comp / tot * 100), 1) if tot > 0 else 0.0
+            rem_pct = round(max(0.0, 100.0 - comp_pct), 1) if tot > 0 else 0.0
+
+            zone_insights.append({
+                "zone_name": r['zone_name'],
+                "total_villages": tot,
+                "completed_villages": comp,
+                "pending_villages": pend,
+                "in_progress_villages": in_prog,
+                "completion_percentage": comp_pct,
+                "remaining_percentage": rem_pct
+            })
+
+        # Calculate Executive 4 Zone Overview KPIs
+        total_zones_count = len(zone_insights)
+        completed_zones_count = sum(1 for z in zone_insights if z['completion_percentage'] == 100.0 and z['total_villages'] > 0)
+        in_progress_zones_count = sum(1 for z in zone_insights if 0 < z['completion_percentage'] < 100.0)
+        pending_zones_count = sum(1 for z in zone_insights if z['completion_percentage'] == 0.0)
+
+        zone_kpis = {
+            "total_zones": total_zones_count,
+            "completed_zones": completed_zones_count,
+            "in_progress_zones": in_progress_zones_count,
+            "pending_zones": pending_zones_count
+        }
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
         return {
             "summary": {
                 "total_villages": total_villages,
                 "pending_villages": pending_villages,
+<<<<<<< HEAD
                 "assigned_villages": assigned_villages,
                 "completed_villages": completed_villages,
                 "total_remaining_villages": overall_pending,
@@ -626,6 +780,37 @@ def get_dashboard_metrics(zone: str = ''):
             "other_zones": other_zones_data,
             "total_remaining_villages": overall_pending,
             "selected_zone": zone,
+=======
+                "unassigned_villages": unassigned_villages,
+                "assigned_villages": assigned_villages,
+                "completed_villages": completed_villages,
+                "persons_count": persons_count,
+                "in_progress": in_progress,
+                "marking_completed": marking_completed,
+                "kml_downloaded": kml_downloaded,
+                "failed_review": failed_review,
+                "total_dugwells": total_dugwells,
+                "total_bores": total_bores,
+                "total_wells": total_wells,
+                "kml_files_count": kml_count,
+                "progress_percentage": progress_pct
+            },
+            "status_distribution": {
+                "Pending": pending_villages,
+                "In Progress": in_progress,
+                "Marking Completed": marking_completed,
+                "KML Downloaded": kml_downloaded,
+                "Done / Verified": completed_villages,
+                "Needs Review / Failed": failed_review
+            },
+            "district_breakdown": [],
+            "zone_insights": zone_insights,
+            "zone_kpis": zone_kpis,
+            "selected_zone": zone,
+            "recent_villages": recent_villages,
+            "recent_imports": [],
+            "recent_kmls": [],
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             "filter_options": {
                 "districts": districts,
                 "zones": zones
@@ -786,6 +971,7 @@ def bulk_delete_unassigned_villages(village_ids: list, changed_by: str = 'Admin'
     }
 
 
+<<<<<<< HEAD
 def get_village_correction_history(village_id):
     """Retrieve complete audit history of corrections for a village."""
     if not village_id:
@@ -1169,3 +1355,5 @@ def get_village_full_assignment_history(village_id):
 
 
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1

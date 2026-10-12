@@ -8,6 +8,7 @@ from services.village_service import (
     bulk_update_status,
     get_queue_navigation,
     delete_village,
+<<<<<<< HEAD
     bulk_delete_unassigned_villages,
     reopen_completed_village,
     get_village_correction_history,
@@ -15,6 +16,10 @@ from services.village_service import (
     get_village_full_assignment_history
 )
 import services.user_work_service as user_work_service
+=======
+    bulk_delete_unassigned_villages
+)
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 import db
 
 village_bp = Blueprint('village_bp', __name__)
@@ -22,9 +27,12 @@ village_bp = Blueprint('village_bp', __name__)
 @village_bp.route('/api/villages', methods=['GET'])
 @login_required
 def list_villages():
+<<<<<<< HEAD
     if session.get('role') != 'admin':
         return jsonify({'success': False, 'error': 'Unauthorized. Admin access required.'}), 403
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     page = request.args.get('page', 1, type=int)
     page_size = request.args.get('page_size', 20, type=int)
     search = request.args.get('search', '', type=str)
@@ -32,8 +40,11 @@ def list_villages():
     subdistrict = request.args.get('subdistrict', '', type=str)
     zone = request.args.get('zone', '', type=str)
     status = request.args.get('status', '', type=str)
+<<<<<<< HEAD
     person_id = request.args.get('person_id', None, type=int)
     assignment_status = request.args.get('assignment_status', '', type=str)
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     sort_by = request.args.get('sort_by', 'district_name', type=str)
     sort_dir = request.args.get('sort_dir', 'asc', type=str)
 
@@ -46,8 +57,11 @@ def list_villages():
             subdistrict=subdistrict,
             zone=zone,
             status=status,
+<<<<<<< HEAD
             person_id=person_id,
             assignment_status=assignment_status,
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             sort_by=sort_by,
             sort_dir=sort_dir
         )
@@ -101,6 +115,7 @@ def delete_village_endpoint(village_id):
         return jsonify({'success': False, 'error': str(e)}), 500
 
 
+<<<<<<< HEAD
 @village_bp.route('/api/villages/<int:village_id>/reopen', methods=['POST'])
 @login_required
 def reopen_village_endpoint(village_id):
@@ -204,6 +219,8 @@ def get_village_assignment_history_endpoint(village_id):
 
 
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 @village_bp.route('/api/villages/bulk-delete', methods=['POST'])
 @login_required
 def bulk_delete_villages_endpoint():
@@ -283,15 +300,20 @@ def get_filter_options():
     try:
         districts = [r['district_name'] for r in db.query_all("SELECT DISTINCT district_name FROM Villages WHERE district_name IS NOT NULL ORDER BY district_name")]
         subdistricts = [r['subdistrict_name'] for r in db.query_all("SELECT DISTINCT subdistrict_name FROM Villages WHERE subdistrict_name IS NOT NULL ORDER BY subdistrict_name")]
+<<<<<<< HEAD
         zones = ['GPIC', 'KPIC', 'VPIC', 'RPIC']
         extra_zones = [r['zone'] for r in db.query_all("SELECT DISTINCT zone FROM Villages WHERE zone IS NOT NULL AND zone <> '' AND UPPER(TRIM(zone)) NOT IN ('GPIC', 'KPIC', 'VPIC', 'RPIC') ORDER BY zone")]
         if extra_zones:
             zones.append('Other / Unassigned')
         persons = [{'id': r['id'], 'name': r['name']} for r in db.query_all("SELECT id, name FROM Persons WHERE is_active = 1 ORDER BY name ASC")]
+=======
+        zones = [r['zone'] for r in db.query_all("SELECT DISTINCT zone FROM Villages WHERE zone IS NOT NULL AND zone <> '' ORDER BY zone")]
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         return jsonify({
             'success': True,
             'districts': districts,
             'subdistricts': subdistricts,
+<<<<<<< HEAD
             'zones': zones,
             'persons': persons
         })
@@ -348,3 +370,9 @@ def get_village_review_url(village_id):
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
 
+=======
+            'zones': zones
+        })
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1

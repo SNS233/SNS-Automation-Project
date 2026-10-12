@@ -1,6 +1,9 @@
 import re
 import time
+<<<<<<< HEAD
 import datetime
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 import logging
 import threading
 import requests
@@ -12,6 +15,7 @@ from services.sync_service import bump_state_version
 logger = logging.getLogger(__name__)
 
 
+<<<<<<< HEAD
 def get_ist_now():
     """Return current datetime in Indian Standard Time (UTC+05:30)."""
     utc_now = datetime.datetime.now(datetime.timezone.utc)
@@ -158,6 +162,8 @@ def get_user_history(user_id):
     return result
 
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 def get_linked_person_for_user(user_id):
     """Find the Persons record associated with a given user ID or full name."""
     user = db.query_one("SELECT id, username, full_name FROM Users WHERE id = ?", (user_id,))
@@ -229,11 +235,15 @@ def get_user_assigned_villages(user_id, search='', district='', subdistrict='', 
         v.bores,
         v.kml_status,
         COALESCE(v.work_status, 'Not Done') AS work_status,
+<<<<<<< HEAD
         v.correction_reason,
         COALESCE(
             v.generated_review_url,
             (SELECT uch.review_url FROM UserCompletionHistory uch WHERE uch.village_id = v.id AND uch.review_url IS NOT NULL AND uch.review_url != '' ORDER BY uch.id DESC LIMIT 1)
         ) AS generated_review_url,
+=======
+        v.generated_review_url,
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         v.assigned_at,
         v.assignment_status
     FROM Villages v
@@ -442,7 +452,11 @@ def check_village_remote_completion(village_id, user_id=None, user_name=None):
     if is_completed:
         # Mark as Done in database strictly for this unique village record
         db.execute_non_query(
+<<<<<<< HEAD
             "UPDATE Villages SET work_status = 'Done', kml_status = 'Done', correction_reason = NULL, updated_at = GETDATE() WHERE id = ?",
+=======
+            "UPDATE Villages SET work_status = 'Done', kml_status = 'Done', updated_at = GETDATE() WHERE id = ?",
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             (village_id,)
         )
 
@@ -468,6 +482,7 @@ def check_village_remote_completion(village_id, user_id=None, user_name=None):
         except Exception:
             pass
 
+<<<<<<< HEAD
         # Record in UserCompletionHistory for the surveyor
         effective_user_id = user_id
         if not effective_user_id and v.get('assigned_person_id'):
@@ -492,6 +507,8 @@ def check_village_remote_completion(village_id, user_id=None, user_name=None):
         except Exception as e:
             logger.debug(f"Correction audit update notice: {e}")
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         # Bump global state version so Admin Dashboard and other clients reactively update
         bump_state_version()
 
@@ -565,6 +582,7 @@ def save_surveyor_village(village_id, user_id, user_name, data):
         action_note = f"Survey progress saved by {user_name}"
 
     # Atomic update on this specific village record only
+<<<<<<< HEAD
     if new_work_status == 'Done':
         db.execute_non_query(
             """
@@ -598,6 +616,23 @@ def save_surveyor_village(village_id, user_id, user_name, data):
             """,
             (dugwells, bores, total_wells, new_work_status, new_kml_status, remark, village_id)
         )
+=======
+    db.execute_non_query(
+        """
+        UPDATE Villages SET
+            dugwells = ?,
+            bores = ?,
+            total_wells = ?,
+            work_status = ?,
+            kml_status = ?,
+            remark = ?,
+            last_processed_at = GETDATE(),
+            updated_at = GETDATE()
+        WHERE id = ?
+        """,
+        (dugwells, bores, total_wells, new_work_status, new_kml_status, remark, village_id)
+    )
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
     # Insert notification for admin if completed
     if new_work_status == 'Done':
@@ -610,6 +645,7 @@ def save_surveyor_village(village_id, user_id, user_name, data):
             (user_id, user_name, village_id, v['village_name'], notification_msg)
         )
 
+<<<<<<< HEAD
         # Record in UserCompletionHistory for surveyor
         history_user_id = user_id
         if v.get('assigned_person_id'):
@@ -634,6 +670,8 @@ def save_surveyor_village(village_id, user_id, user_name, data):
         except Exception as e:
             logger.debug(f"Correction audit update notice: {e}")
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     # Record in ProcessingHistory
     try:
         db.execute_non_query(

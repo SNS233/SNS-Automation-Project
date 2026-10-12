@@ -224,6 +224,7 @@ BEGIN
 END
 GO
 
+<<<<<<< HEAD
 -- 11. UserCompletionHistory Table
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'UserCompletionHistory')
 BEGIN
@@ -288,4 +289,6 @@ END
 GO
 
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 

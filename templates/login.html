@@ -11,10 +11,19 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="/static/css/style.css">
+<<<<<<< HEAD
     <!-- Permanent Light Theme -->
     <script>
         try { localStorage.removeItem('app_theme'); } catch (e) {}
         document.documentElement.setAttribute('data-theme', 'light');
+=======
+    <!-- Immediate Theme Bootstrap (Prevents White Flash) -->
+    <script>
+        (function() {
+            var theme = localStorage.getItem('app_theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     </script>
     <style>
         body {
@@ -82,8 +91,12 @@
         .input-group {
             position: relative;
         }
+<<<<<<< HEAD
         .input-group > i,
         .input-group > svg {
+=======
+        .input-group i {
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             position: absolute;
             left: 12px;
             top: 50%;
@@ -91,12 +104,19 @@
             color: #94a3b8;
             width: 18px;
             height: 18px;
+<<<<<<< HEAD
             pointer-events: none;
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         }
         .form-input {
             width: 100%;
             box-sizing: border-box;
+<<<<<<< HEAD
             padding: 10px 42px 10px 38px;
+=======
+            padding: 10px 14px 10px 38px;
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             font-size: 0.9rem;
             border: 1px solid #cbd5e1;
             border-radius: 8px;
@@ -109,6 +129,7 @@
             border-color: #2563eb;
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
         }
+<<<<<<< HEAD
         .password-toggle-btn {
             position: absolute;
             right: 8px;
@@ -152,6 +173,8 @@
             height: 0 !important;
             pointer-events: none !important;
         }
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         .btn-submit {
             width: 100%;
             padding: 12px;
@@ -184,10 +207,91 @@
             align-items: center;
             gap: 8px;
         }
+<<<<<<< HEAD
+=======
+        /* Dark Mode Overrides for Login */
+        [data-theme="dark"] body {
+            background: #090d16;
+            color: #f8fafc;
+        }
+        [data-theme="dark"] .login-card {
+            background: #111827;
+            border-color: #1f293d;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+        [data-theme="dark"] .login-header {
+            background: #111827;
+            border-bottom: 1px solid #1f293d;
+            color: #f8fafc;
+        }
+        [data-theme="dark"] .login-logo-img {
+            background: #ffffff;
+            border-radius: 6px;
+            padding: 4px 8px;
+        }
+        [data-theme="dark"] .login-title {
+            color: #f8fafc;
+        }
+        [data-theme="dark"] .login-subtitle {
+            color: #8292a8;
+        }
+        [data-theme="dark"] .form-label {
+            color: #cbd5e1;
+        }
+        [data-theme="dark"] .form-input {
+            background: #162032;
+            border-color: #334155;
+            color: #f8fafc;
+        }
+        [data-theme="dark"] .form-input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+        }
+        [data-theme="dark"] .alert-error {
+            background: rgba(239, 68, 68, 0.15);
+            border-color: rgba(239, 68, 68, 0.3);
+            color: #fca5a5;
+        }
+        .theme-toggle-fixed {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: #475569;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        [data-theme="dark"] .theme-toggle-fixed {
+            background: #162032;
+            border-color: #334155;
+            color: #cbd5e1;
+        }
+        .theme-toggle-fixed:hover {
+            border-color: #2563eb;
+        }
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     </style>
 </head>
 <body>
 
+<<<<<<< HEAD
+=======
+<button class="theme-toggle-fixed" id="loginThemeToggle" onclick="toggleLoginTheme()" title="Toggle Dark/Light Mode">
+    <i data-lucide="moon" id="loginThemeIcon" style="width: 15px; height: 15px;"></i>
+    <span id="loginThemeText">Theme</span>
+</button>
+
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 <div class="login-card">
     <div class="login-header">
         <img src="/static/images/logo.png" alt="SNS Infrastructure Engineering Services – Ethical Engineering" class="login-logo-img">
@@ -214,10 +318,14 @@
                 <label class="form-label" for="password">Password</label>
                 <div class="input-group">
                     <i data-lucide="lock"></i>
+<<<<<<< HEAD
                     <input type="password" id="password" class="form-input" placeholder="Enter password" required autocomplete="current-password">
                     <button type="button" class="password-toggle-btn" onclick="PasswordVisibility.toggle('password', this)" title="Show password" aria-label="Show password">
                         <i data-lucide="eye-off"></i>
                     </button>
+=======
+                    <input type="password" id="password" class="form-input" placeholder="••••••••" required>
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                 </div>
             </div>
 
@@ -229,7 +337,10 @@
     </div>
 </div>
 
+<<<<<<< HEAD
 <script src="/static/js/password-toggle.js?v=2.1"></script>
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 <script>
     lucide.createIcons();
 
@@ -274,6 +385,33 @@
             lucide.createIcons();
         }
     });
+<<<<<<< HEAD
+=======
+
+    function updateLoginThemeIcon() {
+        var theme = document.documentElement.getAttribute('data-theme') || 'light';
+        var icon = document.getElementById('loginThemeIcon');
+        var text = document.getElementById('loginThemeText');
+        if (icon) {
+            icon.setAttribute('data-lucide', theme === 'dark' ? 'sun' : 'moon');
+            icon.style.color = theme === 'dark' ? '#f59e0b' : '#64748b';
+        }
+        if (text) {
+            text.textContent = theme === 'dark' ? 'Light' : 'Dark';
+        }
+        if (window.lucide) lucide.createIcons();
+    }
+
+    function toggleLoginTheme() {
+        var curr = document.documentElement.getAttribute('data-theme') || 'light';
+        var next = curr === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('app_theme', next);
+        updateLoginThemeIcon();
+    }
+
+    updateLoginThemeIcon();
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 </script>
 
 </body>

@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 import logging
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 from flask import Blueprint, request, jsonify
 from services.auth_service import login_required, admin_required
 from services.integration_adapter import marking_adapter
 from db import check_db_health, query_all, query_one, execute_non_query
 
+<<<<<<< HEAD
 logger = logging.getLogger(__name__)
 
 settings_bp = Blueprint('settings_bp', __name__)
@@ -53,20 +57,36 @@ def get_settings():
             if k not in settings_dict or settings_dict[k] is None:
                 settings_dict[k] = v
 
+=======
+settings_bp = Blueprint('settings_bp', __name__)
+
+@settings_bp.route('/api/settings', methods=['GET'])
+@login_required
+def get_settings():
+    try:
+        db_health = check_db_health()
+        rows = query_all("SELECT setting_key, setting_value, updated_at FROM ApplicationSettings")
+        settings_dict = {r['setting_key']: r['setting_value'] for r in rows}
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         return jsonify({
             'success': True,
             'settings': settings_dict,
             'db_health': db_health
         })
     except Exception as e:
+<<<<<<< HEAD
         logger.error(f"Error loading settings: {e}", exc_info=True)
         return jsonify({'success': False, 'error': f"Failed to retrieve settings: {str(e)}"}), 500
+=======
+        return jsonify({'success': False, 'error': str(e)}), 500
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
 
 @settings_bp.route('/api/settings', methods=['PUT'])
 @login_required
 @admin_required
 def update_settings():
+<<<<<<< HEAD
     """Update application settings in database using cross-database compatible upsert."""
     data = request.get_json() or {}
     if not isinstance(data, dict):
@@ -107,22 +127,45 @@ def update_settings():
     except Exception as e:
         logger.error(f"Error saving settings: {e}", exc_info=True)
         return jsonify({'success': False, 'error': f"Failed to save settings: {str(e)}"}), 500
+=======
+    data = request.get_json() or {}
+    try:
+        for key, val in data.items():
+            execute_non_query("""
+            IF EXISTS (SELECT 1 FROM ApplicationSettings WHERE setting_key = ?)
+                UPDATE ApplicationSettings SET setting_value = ?, updated_at = GETDATE() WHERE setting_key = ?
+            ELSE
+                INSERT INTO ApplicationSettings (setting_key, setting_value, updated_at) VALUES (?, ?, GETDATE())
+            """, (key, str(val), key, key, str(val)))
+
+        return jsonify({'success': True, 'message': 'Settings saved successfully.'})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
 
 @settings_bp.route('/api/settings/integration-payload/<int:village_id>', methods=['GET'])
 @login_required
 def get_integration_payload(village_id):
+<<<<<<< HEAD
     """Retrieve external integration payload for a specific village."""
     try:
         village = query_one(
             "SELECT id, village_code, village_name, district_name, subdistrict_name, zone FROM Villages WHERE id = ?",
             (village_id,)
         )
+=======
+    try:
+        village = query_one("SELECT id, village_code, village_name, district_name, subdistrict_name, zone FROM Villages WHERE id = ?", (village_id,))
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         if not village:
             return jsonify({'success': False, 'error': 'Village not found'}), 404
         
         payload = marking_adapter.prepare_assisted_payload(village)
         return jsonify({'success': True, 'data': payload})
     except Exception as e:
+<<<<<<< HEAD
         logger.error(f"Error generating integration payload for village {village_id}: {e}")
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         return jsonify({'success': False, 'error': str(e)}), 500

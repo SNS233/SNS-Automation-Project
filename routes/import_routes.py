@@ -1,5 +1,6 @@
 import json
 import os
+<<<<<<< HEAD
 from flask import Blueprint, request, jsonify, send_file, session
 from services.auth_service import login_required
 from services.excel_service import (
@@ -12,6 +13,11 @@ from services.excel_service import (
     check_batch_delete_safety,
     delete_import_batch
 )
+=======
+from flask import Blueprint, request, jsonify, send_file
+from services.auth_service import login_required
+from services.excel_service import preview_uploaded_file, parse_and_import_file
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 from config import Config
 import db
 
@@ -68,16 +74,38 @@ def process_import():
 
 
 @import_bp.route('/api/import/history', methods=['GET'])
+<<<<<<< HEAD
 @import_bp.route('/api/import/batches', methods=['GET'])
 @login_required
 def import_batches():
     try:
         batches = get_import_batches_summary()
+=======
+@login_required
+def import_history():
+    try:
+        batches = db.query_all("""
+        SELECT 
+            id, filename, total_rows, valid_rows, invalid_rows, duplicate_rows, 
+            status, error_report_path, created_at
+        FROM ImportBatches
+        ORDER BY created_at DESC
+        """)
+        
+        # Add clean error report filename
+        for b in batches:
+            if b.get('error_report_path'):
+                b['error_report_name'] = os.path.basename(b['error_report_path'])
+            else:
+                b['error_report_name'] = None
+                
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         return jsonify({'success': True, 'batches': batches})
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
 
 
+<<<<<<< HEAD
 @import_bp.route('/api/import/batch/<int:batch_id>/villages', methods=['GET'])
 @login_required
 def get_batch_villages(batch_id):
@@ -176,6 +204,8 @@ def delete_batch(batch_id):
         return jsonify({'success': False, 'error': str(e)}), 500
 
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 @import_bp.route('/api/import/errors/<filename>', methods=['GET'])
 @login_required
 def download_error_report(filename):

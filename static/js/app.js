@@ -4,6 +4,7 @@
  */
 
 /* =========================================================================
+<<<<<<< HEAD
    PERMANENT LIGHT THEME ENFORCEMENT
    ========================================================================= */
 const ThemeManager = {
@@ -18,6 +19,88 @@ const ThemeManager = {
     toggleTheme() {},
     applyTheme() {},
     updateControls() {}
+=======
+   THEME MANAGER (LIGHT / DARK MODE ENGINE)
+   ========================================================================= */
+const ThemeManager = {
+    init() {
+        const saved = localStorage.getItem('app_theme') || 'light';
+        this.applyTheme(saved, false);
+        this.updateControls();
+    },
+
+    setTheme(theme) {
+        if (theme !== 'light' && theme !== 'dark') theme = 'light';
+        localStorage.setItem('app_theme', theme);
+        this.applyTheme(theme, true);
+    },
+
+    toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme') || 'light';
+        const next = current === 'dark' ? 'light' : 'dark';
+        this.setTheme(next);
+    },
+
+    applyTheme(theme, notify = false) {
+        document.documentElement.setAttribute('data-theme', theme);
+        if (document.body) {
+            document.body.setAttribute('data-theme', theme);
+        }
+
+        // Update header toggle icons & labels
+        const adminIcon = document.getElementById('headerThemeIcon');
+        const userIcon = document.getElementById('userHeaderThemeIcon');
+        const iconName = theme === 'dark' ? 'sun' : 'moon';
+        
+        [adminIcon, userIcon].forEach(el => {
+            if (el) {
+                el.setAttribute('data-lucide', iconName);
+                el.style.color = theme === 'dark' ? '#f59e0b' : '#64748b';
+            }
+        });
+
+        const headerText = document.getElementById('headerThemeText');
+        if (headerText) {
+            headerText.textContent = theme === 'dark' ? 'Light' : 'Dark';
+        }
+
+        this.updateControls();
+
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+
+        if (window.App && App.charts && App.charts.statusChart && typeof DashboardManager !== 'undefined' && DashboardManager.load) {
+            DashboardManager.load();
+        }
+
+        if (notify && window.App && App.toast) {
+            App.toast(`Appearance switched to ${theme === 'dark' ? 'Dark Mode' : 'Light Mode'}`, 'info');
+        }
+    },
+
+    updateControls() {
+        const current = document.documentElement.getAttribute('data-theme') || 'light';
+        
+        const radioLight = document.getElementById('themeRadioLight');
+        const radioDark = document.getElementById('themeRadioDark');
+        const cardLight = document.getElementById('themeCardLight');
+        const cardDark = document.getElementById('themeCardDark');
+        const badge = document.getElementById('currentThemeBadge');
+
+        if (radioLight) radioLight.checked = (current === 'light');
+        if (radioDark) radioDark.checked = (current === 'dark');
+
+        if (cardLight) cardLight.classList.toggle('active', current === 'light');
+        if (cardDark) cardDark.classList.toggle('active', current === 'dark');
+
+        if (badge) {
+            badge.textContent = current === 'dark' ? 'Dark Mode' : 'Light Mode';
+            badge.style.background = current === 'dark' ? 'rgba(59, 130, 246, 0.2)' : 'var(--primary-light)';
+            badge.style.color = current === 'dark' ? '#93c5fd' : 'var(--primary)';
+        }
+    }
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 };
 
 window.ThemeManager = ThemeManager;
@@ -124,8 +207,12 @@ const App = {
             history: 'Import Batch History',
             settings: 'System Settings & Diagnostics',
             'user-dashboard': 'Surveyor Dashboard',
+<<<<<<< HEAD
             'user-excel-files': 'Excel Files — Assigned Villages',
             'user-history': 'History'
+=======
+            'user-excel-files': 'Excel Files — Assigned Villages'
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         };
         const titleEl = document.getElementById('pageTitle');
         if (titleEl) titleEl.textContent = titles[viewName] || 'Portal';
@@ -135,7 +222,10 @@ const App = {
 
         // Load data for specific view
         if (viewName === 'dashboard') DashboardManager.load();
+<<<<<<< HEAD
         else if (viewName === 'import') ImportManager.loadBatches();
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         else if (viewName === 'assign-person') PersonManager.load();
         else if (viewName === 'user-settings') UserSettingsManager.load();
         else if (viewName === 'villages') VillagesManager.load();
@@ -147,12 +237,17 @@ const App = {
             ThemeManager.updateControls();
         }
         else if (viewName === 'export') ExportManager.init();
+<<<<<<< HEAD
         else if (viewName === 'user-dashboard') {
             UserWorkManager.loadDashboard();
             UserWorkManager.loadHistory();
         }
         else if (viewName === 'user-excel-files') UserWorkManager.loadAssignedVillages();
         else if (viewName === 'user-history') UserWorkManager.loadHistory();
+=======
+        else if (viewName === 'user-dashboard') UserWorkManager.loadDashboard();
+        else if (viewName === 'user-excel-files') UserWorkManager.loadAssignedVillages();
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
         // Re-render icons
         setTimeout(() => lucide.createIcons(), 50);
@@ -284,7 +379,10 @@ const App = {
         }
     }
 };
+<<<<<<< HEAD
 window.App = App;
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
 /* =========================================================================
    1. DASHBOARD MANAGER (STREAMLINED FOR LARGE DATASETS)
@@ -292,6 +390,7 @@ window.App = App;
 const DashboardManager = {
     zoneInsights: [],
     currentZoneSort: { column: 'total_villages', dir: 'desc' },
+<<<<<<< HEAD
 
     async load() {
         try {
@@ -300,6 +399,22 @@ const DashboardManager = {
             if (!data.success) throw new Error(data.error);
 
             // 1. Four Main Top KPI Cards
+=======
+    activeZone: '',
+
+    async filterByZone(zone) {
+        this.activeZone = zone || '';
+        await this.load();
+    },
+
+    async load() {
+        try {
+            const url = this.activeZone ? `/api/dashboard/metrics?zone=${encodeURIComponent(this.activeZone)}` : '/api/dashboard/metrics';
+            const resp = await fetch(url);
+            const data = await resp.json();
+            if (!data.success) throw new Error(data.error);
+
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             const m = data.data.summary || {};
             if (document.getElementById('statTotalVillages')) {
                 document.getElementById('statTotalVillages').textContent = (m.total_villages || 0).toLocaleString();
@@ -314,7 +429,10 @@ const DashboardManager = {
                 document.getElementById('statCompleted').textContent = (m.completed_villages || 0).toLocaleString();
             }
 
+<<<<<<< HEAD
             // Overall Progress Bar
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             const pct = m.progress_percentage || 0;
             if (document.getElementById('progressText')) {
                 document.getElementById('progressText').textContent = `${pct}%`;
@@ -323,6 +441,7 @@ const DashboardManager = {
                 document.getElementById('progressBar').style.width = `${Math.min(pct, 100)}%`;
             }
 
+<<<<<<< HEAD
             // 2. Total Remaining Villages KPI Card
             if (document.getElementById('statTotalRemaining')) {
                 document.getElementById('statTotalRemaining').textContent = (data.data.total_remaining_villages || 0).toLocaleString();
@@ -386,6 +505,48 @@ const DashboardManager = {
             }
 
             await this.loadCompletedVillages();
+=======
+            // Render 4 Zone Overview KPI cards
+            const zk = data.data.zone_kpis || {};
+            if (document.getElementById('zoneKpiTotalZones')) {
+                document.getElementById('zoneKpiTotalZones').textContent = (zk.total_zones || 0).toLocaleString();
+            }
+            if (document.getElementById('zoneKpiCompletedZones')) {
+                document.getElementById('zoneKpiCompletedZones').textContent = (zk.completed_zones || 0).toLocaleString();
+            }
+            if (document.getElementById('zoneKpiInProgressZones')) {
+                document.getElementById('zoneKpiInProgressZones').textContent = (zk.in_progress_zones || 0).toLocaleString();
+            }
+            if (document.getElementById('zoneKpiPendingZones')) {
+                document.getElementById('zoneKpiPendingZones').textContent = (zk.pending_zones || 0).toLocaleString();
+            }
+
+            // Populate / sync Dashboard Zone Filter Select options
+            const zoneSelect = document.getElementById('dashboardZoneSelect');
+            if (zoneSelect && data.data.filter_options && data.data.filter_options.zones) {
+                const currentVal = this.activeZone;
+                const zones = data.data.filter_options.zones || [];
+                const targetCount = zones.length + 1;
+                if (zoneSelect.children.length !== targetCount) {
+                    let html = '<option value="">All Zones (Overall)</option>';
+                    zones.forEach(z => {
+                        html += `<option value="${escapeQuotes(z)}" ${z === currentVal ? 'selected' : ''}>Zone: ${z}</option>`;
+                    });
+                    zoneSelect.innerHTML = html;
+                }
+                zoneSelect.value = currentVal;
+            }
+
+            // Render live Done vs Pending Pie Chart (scoped to active zone or overall)
+            this.renderPieChart(m.completed_villages || 0, m.pending_villages || 0);
+
+            // Update zone count badge
+            const badge = document.getElementById('zoneCountBadge');
+            if (badge && data.data.zone_insights) {
+                badge.textContent = `${data.data.zone_insights.length} Zones`;
+            }
+
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             lucide.createIcons();
         } catch (e) {
             console.error('Error loading dashboard:', e);
@@ -393,6 +554,7 @@ const DashboardManager = {
         }
     },
 
+<<<<<<< HEAD
     viewDetail(statusType) {
         App.navigate('villages');
         if (window.VillagesManager && VillagesManager.openWithFilters) {
@@ -407,6 +569,8 @@ const DashboardManager = {
         }
     },
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     renderZoneInsights(zones) {
         const tbody = document.getElementById('zoneInsightsTableBody');
         const tfoot = document.getElementById('zoneInsightsTableFoot');
@@ -581,8 +745,14 @@ const DashboardManager = {
             App.charts.statusChart = null;
         }
 
+<<<<<<< HEAD
         const textColor = '#0f172a';
         const borderColor = '#ffffff';
+=======
+        const isDark = document.body.classList.contains('dark-theme');
+        const textColor = isDark ? '#f1f5f9' : '#0f172a';
+        const borderColor = isDark ? '#1e293b' : '#ffffff';
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
         const ctx = canvas.getContext('2d');
         App.charts.statusChart = new Chart(ctx, {
@@ -648,6 +818,7 @@ const DashboardManager = {
             </tr>
         `).join('');
         lucide.createIcons();
+<<<<<<< HEAD
     },
 
     async loadCompletedVillages() {
@@ -754,6 +925,8 @@ const DashboardManager = {
 
     warnMissingReviewLink(villageName, villageCode) {
         App.toast(`Warning: No genuine review URL recorded in database for village "${villageName}" (${villageCode}). Generating fake URLs is strictly prohibited.`, 'warning');
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     }
 };
 
@@ -763,6 +936,7 @@ const DashboardManager = {
 const ImportManager = {
     selectedFile: null,
     previewData: null,
+<<<<<<< HEAD
     batches: [],
     currentBatchId: null,
     currentBatchVillages: [],
@@ -771,6 +945,8 @@ const ImportManager = {
     batchVillagesPageSize: 20,
     correctionFile: null,
     searchDebounceTimer: null,
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
     init() {
         const dropzone = document.getElementById('excelDropzone');
@@ -804,6 +980,7 @@ const ImportManager = {
         if (resetBtn) {
             resetBtn.addEventListener('click', () => this.reset());
         }
+<<<<<<< HEAD
 
         // Batch Review Table search/filters
         const batchSearchInput = document.getElementById('batchVillageSearchInput');
@@ -1449,6 +1626,8 @@ const ImportManager = {
             if (btnText) btnText.textContent = 'Delete Dataset';
             if (window.lucide) lucide.createIcons();
         }
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     },
 
     async handleFile(file) {
@@ -1481,6 +1660,10 @@ const ImportManager = {
         document.getElementById('previewFileName').textContent = preview.filename;
         document.getElementById('previewRowCount').textContent = `Detected ~${preview.total_estimated_rows} rows`;
 
+<<<<<<< HEAD
+=======
+        // Canonical fields target list
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         const canonicalOptions = [
             { id: 'zone', label: 'Zone' },
             { id: 'district_name', label: 'District Name *' },
@@ -1497,6 +1680,10 @@ const ImportManager = {
             { id: 'remark', label: 'Remark' }
         ];
 
+<<<<<<< HEAD
+=======
+        // Render Column Mapping Controls
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         const grid = document.getElementById('columnMappingGrid');
         grid.innerHTML = preview.headers.map(header => {
             const suggested = preview.suggested_mappings[header] || '';
@@ -1519,6 +1706,10 @@ const ImportManager = {
             `;
         }).join('');
 
+<<<<<<< HEAD
+=======
+        // Render Sample Table
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         const thead = document.getElementById('previewTableHead');
         const tbody = document.getElementById('previewTableBody');
 
@@ -1533,6 +1724,10 @@ const ImportManager = {
     async executeImport() {
         if (!this.selectedFile) return;
 
+<<<<<<< HEAD
+=======
+        // Gather column mappings
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         const mappings = {};
         document.querySelectorAll('.mapping-select').forEach(sel => {
             const actual = sel.getAttribute('data-actual-header');
@@ -1544,7 +1739,11 @@ const ImportManager = {
 
         const btn = document.getElementById('startImportBtn');
         btn.disabled = true;
+<<<<<<< HEAD
         btn.innerHTML = '<span>Importing dataset...</span>';
+=======
+        btn.innerHTML = '<span>Importing data...</span>';
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
         const formData = new FormData();
         formData.append('file', this.selectedFile);
@@ -1561,9 +1760,12 @@ const ImportManager = {
 
             this.showResult(data.result);
             App.toast('Batch import successfully completed!', 'success');
+<<<<<<< HEAD
 
             // Immediately refresh batches, dashboard, person managers
             this.loadBatches();
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             DashboardManager.load();
             if (typeof PersonManager !== 'undefined') {
                 PersonManager.load();
@@ -1581,11 +1783,19 @@ const ImportManager = {
         const card = document.getElementById('importResultCard');
         card.style.display = 'block';
 
+<<<<<<< HEAD
         document.getElementById('resTotal').textContent = (res.total_rows || 0).toLocaleString();
         document.getElementById('resInserted').textContent = (res.inserted_count || 0).toLocaleString();
         document.getElementById('resUpdated').textContent = (res.updated_count || 0).toLocaleString();
         document.getElementById('resDuplicates').textContent = (res.duplicates_detected || 0).toLocaleString();
         document.getElementById('resInvalid').textContent = (res.invalid_rows || 0).toLocaleString();
+=======
+        document.getElementById('resTotal').textContent = res.total_rows;
+        document.getElementById('resInserted').textContent = res.inserted_count;
+        document.getElementById('resUpdated').textContent = res.updated_count;
+        document.getElementById('resDuplicates').textContent = res.duplicates_detected;
+        document.getElementById('resInvalid').textContent = res.invalid_rows;
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
         const errContainer = document.getElementById('errorDownloadContainer');
         const errLink = document.getElementById('errorReportLink');
@@ -1611,7 +1821,10 @@ const ImportManager = {
         }
     }
 };
+<<<<<<< HEAD
 window.ImportManager = ImportManager;
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
 /* =========================================================================
    3. ALL VILLAGES MANAGER
@@ -1622,8 +1835,11 @@ const VillagesManager = {
     selectedIds: new Set(),
     sortBy: 'district_name',
     sortDir: 'asc',
+<<<<<<< HEAD
     currentZone: '',
     currentStatus: 'all',
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
     init() {
         const searchInput = document.getElementById('villageSearchInput');
@@ -1638,6 +1854,7 @@ const VillagesManager = {
             });
         }
 
+<<<<<<< HEAD
         const zoneSelect = document.getElementById('filterZone');
         if (zoneSelect) {
             zoneSelect.addEventListener('change', (e) => {
@@ -1650,6 +1867,9 @@ const VillagesManager = {
         }
 
         ['filterDistrict', 'filterSubdistrict', 'filterAssignedPerson'].forEach(id => {
+=======
+        ['filterDistrict', 'filterSubdistrict', 'filterZone', 'filterStatus'].forEach(id => {
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             const el = document.getElementById(id);
             if (el) el.addEventListener('change', () => {
                 this.currentPage = 1;
@@ -1657,6 +1877,7 @@ const VillagesManager = {
             });
         });
 
+<<<<<<< HEAD
         const statusSelect = document.getElementById('filterStatus');
         if (statusSelect) {
             statusSelect.addEventListener('change', (e) => {
@@ -1695,6 +1916,18 @@ const VillagesManager = {
                 this.currentStatus = 'all';
                 this.setStatusTab('all');
                 this.loadScopeMetrics();
+=======
+        const resetBtn = document.getElementById('resetFiltersBtn');
+        if (resetBtn) {
+            resetBtn.addEventListener('click', () => {
+                document.getElementById('villageSearchInput').value = '';
+                document.getElementById('filterDistrict').value = '';
+                document.getElementById('filterSubdistrict').value = '';
+                document.getElementById('filterZone').value = '';
+                document.getElementById('filterStatus').value = '';
+                this.currentPage = 1;
+                this.load();
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             });
         }
 
@@ -1744,6 +1977,7 @@ const VillagesManager = {
         this.loadFilters();
     },
 
+<<<<<<< HEAD
     updateScopeHeader() {
         const titleEl = document.getElementById('villagesViewTitle');
         const subtitleEl = document.getElementById('villagesViewSubtitle');
@@ -1880,6 +2114,8 @@ const VillagesManager = {
         this.load();
     },
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     async loadFilters() {
         try {
             const resp = await fetch('/api/villages/filters');
@@ -1887,6 +2123,7 @@ const VillagesManager = {
             if (data.success) {
                 const distSel = document.getElementById('filterDistrict');
                 if (distSel) {
+<<<<<<< HEAD
                     const currentDist = distSel.value;
                     distSel.innerHTML = '<option value="">All Districts</option>' + 
                         (data.districts || []).map(d => `<option value="${escapeQuotes(d)}" ${d === currentDist ? 'selected' : ''}>${d}</option>`).join('');
@@ -1917,6 +2154,20 @@ const VillagesManager = {
                         });
                     }
                     personSel.innerHTML = personHtml;
+=======
+                    distSel.innerHTML = '<option value="">All Districts</option>' + 
+                        data.districts.map(d => `<option value="${d}">${d}</option>`).join('');
+                }
+                const subSel = document.getElementById('filterSubdistrict');
+                if (subSel) {
+                    subSel.innerHTML = '<option value="">All Subdistricts</option>' + 
+                        data.subdistricts.map(s => `<option value="${s}">${s}</option>`).join('');
+                }
+                const zoneSel = document.getElementById('filterZone');
+                if (zoneSel) {
+                    zoneSel.innerHTML = '<option value="">All Zones</option>' + 
+                        data.zones.map(z => `<option value="${z}">${z}</option>`).join('');
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                 }
             }
         } catch (e) {
@@ -1926,6 +2177,7 @@ const VillagesManager = {
 
     async load() {
         const search = document.getElementById('villageSearchInput')?.value || '';
+<<<<<<< HEAD
         const zone = document.getElementById('filterZone')?.value || '';
         const district = document.getElementById('filterDistrict')?.value || '';
         const subdistrict = document.getElementById('filterSubdistrict')?.value || '';
@@ -1939,6 +2191,13 @@ const VillagesManager = {
             this.loadScopeMetrics();
         }
 
+=======
+        const district = document.getElementById('filterDistrict')?.value || '';
+        const subdistrict = document.getElementById('filterSubdistrict')?.value || '';
+        const zone = document.getElementById('filterZone')?.value || '';
+        const status = document.getElementById('filterStatus')?.value || '';
+
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         const params = new URLSearchParams({
             page: this.currentPage,
             page_size: this.pageSize,
@@ -1946,10 +2205,15 @@ const VillagesManager = {
             district,
             subdistrict,
             zone,
+<<<<<<< HEAD
+=======
+            status,
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             sort_by: this.sortBy,
             sort_dir: this.sortDir
         });
 
+<<<<<<< HEAD
         if (person === 'unassigned') {
             params.append('assignment_status', 'unassigned');
         } else if (person) {
@@ -1960,6 +2224,8 @@ const VillagesManager = {
             params.append('status', status);
         }
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         try {
             const resp = await fetch(`/api/villages?${params.toString()}`);
             const data = await resp.json();
@@ -1975,14 +2241,20 @@ const VillagesManager = {
         const tbody = document.getElementById('villagesTableBody');
         if (!tbody) return;
 
+<<<<<<< HEAD
         if (!data.items || data.items.length === 0) {
             tbody.innerHTML = '<tr><td colspan="10" style="text-align: center; padding: 36px; color: #94a3b8;">No matching villages found in database.</td></tr>';
+=======
+        if (data.items.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="16" style="text-align: center; padding: 36px; color: #94a3b8;">No matching villages found.</td></tr>';
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             this.updatePagination(0, 0, 1, 1);
             return;
         }
 
         tbody.innerHTML = data.items.map(v => {
             const isChecked = this.selectedIds.has(v.id) ? 'checked' : '';
+<<<<<<< HEAD
             const isCorrection = (v.work_status === 'Correction Required' || v.kml_status === 'Correction Required');
             const isDone = !isCorrection && (v.work_status === 'Done' || ['Done', 'Verified', 'Marking Completed', 'Finalized'].includes(v.kml_status));
             
@@ -2049,10 +2321,16 @@ const VillagesManager = {
                     <i data-lucide="rotate-ccw" style="width:12px;height:12px;"></i> Reopen
                    </button>`
                 : '';
+=======
+            const kmlLink = v.kml_id 
+                ? `<a href="/api/kml/download/${v.kml_id}" class="badge badge-kml" style="text-decoration:none;" title="Download KML"><i data-lucide="download" style="width:12px;height:12px;"></i> KML v${v.kml_version}</a>`
+                : `<span style="color:#94a3b8; font-size:0.75rem;">None</span>`;
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
             return `
                 <tr>
                     <td><input type="checkbox" class="village-row-checkbox" value="${v.id}" ${isChecked} onchange="VillagesManager.toggleRow(${v.id}, this.checked)"></td>
+<<<<<<< HEAD
                     <td><span class="badge" style="background:#f8fafc; border:1px solid #e2e8f0; font-weight:700; color:#334155;">${v.zone || '-'}</span></td>
                     <td><strong>${v.district_name || '-'}</strong></td>
                     <td>${v.subdistrict_name || '-'}</td>
@@ -2078,6 +2356,46 @@ const VillagesManager = {
                         ${kmlButton}
                         <button class="btn btn-outline btn-sm" style="color: #ef4444; border-color: #fca5a5; margin-left: 2px;" onclick="VillagesManager.confirmDelete(${v.id}, '${escapeQuotes(v.village_name)}', '${escapeQuotes(v.village_code)}')" title="Remove Village">
                             <i data-lucide="trash-2" style="width:13px; height:13px;"></i>
+=======
+                    <td>${v.zone || ''}</td>
+                    <td><strong>${v.district_name}</strong></td>
+                    <td>${v.subdistrict_name}</td>
+                    <td><strong>${v.village_name}</strong></td>
+                    <td><code style="font-weight:600; color:#1e293b;">${v.village_code}</code></td>
+                    <td>${v.geb_connection || ''}</td>
+                    <td style="text-align:right;">${v.google_search_orig_nos || 0}</td>
+                    <td style="text-align:right;">${v.google_edited_nos || 0}</td>
+                    <td style="text-align:right;"><strong>${v.total_wells || 0}</strong></td>
+                    <td style="text-align:right;">${v.dugwells || 0}</td>
+                    <td style="text-align:right;">${v.bores || 0}</td>
+                    <td>${kmlLink}</td>
+                    <td>
+                        ${(v.work_status === 'Done' || v.kml_status === 'Done') ? `
+                            <span class="badge" style="background:#ecfdf5; color:#059669; border:1px solid #a7f3d0; font-weight:700; display:inline-flex; align-items:center; gap:3px;">
+                                <i data-lucide="check-circle-2" style="width:12px;height:12px;"></i> Done
+                            </span>
+                            ${v.assigned_person_name ? `<div style="font-size:0.72rem; color:#059669; font-weight:500; margin-top:2px;">by ${v.assigned_person_name}</div>` : ''}
+                            ${v.updated_at ? `<div style="font-size:0.70rem; color:#64748b;">${new Date(v.updated_at).toLocaleDateString()}</div>` : ''}
+                        ` : (v.assigned_person_name ? `
+                            <span class="badge" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; font-weight:600;">Assigned</span>
+                            <div style="font-size:0.72rem; color:#1e293b; font-weight:500; margin-top:2px;">to ${v.assigned_person_name}</div>
+                            <div style="font-size:0.70rem; color:#d97706; font-weight:600;">Pending</div>
+                        ` : `
+                            <span class="badge ${getStatusBadgeClass(v.kml_status)}">${v.kml_status || 'Pending'}</span>
+                        `)}
+                    </td>
+                    <td style="max-width:140px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="${v.remark||''}">${v.remark || ''}</td>
+                    <td style="text-align:right; white-space:nowrap;">
+                        <button class="btn btn-secondary btn-sm" onclick="QueueManager.openVillage(${v.id})" title="Process in Queue">
+                            <i data-lucide="play" style="width:14px; height:14px;"></i>
+                        </button>
+                        <button class="btn btn-secondary btn-sm" onclick="VillagesManager.openEditModal(${v.id})" title="Edit Details">
+                            <i data-lucide="edit" style="width:14px; height:14px;"></i>
+                        </button>
+                        ${v.kml_id ? `<button class="btn btn-secondary btn-sm" onclick="VillagesManager.previewMap(${v.id}, '${escapeQuotes(v.village_name)}')" title="GIS Map Preview"><i data-lucide="map" style="width:14px;height:14px;"></i></button>` : ''}
+                        <button class="btn btn-outline btn-sm" style="color: #ef4444; border-color: #fca5a5; margin-left: 4px;" onclick="VillagesManager.confirmDelete(${v.id}, '${escapeQuotes(v.village_name)}', '${escapeQuotes(v.village_code)}')" title="Remove Village">
+                            <i data-lucide="trash-2" style="width:14px; height:14px;"></i>
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                         </button>
                     </td>
                 </tr>
@@ -2088,6 +2406,7 @@ const VillagesManager = {
         lucide.createIcons();
     },
 
+<<<<<<< HEAD
     async openVillageWork(villageId, existingUrl, btnEl) {
         if (existingUrl && existingUrl.trim().startsWith('http')) {
             window.open(existingUrl.trim(), '_blank');
@@ -2321,6 +2640,8 @@ const VillagesManager = {
         App.toast(`Warning: No genuine review URL recorded in database for village "${villageName}" (${villageCode}). Generating fake URLs is strictly prohibited.`, 'warning');
     },
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     toggleRow(id, isChecked) {
         if (isChecked) this.selectedIds.add(id);
         else this.selectedIds.delete(id);
@@ -2473,6 +2794,7 @@ const VillagesManager = {
         }, 200);
     },
 
+<<<<<<< HEAD
     async promptReopenVillage(villageId, villageName, villageCode, assignedPersonId, assignedPersonName) {
         const modal = document.getElementById('reopenVillageModal');
         if (!modal) return;
@@ -2575,6 +2897,8 @@ const VillagesManager = {
         }
     },
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     confirmDelete(id, name, code) {
         App.promptDeleteVillage(id, name, code);
     }
@@ -3848,6 +4172,7 @@ const SettingsManager = {
     async load() {
         try {
             const resp = await fetch('/api/settings');
+<<<<<<< HEAD
             if (!resp.ok) {
                 const errData = await resp.json().catch(() => ({}));
                 throw new Error(errData.error || `HTTP ${resp.status}`);
@@ -3877,6 +4202,24 @@ const SettingsManager = {
             }
         } catch (e) {
             console.error('SettingsManager.load failed:', e);
+=======
+            const data = await resp.json();
+            if (!data.success) throw new Error(data.error);
+
+            const h = data.db_health || {};
+            document.getElementById('diagStatus').textContent = h.connected ? 'Healthy / Active' : 'Disconnected';
+            document.getElementById('diagStatus').style.color = h.connected ? '#166534' : '#dc2626';
+            document.getElementById('diagDriver').textContent = h.driver || 'Auto';
+            document.getElementById('diagDbName').textContent = h.database || 'BorewellPortalDB';
+            document.getElementById('diagTime').textContent = h.server_time || '-';
+            document.getElementById('diagVersion').textContent = h.version_summary || '-';
+
+            const settings = data.settings || {};
+            if (settings.marking_portal_url) {
+                document.getElementById('markingPortalUrlInput').value = settings.marking_portal_url;
+            }
+        } catch (e) {
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             App.toast('Failed to load settings.', 'error');
         }
     },
@@ -3909,24 +4252,32 @@ const SettingsManager = {
             e.preventDefault();
             const old_password = document.getElementById('currPassword').value;
             const new_password = document.getElementById('newPassword').value;
+<<<<<<< HEAD
             const confirm_password = document.getElementById('confirmNewPassword')?.value;
 
             if (confirm_password !== undefined && new_password !== confirm_password) {
                 App.toast('New password and confirm password do not match.', 'warning');
                 return;
             }
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
             try {
                 const resp = await fetch('/api/auth/change-password', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
+<<<<<<< HEAD
                     body: JSON.stringify({ old_password, new_password, confirm_password })
+=======
+                    body: JSON.stringify({ old_password, new_password })
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                 });
                 const d = await resp.json();
                 if (d.success) {
                     App.toast('Password changed successfully!', 'success');
                     document.getElementById('currPassword').value = '';
                     document.getElementById('newPassword').value = '';
+<<<<<<< HEAD
                     if (document.getElementById('confirmNewPassword')) {
                         document.getElementById('confirmNewPassword').value = '';
                     }
@@ -3935,6 +4286,8 @@ const SettingsManager = {
                         PasswordVisibility.reset('newPassword');
                         PasswordVisibility.reset('confirmNewPassword');
                     }
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                 } else {
                     throw new Error(d.error);
                 }
@@ -4497,9 +4850,12 @@ const UserSettingsManager = {
         document.getElementById('pwRequiredMarker').style.display = 'inline';
         document.getElementById('formUserPassword').required = true;
         document.getElementById('pwHelpText').textContent = 'Minimum 4 characters. Will be used for user login.';
+<<<<<<< HEAD
         if (window.PasswordVisibility) {
             PasswordVisibility.reset('formUserPassword');
         }
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         App.openModal('userAddModal');
     },
 
@@ -4517,9 +4873,12 @@ const UserSettingsManager = {
         document.getElementById('pwRequiredMarker').style.display = 'none';
         document.getElementById('pwHelpText').textContent = 'Leave blank to keep existing password unchanged.';
         document.getElementById('userModalTitle').textContent = `Edit User: ${u.username}`;
+<<<<<<< HEAD
         if (window.PasswordVisibility) {
             PasswordVisibility.reset('formUserPassword');
         }
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
         App.openModal('userAddModal');
     },
@@ -4562,9 +4921,12 @@ const UserSettingsManager = {
             if (!resData.success) throw new Error(resData.error);
 
             App.closeModal('userAddModal');
+<<<<<<< HEAD
             if (window.PasswordVisibility) {
                 PasswordVisibility.reset('formUserPassword');
             }
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             App.toast(resData.message || 'User saved successfully.', 'success');
             await this.load();
             if (typeof PersonManager !== 'undefined' && PersonManager.load) {
@@ -4622,20 +4984,29 @@ const UserSettingsManager = {
 
 const UserWorkManager = {
     villages: [],
+<<<<<<< HEAD
     history: [],
     pollTimer: null,
     searchDebounce: null,
     _focusBound: false,
+=======
+    pollTimer: null,
+    searchDebounce: null,
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
     init() {
         this.loadDashboard();
         this.loadAssignedVillages();
+<<<<<<< HEAD
         this.loadHistory();
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         // Start background polling every 10 seconds to detect remote completion automatically
         if (this.pollTimer) clearInterval(this.pollTimer);
         this.pollTimer = setInterval(() => {
             this.syncAndCheckCompletions(true);
         }, 10000);
+<<<<<<< HEAD
 
         // Window focus event listener: instant sync when returning from marking portal tab
         if (!this._focusBound) {
@@ -4714,6 +5085,8 @@ const UserWorkManager = {
                 fullList.innerHTML = `<div style="color: #ef4444; font-size: 0.85rem; padding: 8px 0;">Error loading history: ${err.message}</div>`;
             }
         }
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     },
 
     async loadDashboard() {
@@ -4775,6 +5148,7 @@ const UserWorkManager = {
 
         tbody.innerHTML = this.villages.map((v, idx) => {
             const dateStr = v.assigned_at ? new Date(v.assigned_at).toLocaleDateString() : '—';
+<<<<<<< HEAD
             const isCorrection = (v.work_status === 'Correction Required' || v.kml_status === 'Correction Required');
             let workStatusBadge = '';
             if (isCorrection) {
@@ -4787,6 +5161,9 @@ const UserWorkManager = {
             } else {
                 workStatusBadge = '<span class="badge" style="background: #fef3c7; color: #92400e; border: 1px solid #fde68a; font-weight: 600;">Not Done</span>';
             }
+=======
+            const workStatusBadge = '<span class="badge" style="background: #fef3c7; color: #92400e; border: 1px solid #fde68a; font-weight: 600;">Not Done</span>';
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
             const saveBtnHtml = `
                 <button class="btn btn-sm js-save-${v.id}" onclick="UserWorkManager.openSurveyModal(${v.id})" title="Complete survey and save findings" style="padding: 5px 11px; font-size: 0.82rem; background: #10b981; border: 1px solid #059669; color: #ffffff; display: inline-flex; align-items: center; gap: 5px; cursor: pointer; border-radius: 6px;">
@@ -4810,8 +5187,13 @@ const UserWorkManager = {
             } else {
                 actionHtml = `
                     <div style="display: inline-flex; gap: 6px; align-items: center; justify-content: center;">
+<<<<<<< HEAD
                         <button class="btn btn-sm btn-primary js-open-review-${v.id}" onclick="UserWorkManager.openReviewLink(${v.id}, this)" style="padding: 5px 12px; font-size: 0.82rem; display: inline-flex; align-items: center; gap: 6px;" title="Open authentic review page on Village Wells marking portal">
                             <i data-lucide="external-link" style="width: 14px; height: 14px;"></i> Open / Review
+=======
+                        <button class="btn btn-sm btn-secondary js-ensure-link-${v.id}" onclick="UserWorkManager.ensureLink(${v.id}, this)" style="padding: 5px 11px; font-size: 0.82rem; display: inline-flex; align-items: center; gap: 5px;">
+                            <i data-lucide="link" style="width: 14px; height: 14px;"></i> Get Link
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                         </button>
                         ${saveBtnHtml}
                     </div>
@@ -4858,6 +5240,7 @@ const UserWorkManager = {
         if (totalWellsEl) totalWellsEl.value = v.total_wells || ((v.dugwells || 0) + (v.bores || 0));
         if (remarkEl) remarkEl.value = v.remark || '';
 
+<<<<<<< HEAD
         const noticeEl = document.getElementById('surveyorCorrectionNotice');
         const reasonEl = document.getElementById('surveyorCorrectionReasonText');
         if (noticeEl && reasonEl) {
@@ -4869,6 +5252,8 @@ const UserWorkManager = {
             }
         }
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         if (submitBtn) {
             submitBtn.disabled = false;
             submitBtn.innerHTML = '<i data-lucide="check" style="width: 15px; height: 15px;"></i><span>Save & Mark Done</span>';
@@ -4922,9 +5307,14 @@ const UserWorkManager = {
             this.villages = this.villages.filter(item => item.id !== villageId);
             this.renderTable();
 
+<<<<<<< HEAD
             // Immediately update Surveyor metrics and history
             await this.loadDashboard();
             await this.loadHistory();
+=======
+            // Immediately update Surveyor metrics
+            await this.loadDashboard();
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         } catch (err) {
             App.toast(`Save error: ${err.message}`, 'error');
             if (submitBtn) {
@@ -4948,7 +5338,10 @@ const UserWorkManager = {
                 App.toast(`🎉 Village "${data.data.village_name || ''}" is completed! Removed from active work list.`, 'success');
                 await this.loadAssignedVillages();
                 await this.loadDashboard();
+<<<<<<< HEAD
                 await this.loadHistory();
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             } else {
                 App.toast('Village is still pending (status is review, not finalized).', 'info');
                 if (btnEl) {
@@ -4967,18 +5360,26 @@ const UserWorkManager = {
         }
     },
 
+<<<<<<< HEAD
     async openReviewLink(villageId, btnEl) {
         // Pre-open a tab synchronously on user click to avoid browser popup blockers
         const newTab = window.open('about:blank', '_blank');
         if (btnEl) {
             btnEl.disabled = true;
             btnEl.innerHTML = '<i data-lucide="loader-2" class="spin" style="width: 14px; height: 14px;"></i> Preparing...';
+=======
+    async ensureLink(villageId, btnEl) {
+        if (btnEl) {
+            btnEl.disabled = true;
+            btnEl.innerHTML = '<i data-lucide="loader-2" class="spin" style="width: 14px; height: 14px;"></i> Generating...';
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             lucide.createIcons();
         }
 
         try {
             const resp = await fetch(`/api/user/villages/${villageId}/ensure-link`, { method: 'POST' });
             const data = await resp.json();
+<<<<<<< HEAD
             if (!data.success || !data.link) throw new Error(data.error || 'Failed to prepare genuine review link');
 
             const v = this.villages.find(item => item.id === villageId);
@@ -4996,15 +5397,29 @@ const UserWorkManager = {
             if (btnEl) {
                 btnEl.disabled = false;
                 btnEl.innerHTML = '<i data-lucide="external-link" style="width: 14px; height: 14px;"></i> Open / Review';
+=======
+            if (!data.success) throw new Error(data.error);
+
+            App.toast('Review link generated successfully!', 'success');
+            await this.loadAssignedVillages();
+        } catch (err) {
+            App.toast(`Link generation notice: ${err.message}`, 'error');
+            if (btnEl) {
+                btnEl.disabled = false;
+                btnEl.innerHTML = '<i data-lucide="refresh-cw" style="width: 14px; height: 14px;"></i> Retry';
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                 lucide.createIcons();
             }
         }
     },
 
+<<<<<<< HEAD
     async ensureLink(villageId, btnEl) {
         return this.openReviewLink(villageId, btnEl);
     },
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     async syncAndCheckCompletions(silent = false) {
         try {
             const resp = await fetch('/api/user/check-completions', { method: 'POST' });
@@ -5013,15 +5428,24 @@ const UserWorkManager = {
                 data.completed.forEach(c => {
                     App.toast(`🎉 Village "${c.village_name}" completed! Removed from active list.`, 'success');
                 });
+<<<<<<< HEAD
                 // Reload table, dashboard and history
                 await this.loadAssignedVillages();
                 await this.loadDashboard();
                 await this.loadHistory();
+=======
+                // Reload table and dashboard
+                await this.loadAssignedVillages();
+                await this.loadDashboard();
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             } else if (!silent) {
                 App.toast('Checked status: No new completions detected.', 'info');
                 await this.loadAssignedVillages();
                 await this.loadDashboard();
+<<<<<<< HEAD
                 await this.loadHistory();
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             }
         } catch (e) {
             if (!silent) App.toast('Status check error: ' + e.message, 'warning');
@@ -5216,11 +5640,16 @@ const ReactiveSyncManager = {
 
                     if (App.currentView === 'user-dashboard') {
                         UserWorkManager.loadDashboard();
+<<<<<<< HEAD
                         UserWorkManager.loadHistory();
                     } else if (App.currentView === 'user-excel-files' && !this.isUserBusy()) {
                         UserWorkManager.loadAssignedVillages();
                     } else if (App.currentView === 'user-history') {
                         UserWorkManager.loadHistory();
+=======
+                    } else if (App.currentView === 'user-excel-files' && !this.isUserBusy()) {
+                        UserWorkManager.loadAssignedVillages();
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                     }
                 }
             }
@@ -5248,6 +5677,7 @@ function getStatusBadgeClass(status) {
 }
 
 
+<<<<<<< HEAD
 // Global Window Scope Bindings
 window.App = App;
 window.ImportManager = ImportManager;
@@ -5261,6 +5691,8 @@ if (typeof SettingsManager !== 'undefined') window.SettingsManager = SettingsMan
 if (typeof UserWorkManager !== 'undefined') window.UserWorkManager = UserWorkManager;
 if (typeof AdminNotificationManager !== 'undefined') window.AdminNotificationManager = AdminNotificationManager;
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 // Bootstrap Application on DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
     App.init();

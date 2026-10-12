@@ -19,10 +19,19 @@
     <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     <!-- App CSS -->
     <link rel="stylesheet" href="/static/css/style.css">
+<<<<<<< HEAD
     <!-- Permanent Light Theme -->
     <script>
         try { localStorage.removeItem('app_theme'); } catch (e) {}
         document.documentElement.setAttribute('data-theme', 'light');
+=======
+    <!-- Immediate Theme Bootstrap (Prevents White Flash) -->
+    <script>
+        (function() {
+            var theme = localStorage.getItem('app_theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     </script>
 </head>
 <body data-user-role="{{ user.role }}" data-user-id="{{ user.id }}">
@@ -58,6 +67,13 @@
                 <i data-lucide="user-cog"></i>
                 <span>User Settings</span>
             </button>
+<<<<<<< HEAD
+=======
+            <button class="nav-item" data-view="villages">
+                <i data-lucide="map-pin"></i>
+                <span>All Villages</span>
+            </button>
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             <button class="nav-item" data-view="export">
                 <i data-lucide="file-spreadsheet"></i>
                 <span>Export Excel</span>
@@ -75,10 +91,13 @@
                 <i data-lucide="file-spreadsheet"></i>
                 <span>Excel Files</span>
             </button>
+<<<<<<< HEAD
             <button class="nav-item" data-view="user-history">
                 <i data-lucide="history"></i>
                 <span>History</span>
             </button>
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             {% endif %}
         </nav>
 
@@ -126,6 +145,18 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
+=======
+                <button class="btn btn-secondary btn-sm" id="headerThemeToggleBtn" onclick="ThemeManager.toggleTheme()" title="Toggle Dark/Light Mode" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px;">
+                    <i data-lucide="moon" id="headerThemeIcon" style="width: 15px; height: 15px;"></i>
+                    <span id="headerThemeText" style="font-size: 0.8rem;">Theme</span>
+                </button>
+                {% else %}
+                <button class="btn btn-secondary btn-sm" id="userHeaderThemeToggleBtn" onclick="ThemeManager.toggleTheme()" title="Toggle Dark/Light Mode" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px;">
+                    <i data-lucide="moon" id="userHeaderThemeIcon" style="width: 15px; height: 15px;"></i>
+                    <span style="font-size: 0.8rem;">Theme</span>
+                </button>
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                 {% endif %}
             </div>
         </header>
@@ -145,6 +176,7 @@
                             </h2>
                             <p style="margin: 2px 0 0 0; font-size: 0.8rem; color: var(--text-secondary, #64748b);">Real-time monitoring of assignments, marking progress, and zone breakdown.</p>
                         </div>
+<<<<<<< HEAD
                     </div>
                 </div>
 
@@ -191,6 +223,55 @@
                                 <span>Verified & marked</span>
                                 <span style="color: #059669; font-weight: 600; font-size: 0.76rem;">View list &rarr;</span>
                             </div>
+=======
+                        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                            <label for="dashboardZoneSelect" style="font-size: 0.84rem; font-weight: 600; color: var(--text-secondary, #475569); display: flex; align-items: center; gap: 6px; margin: 0;">
+                                <i data-lucide="filter" style="width: 14px; height: 14px; color: #2563eb;"></i>
+                                <span>Zone Filter:</span>
+                            </label>
+                            <select id="dashboardZoneSelect" class="form-control" style="width: 220px; padding: 6px 12px; font-size: 0.85rem; font-weight: 500;" onchange="DashboardManager.filterByZone(this.value)">
+                                <option value="">All Zones (Overall)</option>
+                            </select>
+                            <button class="btn btn-secondary btn-sm" onclick="DashboardManager.load()" title="Refresh Dashboard Metrics" style="padding: 6px 10px; display: inline-flex; align-items: center; gap: 4px;">
+                                <i data-lucide="refresh-cw" style="width: 14px; height: 14px;"></i>
+                                <span>Refresh</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Streamlined 4 Workflow KPIs -->
+                <div class="stats-grid" style="grid-template-columns: repeat(4, 1fr);">
+                    <div class="stat-card">
+                        <div>
+                            <div class="stat-label">Total Villages</div>
+                            <div class="stat-value" id="statTotalVillages">0</div>
+                            <div class="stat-sub">Complete imported database</div>
+                        </div>
+                        <div class="stat-icon bg-blue-light"><i data-lucide="map-pin"></i></div>
+                    </div>
+                    <div class="stat-card">
+                        <div>
+                            <div class="stat-label">Pending Villages</div>
+                            <div class="stat-value" id="statPendingVillages">0</div>
+                            <div class="stat-sub">Unassigned records</div>
+                        </div>
+                        <div class="stat-icon bg-amber-light"><i data-lucide="clock"></i></div>
+                    </div>
+                    <div class="stat-card">
+                        <div>
+                            <div class="stat-label">Assigned Villages</div>
+                            <div class="stat-value" id="statAssignedVillages">0</div>
+                            <div class="stat-sub">Allocated to surveyors</div>
+                        </div>
+                        <div class="stat-icon bg-indigo-light"><i data-lucide="user-check"></i></div>
+                    </div>
+                    <div class="stat-card">
+                        <div>
+                            <div class="stat-label">Completed Villages</div>
+                            <div class="stat-value" id="statCompleted">0</div>
+                            <div class="stat-sub">Verified & marked</div>
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                         </div>
                         <div class="stat-icon bg-emerald-light"><i data-lucide="check-circle-2"></i></div>
                     </div>
@@ -207,6 +288,7 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <!-- Zone-Wise Insights & Progress Section -->
                 <div class="card" style="margin-bottom: 0;">
                     <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 14px; margin-bottom: 18px; flex-wrap: wrap; gap: 10px;">
@@ -452,11 +534,112 @@
                                 </tr>
                             </tbody>
                         </table>
+=======
+                <!-- Pie Chart Card: Village Completion Status (Done vs Pending) -->
+                <div class="card" style="margin-bottom: 22px;">
+                    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; margin-bottom: 16px;">
+                        <h3 class="card-title" style="margin: 0; display: flex; align-items: center; gap: 8px;">
+                            <i data-lucide="pie-chart" style="color: #2563eb;"></i>
+                            <span>Village Completion Status (Done vs Pending)</span>
+                        </h3>
+                        <span class="badge" style="background: rgba(16, 185, 129, 0.1); color: #059669; border: 1px solid rgba(16, 185, 129, 0.3); font-size: 0.78rem; display: inline-flex; align-items: center; gap: 4px;">
+                            <span style="width: 6px; height: 6px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+                            Live Database Records
+                        </span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: minmax(240px, 320px) 1fr; gap: 24px; align-items: center;">
+                        <div style="height: 250px; position: relative; display: flex; align-items: center; justify-content: center;">
+                            <canvas id="statusChart"></canvas>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 12px; justify-content: center;">
+                            <div style="background: var(--bg-surface, #f8fafc); border: 1px solid var(--border-color, #e2e8f0); border-radius: 8px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center;">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="width: 14px; height: 14px; border-radius: 4px; background: #10b981; display: inline-block;"></span>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 0.92rem; color: var(--text-primary, #0f172a);">Done / Completed</div>
+                                        <div style="font-size: 0.78rem; color: var(--text-secondary, #64748b);">Surveys verified & marked</div>
+                                    </div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <span id="chartDoneCount" style="font-size: 1.35rem; font-weight: 700; color: #059669;">0</span>
+                                    <span id="chartDonePct" style="font-size: 0.8rem; color: #059669; margin-left: 4px;">(0%)</span>
+                                </div>
+                            </div>
+                            <div style="background: var(--bg-surface, #f8fafc); border: 1px solid var(--border-color, #e2e8f0); border-radius: 8px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center;">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="width: 14px; height: 14px; border-radius: 4px; background: #f59e0b; display: inline-block;"></span>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 0.92rem; color: var(--text-primary, #0f172a);">Not Done / Pending</div>
+                                        <div style="font-size: 0.78rem; color: var(--text-secondary, #64748b);">Pending survey completion</div>
+                                    </div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <span id="chartPendingCount" style="font-size: 1.35rem; font-weight: 700; color: #d97706;">0</span>
+                                    <span id="chartPendingPct" style="font-size: 0.8rem; color: #d97706; margin-left: 4px;">(0%)</span>
+                                </div>
+                            </div>
+                            <div style="font-size: 0.82rem; color: var(--text-secondary, #64748b); text-align: right; padding-right: 4px;">
+                                Total Database Villages: <strong id="chartTotalCount" style="color: var(--text-primary, #0f172a);">0</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Zone-Wise Insights Section -->
+                <div class="card" style="margin-bottom: 0;">
+                    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+                        <h3 class="card-title" style="margin: 0; display: flex; align-items: center; gap: 8px;">
+                            <i data-lucide="layers" style="color: #2563eb;"></i>
+                            <span>Zone-Wise Insights & Progress</span>
+                        </h3>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span class="badge" style="background: rgba(37, 99, 235, 0.1); color: #2563eb; border: 1px solid rgba(37, 99, 235, 0.25); font-size: 0.78rem;" id="zoneCountBadge">0 Zones</span>
+                        </div>
+                    </div>
+
+                    <!-- 4 Zone Overview KPI Cards -->
+                    <div class="stats-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 0;">
+                        <div class="stat-card" style="padding: 14px 16px; border-left: 4px solid #3b82f6;">
+                            <div>
+                                <div class="stat-label">Total Zones</div>
+                                <div class="stat-value" id="zoneKpiTotalZones" style="font-size: 1.45rem;">0</div>
+                                <div class="stat-sub">Configured operational zones</div>
+                            </div>
+                            <div class="stat-icon bg-blue-light" style="width: 38px; height: 38px;"><i data-lucide="layers" style="width: 18px; height: 18px;"></i></div>
+                        </div>
+                        <div class="stat-card" style="padding: 14px 16px; border-left: 4px solid #10b981;">
+                            <div>
+                                <div class="stat-label">Completed Zones</div>
+                                <div class="stat-value" id="zoneKpiCompletedZones" style="font-size: 1.45rem; color: #059669;">0</div>
+                                <div class="stat-sub">100% surveys finished</div>
+                            </div>
+                            <div class="stat-icon bg-emerald-light" style="width: 38px; height: 38px;"><i data-lucide="check-circle-2" style="width: 18px; height: 18px;"></i></div>
+                        </div>
+                        <div class="stat-card" style="padding: 14px 16px; border-left: 4px solid #f59e0b;">
+                            <div>
+                                <div class="stat-label">In-Progress Zones</div>
+                                <div class="stat-value" id="zoneKpiInProgressZones" style="font-size: 1.45rem; color: #d97706;">0</div>
+                                <div class="stat-sub">Active surveying</div>
+                            </div>
+                            <div class="stat-icon bg-amber-light" style="width: 38px; height: 38px;"><i data-lucide="activity" style="width: 18px; height: 18px;"></i></div>
+                        </div>
+                        <div class="stat-card" style="padding: 14px 16px; border-left: 4px solid #64748b;">
+                            <div>
+                                <div class="stat-label">Pending Zones</div>
+                                <div class="stat-value" id="zoneKpiPendingZones" style="font-size: 1.45rem; color: #475569;">0</div>
+                                <div class="stat-sub">0% survey completion</div>
+                            </div>
+                            <div class="stat-icon" style="width: 38px; height: 38px; background: rgba(100, 116, 139, 0.12); color: #64748b;"><i data-lucide="clock" style="width: 18px; height: 18px;"></i></div>
+                        </div>
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                     </div>
                 </div>
             </section>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
             <!-- ================= VIEW 2: IMPORT VILLAGES ================= -->
             <section id="view-import" class="app-view" style="display: none;">
                 <div class="card">
@@ -581,6 +764,7 @@
                         </div>
 
                         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+<<<<<<< HEAD
                             <button class="btn btn-primary" onclick="App.navigate('assign-person')"><i data-lucide="user-check"></i> Assign Villages to Person</button>
                             <button class="btn btn-secondary" onclick="App.navigate('export')"><i data-lucide="file-spreadsheet"></i> Export Excel</button>
                             <button class="btn btn-secondary" onclick="App.navigate('dashboard')"><i data-lucide="layout-dashboard"></i> View Dashboard</button>
@@ -613,6 +797,12 @@
                         <div style="grid-column: 1 / -1; text-align: center; padding: 30px; color: var(--text-secondary);">
                             <div class="spinner" style="margin: 0 auto 10px auto;"></div>
                             <div>Loading imported batches...</div>
+=======
+                            <button class="btn btn-primary" onclick="App.navigate('villages')">View All Villages</button>
+                            <button class="btn btn-secondary" onclick="App.navigate('assign-person')"><i data-lucide="user-check"></i> Assign Villages to Person</button>
+                            <button class="btn btn-secondary" onclick="App.navigate('processing')">Start Processing Queue</button>
+                            <button class="btn btn-outline" onclick="ImportManager.reset()">Import Another File</button>
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                         </div>
                     </div>
                 </div>
@@ -852,6 +1042,7 @@
                 </div>
             </section>
 
+<<<<<<< HEAD
             <!-- ================= VIEW 3: ALL VILLAGES & DRILLDOWN EXPLORER ================= -->
             <section id="view-villages" class="app-view" style="display: none;">
                 <!-- Header with Back Button and Contextual Title -->
@@ -941,21 +1132,39 @@
                             <option value="Other / Unassigned">Other / Unassigned</option>
                         </select>
 
+=======
+            <!-- ================= VIEW 3: ALL VILLAGES ================= -->
+            <section id="view-villages" class="app-view" style="display: none;">
+                <!-- Filters & Search Toolbar -->
+                <div class="card" style="padding: 16px; margin-bottom: 16px;">
+                    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr auto; gap: 12px; align-items: center;">
+                        <input type="text" id="villageSearchInput" class="form-control" placeholder="Search by Village Name, Code, or District...">
+                        
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                         <select id="filterDistrict" class="form-control">
                             <option value="">All Districts</option>
                         </select>
 
                         <select id="filterSubdistrict" class="form-control">
+<<<<<<< HEAD
                             <option value="">All Talukas</option>
                         </select>
 
                         <select id="filterAssignedPerson" class="form-control">
                             <option value="">All Surveyors</option>
                             <option value="unassigned">Unassigned</option>
+=======
+                            <option value="">All Subdistricts</option>
+                        </select>
+
+                        <select id="filterZone" class="form-control">
+                            <option value="">All Zones</option>
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                         </select>
 
                         <select id="filterStatus" class="form-control">
                             <option value="">All Statuses</option>
+<<<<<<< HEAD
                             <option value="pending">Pending</option>
                             <option value="assigned">Assigned</option>
                             <option value="completed">Completed</option>
@@ -964,10 +1173,25 @@
                         </select>
 
                         <button class="btn btn-secondary" id="resetFiltersBtn" title="Reset all filters" style="display: inline-flex; align-items: center; gap: 4px; padding: 8px 12px;">
+=======
+                            <option value="Pending">Pending</option>
+                            <option value="Ready to Process">Ready to Process</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Marking Completed">Marking Completed</option>
+                            <option value="KML Downloaded">KML Downloaded</option>
+                            <option value="Done">Done</option>
+                            <option value="Verified">Verified</option>
+                            <option value="Needs Review">Needs Review</option>
+                            <option value="Failed">Failed</option>
+                        </select>
+
+                        <button class="btn btn-secondary" id="resetFiltersBtn" title="Reset Filters">
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                             <i data-lucide="rotate-ccw"></i>
                             <span>Reset</span>
                         </button>
                     </div>
+<<<<<<< HEAD
 
                     <!-- Quick Status Filter Pills -->
                     <div style="display: flex; gap: 8px; margin-top: 14px; padding-top: 12px; border-top: 1px solid #f1f5f9; flex-wrap: wrap; align-items: center;">
@@ -995,6 +1219,37 @@
                 </div>
 
                 <!-- Villages Main Table Card -->
+=======
+                </div>
+
+                <!-- Bulk Actions Bar (Appears when checkboxes are selected) -->
+                <div id="bulkActionBar" style="display: none; background: #1e293b; color: #ffffff; padding: 12px 20px; border-radius: var(--radius-sm); margin-bottom: 16px; align-items: center; justify-content: space-between;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span id="selectedCountBadge" style="background: var(--primary); padding: 4px 10px; border-radius: 9999px; font-weight: 600; font-size: 0.8rem;">0 Selected</span>
+                        <span style="font-size: 0.88rem;">Bulk Actions:</span>
+                        <select id="bulkStatusSelect" class="form-control" style="width: 180px; padding: 4px 8px; font-size: 0.82rem;">
+                            <option value="">Change Status to...</option>
+                            <option value="Ready to Process">Ready to Process</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Marking Completed">Marking Completed</option>
+                            <option value="Verified">Verified</option>
+                            <option value="Done">Done (With KML)</option>
+                            <option value="Needs Review">Needs Review</option>
+                        </select>
+                        <button class="btn btn-primary btn-sm" id="applyBulkStatusBtn">Apply Status</button>
+                    </div>
+
+                    <div style="display: flex; gap: 8px;">
+                        <button class="btn btn-secondary btn-sm" id="exportSelectedBtn">
+                            <i data-lucide="download"></i>
+                            <span>Export Selected</span>
+                        </button>
+                        <button class="btn btn-secondary btn-sm" id="clearSelectionBtn">Clear Selection</button>
+                    </div>
+                </div>
+
+                <!-- Villages Main Table -->
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                 <div class="card" style="padding: 0; overflow: hidden;">
                     <div class="table-responsive">
                         <table class="data-table" id="villagesMainTable">
@@ -1002,6 +1257,7 @@
                                 <tr>
                                     <th style="width: 38px;"><input type="checkbox" id="selectAllCheckbox"></th>
                                     <th>Zone</th>
+<<<<<<< HEAD
                                     <th>District</th>
                                     <th>Taluka</th>
                                     <th>Village Name</th>
@@ -1009,13 +1265,33 @@
                                     <th>Assigned Person</th>
                                     <th>GEB / Wells</th>
                                     <th>Status &amp; Completion</th>
+=======
+                                    <th>District Name</th>
+                                    <th>Subdistrict Name</th>
+                                    <th>Village Name</th>
+                                    <th>Village Code</th>
+                                    <th>GEB Conn</th>
+                                    <th>Orig Nos</th>
+                                    <th>Edited Nos</th>
+                                    <th>Total</th>
+                                    <th>Dugwells</th>
+                                    <th>Bores</th>
+                                    <th>KML File</th>
+                                    <th>Status</th>
+                                    <th>Remark</th>
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                                     <th style="text-align: right;">Actions</th>
                                 </tr>
                             </thead>
                             <tbody id="villagesTableBody">
                                 <tr>
+<<<<<<< HEAD
                                     <td colspan="10" style="text-align: center; padding: 36px; color: #94a3b8;">
                                         Loading villages from database...
+=======
+                                    <td colspan="16" style="text-align: center; padding: 36px; color: #94a3b8;">
+                                        Loading villages...
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                                     </td>
                                 </tr>
                             </tbody>
@@ -1425,6 +1701,71 @@
             <!-- ================= VIEW 8: SETTINGS ================= -->
             <section id="view-settings" class="app-view" style="display: none;">
                 <div style="display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 800px;">
+<<<<<<< HEAD
+=======
+                    <!-- Appearance & Theme Card -->
+                    <div class="card" id="appearanceCard">
+                        <div class="card-header">
+                            <h3 class="card-title"><i data-lucide="palette"></i> Appearance</h3>
+                            <span class="badge" id="currentThemeBadge" style="background: var(--primary-light); color: var(--primary); border: 1px solid var(--border-color); font-weight: 700;">Light Mode</span>
+                        </div>
+                        <div style="padding: 4px 0 8px 0;">
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px;">
+                                Customize the interface appearance for AUTO FINDING AI. Both modes work seamlessly across the sidebar, header, dashboard, cards, tables, forms, modals, buttons, and inputs, and persist automatically across logins and page refreshes.
+                            </p>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+                                <!-- Light Mode Option -->
+                                <div class="theme-card" id="themeCardLight" onclick="ThemeManager.setTheme('light')">
+                                    <div class="theme-preview theme-preview-light">
+                                        <div class="preview-sidebar"></div>
+                                        <div class="preview-content">
+                                            <div class="preview-header"></div>
+                                            <div class="preview-body">
+                                                <div class="preview-card"></div>
+                                                <div class="preview-card"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="theme-info">
+                                        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <i data-lucide="sun" style="width: 18px; height: 18px; color: #f59e0b;"></i>
+                                                <span style="font-weight: 700; font-size: 0.95rem; color: var(--text-primary);">Light Mode</span>
+                                            </div>
+                                            <input type="radio" name="appTheme" value="light" id="themeRadioLight" style="accent-color: var(--primary); cursor: pointer;" checked>
+                                        </div>
+                                        <span style="font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">Crisp, clean light view for daytime use</span>
+                                    </div>
+                                </div>
+
+                                <!-- Dark Mode Option -->
+                                <div class="theme-card" id="themeCardDark" onclick="ThemeManager.setTheme('dark')">
+                                    <div class="theme-preview theme-preview-dark">
+                                        <div class="preview-sidebar"></div>
+                                        <div class="preview-content">
+                                            <div class="preview-header"></div>
+                                            <div class="preview-body">
+                                                <div class="preview-card"></div>
+                                                <div class="preview-card"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="theme-info">
+                                        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <i data-lucide="moon" style="width: 18px; height: 18px; color: #60a5fa;"></i>
+                                                <span style="font-weight: 700; font-size: 0.95rem; color: var(--text-primary);">Dark Mode</span>
+                                            </div>
+                                            <input type="radio" name="appTheme" value="dark" id="themeRadioDark" style="accent-color: var(--primary); cursor: pointer;">
+                                        </div>
+                                        <span style="font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">High-contrast dark view optimized for eye comfort</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                     <!-- Database Health & Diagnostics (Hidden from user display as required) -->
                     <div class="card" id="sqlDiagCard" style="display: none;">
                         <div class="card-header">
@@ -1487,6 +1828,7 @@
                         <form id="changePasswordForm">
                             <div style="margin-bottom: 12px;">
                                 <label class="meta-item-label" for="currPassword">Current Password</label>
+<<<<<<< HEAD
                                 <div class="password-input-wrapper">
                                     <input type="password" id="currPassword" class="form-control" required placeholder="Enter current password" autocomplete="current-password">
                                     <button type="button" class="password-toggle-btn" onclick="PasswordVisibility.toggle('currPassword', this)" title="Show password" aria-label="Show password">
@@ -1511,6 +1853,13 @@
                                         <i data-lucide="eye-off"></i>
                                     </button>
                                 </div>
+=======
+                                <input type="password" id="currPassword" class="form-control" required>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                                <label class="meta-item-label" for="newPassword">New Password (min 6 characters)</label>
+                                <input type="password" id="newPassword" class="form-control" required minlength="6">
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                             </div>
                             <button type="submit" class="btn btn-secondary">
                                 <i data-lucide="key"></i>
@@ -1823,6 +2172,7 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <!-- User History Section -->
                 <div class="card" style="margin-bottom: 24px;">
                     <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
@@ -1843,6 +2193,8 @@
                     </div>
                 </div>
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                 <!-- Quick Help Card -->
                 <div class="card">
                     <div class="card-header">
@@ -1921,6 +2273,7 @@
                 </div>
             </section>
 
+<<<<<<< HEAD
             <!-- ================= VIEW 13: USER HISTORY (SURVEYOR) ================= -->
             <section id="view-user-history" class="app-view" style="display: none;">
                 <div class="card">
@@ -1949,6 +2302,8 @@
                 </div>
             </section>
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
         </main>
     </div>
 </div>
@@ -2152,12 +2507,16 @@
                 </div>
                 <div style="margin-bottom: 14px;">
                     <label class="meta-item-label" for="formUserPassword">Password <span id="pwRequiredMarker">*</span></label>
+<<<<<<< HEAD
                     <div class="password-input-wrapper">
                         <input type="password" id="formUserPassword" class="form-control" placeholder="Enter secure password" autocomplete="new-password">
                         <button type="button" class="password-toggle-btn" onclick="PasswordVisibility.toggle('formUserPassword', this)" title="Show password" aria-label="Show password">
                             <i data-lucide="eye-off"></i>
                         </button>
                     </div>
+=======
+                    <input type="password" id="formUserPassword" class="form-control" placeholder="Enter secure password">
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                     <small id="pwHelpText" style="color: #64748b; font-size: 0.75rem; display: block; margin-top: 4px;">Minimum 4 characters.</small>
                 </div>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px;">
@@ -2183,8 +2542,11 @@
             </div>
         </form>
     </div>
+<<<<<<< HEAD
 </div>
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 <!-- Surveyor Complete / Save Village Modal -->
 <div class="modal-backdrop" id="surveyorCompleteModal" style="display: none;">
     <div class="modal-content" style="max-width: 480px;">
@@ -2208,6 +2570,7 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <div id="surveyorCorrectionNotice" style="display: none; background: #fff1f2; border: 1px solid #fecdd3; border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; color: #9f1239; font-size: 0.84rem;">
                     <div style="font-weight: 700; display: flex; align-items: center; gap: 6px;">
                         <i data-lucide="alert-circle" style="width: 14px; height: 14px; color: #e11d48;"></i>
@@ -2216,6 +2579,8 @@
                     <div id="surveyorCorrectionReasonText" style="margin-top: 4px; color: #be123c; font-size: 0.82rem; line-height: 1.4;"></div>
                 </div>
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
                     <div>
                         <label class="meta-item-label" for="surveyorDugwells">Dug Wells</label>
@@ -2266,6 +2631,7 @@
     </div>
 </div>
 
+<<<<<<< HEAD
 <!-- ================= IMPORT BATCH MODALS ================= -->
 
 <!-- Delete Import Batch Modal -->
@@ -2691,6 +3057,13 @@
 
 <!-- JavaScript Core Application -->
 <script src="/static/js/app.js?v=3.0"></script>
+=======
+<!-- Toast Notifications Container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- JavaScript Core Application -->
+<script src="/static/js/app.js"></script>
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
 </body>
 </html>

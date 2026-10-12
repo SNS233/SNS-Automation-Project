@@ -479,6 +479,7 @@ def _init_sqlite():
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
 
+<<<<<<< HEAD
     CREATE TABLE IF NOT EXISTS UserCompletionHistory (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_id INTEGER NOT NULL,
@@ -521,12 +522,15 @@ def _init_sqlite():
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     CREATE INDEX IF NOT EXISTS IX_Villages_VillageCode ON Villages(village_code);
     CREATE INDEX IF NOT EXISTS IX_Villages_Status ON Villages(kml_status);
     CREATE INDEX IF NOT EXISTS IX_Villages_District ON Villages(district_name);
     CREATE INDEX IF NOT EXISTS IX_Villages_Subdistrict ON Villages(subdistrict_name);
     CREATE INDEX IF NOT EXISTS IX_Villages_AssignedPerson ON Villages(assigned_person_id);
     CREATE INDEX IF NOT EXISTS IX_Villages_WorkStatus ON Villages(work_status);
+<<<<<<< HEAD
     CREATE INDEX IF NOT EXISTS IX_Villages_Zone ON Villages(zone);
     CREATE INDEX IF NOT EXISTS IX_AdminNotifications_IsRead ON AdminNotifications(is_read);
     CREATE INDEX IF NOT EXISTS IX_UserCompletionHistory_User ON UserCompletionHistory(user_id, completed_at DESC);
@@ -544,6 +548,11 @@ def _init_sqlite():
     for k, v in defaults:
         cursor.execute("INSERT OR IGNORE INTO ApplicationSettings (setting_key, setting_value) VALUES (?, ?)", (k, v))
 
+=======
+    CREATE INDEX IF NOT EXISTS IX_AdminNotifications_IsRead ON AdminNotifications(is_read);
+    """)
+
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     # Ensure any missing columns in existing Villages table are added dynamically
     cursor.execute("PRAGMA table_info(Villages)")
     existing_cols = {row[1] for row in cursor.fetchall()}
@@ -559,15 +568,20 @@ def _init_sqlite():
         ("total_electric_solar", "INTEGER DEFAULT 0"),
         ("raw_geb_data", "TEXT"),
         ("generated_review_url", "TEXT"),
+<<<<<<< HEAD
         ("work_status", "TEXT DEFAULT 'Not Done'"),
         ("correction_reason", "TEXT"),
         ("reopened_at", "TIMESTAMP"),
         ("reopened_by", "TEXT")
+=======
+        ("work_status", "TEXT DEFAULT 'Not Done'")
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     ]
     for col_name, col_type in migrations:
         if col_name not in existing_cols:
             cursor.execute(f"ALTER TABLE Villages ADD COLUMN {col_name} {col_type}")
 
+<<<<<<< HEAD
     # Ensure is_active and status in UserCompletionHistory table
     cursor.execute("PRAGMA table_info(UserCompletionHistory)")
     existing_uch_cols = {row[1] for row in cursor.fetchall()}
@@ -578,12 +592,15 @@ def _init_sqlite():
     if "review_url" not in existing_uch_cols:
         cursor.execute("ALTER TABLE UserCompletionHistory ADD COLUMN review_url TEXT")
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     # Ensure user_id in Persons table
     cursor.execute("PRAGMA table_info(Persons)")
     existing_person_cols = {row[1] for row in cursor.fetchall()}
     if "user_id" not in existing_person_cols:
         cursor.execute("ALTER TABLE Persons ADD COLUMN user_id INTEGER")
 
+<<<<<<< HEAD
     # Ensure inserted_rows and updated_rows in ImportBatches table
     cursor.execute("PRAGMA table_info(ImportBatches)")
     existing_batch_cols = {row[1] for row in cursor.fetchall()}
@@ -598,6 +615,8 @@ def _init_sqlite():
     # Backfill inserted_rows if empty but valid_rows exists
     cursor.execute("UPDATE ImportBatches SET inserted_rows = valid_rows WHERE (inserted_rows IS NULL OR inserted_rows = 0) AND valid_rows > 0")
 
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     conn.commit()
     conn.close()
     logger.info("SQLite database schema initialized successfully.")

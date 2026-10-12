@@ -1,9 +1,12 @@
 import io
 import re
 import os
+<<<<<<< HEAD
 import time
 import math
 import logging
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 import json
 import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
@@ -13,9 +16,12 @@ from pathlib import Path
 from werkzeug.utils import secure_filename
 import db
 from config import Config
+<<<<<<< HEAD
 from services.sync_service import bump_state_version
 
 logger = logging.getLogger(__name__)
+=======
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
 # Standard mapping dictionary from common header names to our database field names
 COLUMN_MAPPING_RULES = {
@@ -458,11 +464,19 @@ def parse_and_import_file(file_storage_or_path, column_mappings, duplicate_mode=
         error_report_path = Config.ERROR_REPORT_DIR / error_report_filename
         error_df.to_excel(error_report_path, index=False)
 
+<<<<<<< HEAD
     # 1. Create ImportBatch record in SQL Server / SQLite
     batch_insert_sql = """
     INSERT INTO ImportBatches (filename, file_path, total_rows, valid_rows, invalid_rows, duplicate_rows, inserted_rows, updated_rows, status, error_report_path, created_at)
     OUTPUT INSERTED.id
     VALUES (?, ?, ?, ?, ?, ?, 0, 0, 'completed', ?, GETDATE())
+=======
+    # 1. Create ImportBatch record in SQL Server
+    batch_insert_sql = """
+    INSERT INTO ImportBatches (filename, file_path, total_rows, valid_rows, invalid_rows, duplicate_rows, status, error_report_path, created_at)
+    OUTPUT INSERTED.id
+    VALUES (?, ?, ?, ?, ?, ?, 'completed', ?, GETDATE())
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     """
     batch_id = db.execute_scalar_insert(
         batch_insert_sql,
@@ -477,6 +491,7 @@ def parse_and_import_file(file_storage_or_path, column_mappings, duplicate_mode=
         )
     )
 
+<<<<<<< HEAD
     # 2. Insert or Update Villages in SQL Server / SQLite
     inserted_count = 0
     updated_count = 0
@@ -841,6 +856,24 @@ def correct_batch_with_excel(batch_id, file_storage):
                     subdistrict_name = COALESCE(NULLIF(?, ''), subdistrict_name),
                     village_name = COALESCE(NULLIF(?, ''), village_name),
                     geb_connection = COALESCE(NULLIF(?, ''), geb_connection),
+=======
+    # 2. Insert or Update Villages in SQL Server
+    inserted_count = 0
+    updated_count = 0
+
+    with db.get_db_cursor(commit=True) as cursor:
+        for rec in valid_records:
+            if rec["is_update"] and rec["existing_id"]:
+                update_sql = """
+                UPDATE Villages SET
+                    zone = COALESCE(NULLIF(?, ''), zone),
+                    district_name = ?,
+                    subdistrict_name = ?,
+                    village_name = ?,
+                    geb_connection = COALESCE(NULLIF(?, ''), geb_connection),
+                    google_search_orig_nos = CASE WHEN ? > 0 THEN ? ELSE google_search_orig_nos END,
+                    google_edited_nos = CASE WHEN ? > 0 THEN ? ELSE google_edited_nos END,
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                     total_wells = CASE WHEN ? > 0 THEN ? ELSE total_wells END,
                     dugwells = CASE WHEN ? > 0 THEN ? ELSE dugwells END,
                     bores = CASE WHEN ? > 0 THEN ? ELSE bores END,
@@ -857,15 +890,27 @@ def correct_batch_with_excel(batch_id, file_storage):
                 cursor.execute(
                     update_sql,
                     (
+<<<<<<< HEAD
                         zone, d_name, s_name, v_name, geb,
                         total, total, dugwells, dugwells, bores, bores,
                         elec_kuva, elec_kuva, elec_bor, elec_bor, tot_elec, tot_elec,
                         solar_bk, solar_bk, tot_elec_solar, tot_elec_solar,
                         raw_geb_json, remark, existing['id']
+=======
+                        rec["zone"], rec["district_name"], rec["subdistrict_name"], rec["village_name"],
+                        rec["geb_connection"], rec["google_search_orig_nos"], rec["google_search_orig_nos"],
+                        rec["google_edited_nos"], rec["google_edited_nos"], rec["total_wells"], rec["total_wells"],
+                        rec["dugwells"], rec["dugwells"], rec["bores"], rec["bores"],
+                        rec["electric_kuva"], rec["electric_kuva"], rec["electric_bor"], rec["electric_bor"],
+                        rec["total_electric"], rec["total_electric"], rec["solar_bor_kuva"], rec["solar_bor_kuva"],
+                        rec["total_electric_solar"], rec["total_electric_solar"], rec["raw_geb_data"],
+                        rec["remark"], rec["existing_id"]
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
                     )
                 )
                 updated_count += 1
             else:
+<<<<<<< HEAD
                 # New village row to add
                 if v_name and d_name and s_name:
                     to_insert_records.append((
@@ -902,10 +947,35 @@ def correct_batch_with_excel(batch_id, file_storage):
     """, (updated_count, inserted_count, inserted_count, inserted_count, batch_id))
 
     bump_state_version()
+=======
+                insert_village_sql = """
+                INSERT INTO Villages (
+                    batch_id, zone, district_name, subdistrict_name, village_name, village_code,
+                    geb_connection, google_search_orig_nos, google_edited_nos, total_wells,
+                    dugwells, bores, electric_kuva, electric_bor, total_electric, solar_bor_kuva, total_electric_solar,
+                    raw_geb_data, assignment_status, kml_status, remark, created_at, updated_at
+                )
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'Unassigned', ?, ?, GETDATE(), GETDATE())
+                """
+                cursor.execute(
+                    insert_village_sql,
+                    (
+                        batch_id, rec["zone"], rec["district_name"], rec["subdistrict_name"],
+                        rec["village_name"], rec["village_code"], rec["geb_connection"],
+                        rec["google_search_orig_nos"], rec["google_edited_nos"],
+                        rec["total_wells"], rec["dugwells"], rec["bores"],
+                        rec["electric_kuva"], rec["electric_bor"], rec["total_electric"],
+                        rec["solar_bor_kuva"], rec["total_electric_solar"],
+                        rec["raw_geb_data"], rec["kml_status"], rec["remark"]
+                    )
+                )
+                inserted_count += 1
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
 
     return {
         "success": True,
         "batch_id": batch_id,
+<<<<<<< HEAD
         "updated_count": updated_count,
         "inserted_count": inserted_count,
         "total_processed": len(df)
@@ -1043,6 +1113,17 @@ def delete_import_batch(batch_id, force=False):
         "deleted_villages": len(eligible_ids),
         "protected_villages": len(protected_ids),
         "total_villages": safety['total_villages']
+=======
+        "filename": filename,
+        "total_rows": total_rows,
+        "valid_rows": len(valid_records),
+        "invalid_rows": len(invalid_records),
+        "duplicates_detected": duplicate_count,
+        "inserted_count": inserted_count,
+        "updated_count": updated_count,
+        "error_report_filename": error_report_filename,
+        "has_errors": len(invalid_records) > 0
+>>>>>>> 960899f6400ba7a53f452028e0fb1d3f27ae62b1
     }
 
 
