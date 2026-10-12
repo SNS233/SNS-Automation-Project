@@ -1,0 +1,1738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+
+<Document>
+
+  <name>Tandalja</name>
+
+  <!-- ================================================= -->
+  <!-- SURVEY POINT STYLE -->
+  <!-- ================================================= -->
+
+  <Style id="survey-point">
+
+    <IconStyle>
+      <scale>1.2</scale>
+    </IconStyle>
+
+    <LabelStyle>
+      <scale>1.2</scale>
+    </LabelStyle>
+
+  </Style>
+
+  <!-- ================================================= -->
+  <!-- VILLAGE BOUNDARY STYLE -->
+  <!-- ================================================= -->
+
+  <Style id="village-boundary">
+
+    <LineStyle>
+      <color>ff0000ff</color>
+      <width>3</width>
+    </LineStyle>
+
+    <PolyStyle>
+      <fill>0</fill>
+      <outline>1</outline>
+    </PolyStyle>
+
+  </Style>
+
+<Folder>
+  <name>Chhotaudepur</name>
+  <Folder>
+    <name>Bodeli</name>
+    <Folder>
+      <name>Tandalja</name>
+      <Placemark>
+        <name>Tandalja Boundary</name>
+        <styleUrl>#village-boundary</styleUrl>
+        <Polygon><tessellate>1</tessellate><outerBoundaryIs><LinearRing><coordinates>73.785262037076,22.2180768670109,0 73.782900125642,22.2225215398114,0 73.7814797060511,22.2236678348138,0 73.7803464779128,22.2242257919479,0 73.7786567906824,22.2254174640346,0 73.777279917979,22.2264796799977,0 73.7748769409408,22.2280565262244,0 73.7732273545738,22.2289553243719,0 73.7721775556539,22.2307646260744,0 73.771477875067,22.2319848249832,0 73.7711269262474,22.2325323629009,0 73.7699721399846,22.2334245656148,0 73.7687217667463,22.2339838994444,0 73.7689069995024,22.234315450349,0 73.7687481932648,22.234646204565,0 73.7687946849176,22.2349329865705,0 73.768800575575,22.2352916336342,0 73.7687375501965,22.2356090207222,0 73.7687409472359,22.2358199633109,0 73.7686546137118,22.2360954418895,0 73.7685898894689,22.2363074037818,0 73.7683880343504,22.2364788526853,0 73.7682152675611,22.2370298101781,0 73.7679197910622,22.2370336235586,0 73.7676174742661,22.2380083203275,0 73.7676254553716,22.2384936227169,0 73.7674028866397,22.2387919154078,0 73.7670675766495,22.2391340651942,0 73.766729773994,22.2393284182562,0 73.7663661705115,22.2393332470411,0 73.7658437249682,22.239361258105,0 73.7650937150045,22.2393711896384,0 73.7647531197146,22.2393966945086,0 73.764139449037,22.2394048582356,0 73.7636845241827,22.2393897472308,0 73.7626845432622,22.2394029153334,0 73.7615854296876,22.2397551360338,0 73.7609972511975,22.2399315812793,0 73.7603654438998,22.2402142791264,0 73.7596402245925,22.2403504716794,0 73.7591411778988,22.2404203718678,0 73.7583470440634,22.2405152044761,0 73.7576882540499,22.240544948386,0 73.7572956909557,22.2404446650101,0 73.7567047241158,22.2404524311089,0 73.756295607197,22.2404577934686,0 73.7557731579014,22.2404857717429,0 73.7556728291882,22.2404639575852,0 73.7556091722881,22.2401900482553,0 73.7553362431847,22.2399584367795,0 73.7550281911847,22.239507058832,0 73.7556286009889,22.2394403869245,0 73.7560074715125,22.239376624304,0 73.7554639081553,22.238950272208,0 73.7550995000951,22.2389256235367,0 73.7544822418501,22.2389338127673,0 73.7539262200428,22.2388088744789,0 73.7537395433027,22.239017094151,0 73.7533746182517,22.2389630811355,0 73.7525113955337,22.238445476523,0 73.7514727400536,22.2378419739083,0 73.7509094743745,22.2372762618606,0 73.7500771583011,22.236809646338,0 73.7496160509639,22.2366834362233,0 73.7488850273126,22.2365019457659,0 73.7479493813699,22.2363967384529,0 73.7470930809196,22.2363050534963,0 73.7460763925646,22.2360833211114,0 73.7457142299116,22.236690509921,0 73.7452661480916,22.2363877974674,0 73.7448494444277,22.2360699708361,0 73.7444773001969,22.235575264857,0 73.7441251534983,22.2353300159296,0 73.7435366548092,22.2351614354249,0 73.743357145614,22.2348257464602,0 73.7428015690547,22.2347302213272,0 73.7424560408219,22.234896371742,0 73.7420318473789,22.2350928948132,0 73.741349383109,22.2349842795687,0 73.7403651700983,22.2349090030601,0 73.7395705480032,22.2347137003138,0 73.7392987052827,22.2355253515316,0 73.7386947508751,22.2353715376985,0 73.7381082143668,22.2353204685891,0 73.7375243067898,22.2354309231828,0 73.736984804748,22.2353498653005,0 73.7362213073691,22.2351247089712,0 73.7357457498979,22.2348810121214,0 73.7352850783249,22.2347843025717,0 73.7344754179856,22.2346331189299,0 73.7342337397643,22.2353562949312,0 73.7340061171689,22.2359617924011,0 73.7333848138727,22.2357200259114,0 73.7324987506862,22.2357461811028,0 73.7318341566287,22.235754909722,0 73.7311347978864,22.235572954719,0 73.7305593845496,22.2353968421461,0 73.7302173829872,22.2351268939586,0 73.7298558681287,22.2349553388339,0 73.7294744425168,22.2350121561322,0 73.7293347842186,22.2344356811035,0 73.7289412134016,22.234279410735,0 73.7287485042743,22.23401297433,0 73.7283857677146,22.2339772592581,0 73.7284663309054,22.2335863218056,0 73.7278413867128,22.2334599437335,0 73.7275322168867,22.2331546584376,0 73.7276277745408,22.2327902129897,0 73.7277088726741,22.2324261068614,0 73.7273747897245,22.232376613644,0 73.7268797299976,22.2322217115889,0 73.7266576043496,22.231915209136,0 73.7265767956002,22.2313985376168,0 73.7268659275758,22.2313544634413,0 73.7268319468673,22.2310455497798,0 73.726496485201,22.230902012843,0 73.7259423668244,22.230680526372,0 73.7254455713996,22.2304180282242,0 73.7256829460603,22.2298635633644,0 73.7252771881405,22.2298553254082,0 73.7248272570648,22.2298073576353,0 73.7248364117837,22.2294710509975,0 73.7249440807367,22.2289585667542,0 73.7251098456486,22.2284588219482,0 73.7252588015174,22.2278114406966,0 73.7254854695936,22.2274856914646,0 73.7256230902679,22.2270401919587,0 73.72567440306,22.2266225598877,0 73.7256691702074,22.2262998706133,0 73.7256026204025,22.2257627159213,0 73.7256842874591,22.22543230719,0 73.7257790424679,22.2250275705052,0 73.7259036088571,22.2246628114081,0 73.7260122390901,22.224204168072,0 73.7261340891654,22.2236780636174,0 73.7261388770824,22.2230728188433,0 73.7265322892899,22.2225445949823,0 73.7266539159201,22.222182521608,0 73.7267635578423,22.2217938889538,0 73.7270406216499,22.221010210238,0 73.7272101250812,22.2207391096291,0 73.7274030130503,22.2204783087948,0 73.7275595140199,22.2201212948336,0 73.7276563461384,22.2196574083153,0 73.7278361805705,22.2190902955307,0 73.728180323904,22.2188706001681,0 73.7283488530218,22.2185456552841,0 73.7287995252873,22.2184645405934,0 73.7293453791586,22.2185326658137,0 73.7294431739694,22.2181333697685,0 73.7295077880106,22.2178312780599,0 73.7295828312801,22.217448333803,0 73.7295076358387,22.2170942053354,0 73.7297570749428,22.2167575160144,0 73.7299962299563,22.2164962593182,0 73.7302465418738,22.2162024807719,0 73.7305653490948,22.2158540463962,0 73.7309065656764,22.2154515000341,0 73.7312135313298,22.2150817446723,0 73.7320566595664,22.2153928098582,0 73.7323757454834,22.2155091989121,0 73.7327235746836,22.2156118101583,0 73.7331101105493,22.2158008950173,0 73.7334036275082,22.2152213809434,0 73.7335865134328,22.2149378208634,0 73.7337395355891,22.2145877285847,0 73.7339208345426,22.2142105768546,0 73.7342298501105,22.2136977532609,0 73.7343978366126,22.213387700276,0 73.734679082294,22.2129422247899,0 73.7349312052778,22.212477100968,0 73.7351702255761,22.2120991321727,0 73.7353946179249,22.2117079513958,0 73.7356045530918,22.211316928009,0 73.735800932598,22.2109662671787,0 73.7360827781787,22.2105609880776,0 73.7362779118001,22.2101434742686,0 73.736529183058,22.209631461432,0 73.7366386900551,22.2092752461644,0 73.7368192895752,22.2088445206408,0 73.7371827589452,22.2081301402238,0 73.7373780563752,22.2077259937754,0 73.7376164504803,22.2073079099827,0 73.7377418606852,22.2070385323933,0 73.7379939638827,22.2065733125596,0 73.7381874976699,22.2060621129709,0 73.7383979532975,22.2056978268162,0 73.7386839764343,22.2051920409183,0 73.7388932805047,22.2047609021961,0 73.7390467914355,22.2044510032526,0 73.7392402432945,22.2039263425926,0 73.7394790656754,22.2035349954416,0 73.7396449250574,22.2030910541823,0 73.739881543752,22.2025658242361,0 73.7401180275498,22.2020339079103,0 73.7403263675985,22.201535827191,0 73.7405618308523,22.2009438339989,0 73.7407991515101,22.2004587124472,0 73.7411336672713,22.1997448191975,0 73.7412901743792,22.1992606985908,0 73.7415273177004,22.1987622963831,0 73.7416632999852,22.1982518209669,0 73.7418301983405,22.197874817287,0 73.7420252953764,22.1974572033835,0 73.7422049812722,22.1969728992777,0 73.7423526597263,22.1965536543698,0 73.742423515912,22.1965373099041,0 73.742638391185,22.1965343628524,0 73.7427946706056,22.1965324073462,0 73.7428526171245,22.196495278385,0 73.74306409313,22.1962747951666,0 73.7431419580939,22.1962557042012,0 73.7434343728692,22.1962155070723,0 73.7435912031315,22.1962497777691,0 73.7436338890039,22.1964669844909,0 73.7433825426899,22.196633596669,0 73.7433839657559,22.1967242969645,0 73.7433866848308,22.1968875404352,0 73.7435259907887,22.1970490374151,0 73.7438004285404,22.1970999321681,0 73.7438414981286,22.1972263467343,0 73.7440173749236,22.1972240895285,0 73.7441541581201,22.1972222547432,0 73.744215146401,22.1973666168522,0 73.7442752602273,22.197456595876,0 73.7444706369693,22.1974540373252,0 73.7444877402449,22.197308650899,0 73.744525636413,22.1972355969708,0 73.7447402849149,22.1972146699303,0 73.7449172629989,22.1972848638296,0 73.7450362959517,22.1973921883174,0 73.7451931270953,22.19742645641,0 73.7452928883416,22.1975521489289,0 73.7454701910101,22.1976405913068,0 73.74558747495,22.1976390561948,0 73.745764453711,22.1977093394043,0 73.7457474811635,22.197872883217,0 73.7456344395155,22.1981283625733,0 73.7458298171874,22.1981258031862,0 73.7459844475257,22.1980148971458,0 73.7461797271218,22.198012336022,0 73.7462735935954,22.1977752250042,0 73.746429648328,22.1977550188324,0 73.7466445237778,22.197752247546,0 73.7468804217453,22.1978397842237,0 73.7468043055449,22.1979679159195,0 73.7467274122703,22.1980414833831,0 73.7467483374489,22.1981318816466,0 73.7469250896319,22.1981840971371,0 73.7469261917655,22.1982566386709,0 73.7471032689892,22.1983269215759,0 73.7471835342974,22.1984528238277,0 73.7473601905208,22.1985049472846,0 73.7474801011243,22.1986667441499,0 73.7476358335816,22.1986282876488,0 73.7476319107327,22.1983925013986,0 73.7477279459007,22.1982824076898,0 73.7480206893123,22.1982603605299,0 73.7481393998004,22.1983496140416,0 73.7482593102353,22.198511410238,0 73.7483986242178,22.1986728134718,0 73.7484403456436,22.1988356338184,0 73.7483260119275,22.1990184828058,0 73.7484264242984,22.1991805802934,0 73.7485065934537,22.1993064815243,0 73.7485279402929,22.1994151289937,0 73.7487256230154,22.1995576502291,0 73.7488064410433,22.1997198680307,0 73.7488871609795,22.1998821757255,0 73.749045618282,22.200007052465,0 73.749145385181,22.2001327425792,0 73.7492841487626,22.2002580092496,0 73.7494407588939,22.2002740260964,0 73.7496752344281,22.2002709493003,0 73.7498528661997,22.200377635688,0 73.7498942668056,22.2005221172932,0 73.7498767473439,22.2006493453637,0 73.7498790514862,22.2007945200702,0 73.7498808998601,22.200903379585,0 73.7501561281859,22.2010086466054,0 73.7502544680145,22.2010436365208,0 73.7504326548795,22.2011864572091,0 73.7505889396373,22.2011844954876,0 73.7507059030581,22.2011647082349,0 73.750804242849,22.2011997871646,0 73.7510001763623,22.2012334471702,0 73.7512348816492,22.2012485255567,0 73.7514266591271,22.2010283313642,0 73.7515655244254,22.2011534166928,0 73.7516452418339,22.2012431817824,0 73.7519382173462,22.2012392854532,0 73.7520942749385,22.2012191646181,0 73.7523491288707,22.2012702561278,0 73.7524876707412,22.201377273032,0 73.7525051877683,22.2012500446205,0 73.7526393432959,22.2010849589592,0 73.7529530193203,22.2011534821255,0 73.7531114830156,22.2012783547139,0 73.7532310769487,22.2014219892484,0 73.753409819216,22.201601123731,0 73.7539253095915,22.2015760741254,0 73.754198786145,22.2015725667276,0 73.7543941677469,22.2015699971563,0 73.7546286464246,22.2015669136424,0 73.7549018956875,22.2015451571277,0 73.7549412185804,22.2015409410425,0 73.7550140369878,22.2015332780809,0 73.7575547955214,22.2025897451815,0 73.757685644807,22.2027116934108,0 73.7577970185629,22.2028201241372,0 73.7579666234285,22.2029692849494,0 73.7581653423363,22.2031500122706,0 73.7583833823388,22.2033398290932,0 73.7585965730019,22.2035296085207,0 73.7587661796498,22.2036787694003,0 73.7589163518447,22.2038098054002,0 73.7591344778075,22.2039680075221,0 73.7592846814531,22.2040403308671,0 73.7595368018651,22.2041715120809,0 73.7598955035492,22.2043388227457,0 73.760317169515,22.2045603574363,0 73.7607631060914,22.2047909284364,0 73.761194496322,22.2049989855919,0 73.761543479691,22.2051798587352,0 73.7617955311352,22.2052973965389,0 73.7619457552869,22.2053787501511,0 73.7621250980858,22.205469177808,0 73.7622560361923,22.205559598786,0 73.7624935339212,22.2056996968156,0 73.7628957644202,22.2059483573165,0 73.7634531655013,22.2063008979127,0 73.7641365837676,22.2067303597612,0 73.7648538977191,22.2071778714827,0 73.765547006967,22.207598277701,0 73.7661043429349,22.2079598431774,0 73.7665066653511,22.2081994617046,0 73.7667441902022,22.2083485870146,0 73.7669040589466,22.2084480758036,0 73.7670737698876,22.2085204498102,0 73.7673161949805,22.2085973485638,0 73.7674955090497,22.2086697050938,0 73.7676846426023,22.2087284949594,0 73.7678639570539,22.2088008510567,0 73.7680627122755,22.2088687466212,0 73.7683439014748,22.2089501834934,0 73.7684748965444,22.2089683367469,0 73.7686735974053,22.2090091328279,0 73.7689742697861,22.2090590106729,0 73.7693233666706,22.2091179250275,0 73.769691844844,22.2091903541719,0 73.7700554942751,22.2092492868126,0 73.770346370105,22.2092991775387,0 73.7705548696785,22.2093399555327,0 73.7706761650647,22.2093580334576,0 73.7708021910559,22.2093897880198,0 73.7709960622152,22.2094395772768,0 73.7711319045267,22.2094802575755,0 73.7713015242601,22.2095300444679,0 73.7714954927375,22.2095798343158,0 73.7716652087149,22.2096296210701,0 73.771854230311,22.2096793734749,0 73.7720724066199,22.2097788458025,0 73.7722032953663,22.209887323795,0 73.7724455177408,22.210099706233,0 73.7728429189852,22.2104386350992,0 73.7734147862317,22.2109176212849,0 73.785262037076,22.2180768670109,0</coordinates></LinearRing></outerBoundaryIs></Polygon>
+      </Placemark>
+      <Placemark>
+        <name>1_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3893
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-21
+Latitude: 22.2239644
+Longitude: 73.7264668
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7264668,22.2239644,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>2_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4016
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-22
+Latitude: 22.2196517
+Longitude: 73.7393055
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7393055,22.2196517,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>3_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4010
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-22
+Latitude: 22.222765
+Longitude: 73.742255
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.742255,22.222765,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>4_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4005
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-22
+Latitude: 22.221722
+Longitude: 73.7406959
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7406959,22.221722,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>5_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3941
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-21
+Latitude: 22.2235967
+Longitude: 73.7401883
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7401883,22.2235967,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>6_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3939
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-21
+Latitude: 22.2234845
+Longitude: 73.7401643
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7401643,22.2234845,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>7_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3936
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-21
+Latitude: 22.23052
+Longitude: 73.7403667
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7403667,22.23052,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>8_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3906
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-21
+Latitude: 22.2259854
+Longitude: 73.7300116
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7300116,22.2259854,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>9_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3902
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-21
+Latitude: 22.2260569
+Longitude: 73.7299818
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7299818,22.2260569,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>10_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3898
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-21
+Latitude: 22.225555
+Longitude: 73.7303567
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7303567,22.225555,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>11_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4018
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-22
+Latitude: 22.2250667
+Longitude: 73.741235
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.741235,22.2250667,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>12_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3890
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-21
+Latitude: 22.2249922
+Longitude: 73.7261878
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7261878,22.2249922,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>13_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3887
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-21
+Latitude: 22.2254015
+Longitude: 73.7302586
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7302586,22.2254015,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>14_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3883
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-21
+Latitude: 22.2261323
+Longitude: 73.7296131
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7296131,22.2261323,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>15_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3876
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-21
+Latitude: 22.2260649
+Longitude: 73.7291293
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7291293,22.2260649,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>16_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3873
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-21
+Latitude: 22.226718
+Longitude: 73.7290651
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7290651,22.226718,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>17_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3870
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-21
+Latitude: 22.2254901
+Longitude: 73.7302766
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7302766,22.2254901,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>18_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3868
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-21
+Latitude: 22.2267783
+Longitude: 73.7290767
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7290767,22.2267783,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>19_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3823
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.2278885
+Longitude: 73.7334648
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7334648,22.2278885,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>20_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4086
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-23
+Latitude: 22.2092947
+Longitude: 73.7663153
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7663153,22.2092947,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>21_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4203
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-24
+Latitude: 22.2280133
+Longitude: 73.7811717
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7811717,22.2280133,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>22_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4202
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-24
+Latitude: 22.2268898
+Longitude: 73.7800248
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7800248,22.2268898,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>23_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4201
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-24
+Latitude: 22.2267967
+Longitude: 73.780085
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.780085,22.2267967,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>24_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4200
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-24
+Latitude: 22.226465
+Longitude: 73.7799084
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7799084,22.226465,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>25_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4199
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-24
+Latitude: 22.2245917
+Longitude: 73.780285
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.780285,22.2245917,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>26_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4115
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-23
+Latitude: 22.2135716
+Longitude: 73.7692466
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7692466,22.2135716,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>27_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4114
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-23
+Latitude: 22.2135817
+Longitude: 73.7689767
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7689767,22.2135817,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>28_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4089
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-23
+Latitude: 22.2092917
+Longitude: 73.7664668
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7664668,22.2092917,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>29_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3821
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.2280352
+Longitude: 73.734104
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.734104,22.2280352,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>30_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4084
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-23
+Latitude: 22.2108602
+Longitude: 73.7647368
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7647368,22.2108602,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>31_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4049
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-22
+Latitude: 22.2220067
+Longitude: 73.77589
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.77589,22.2220067,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>32_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4047
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-22
+Latitude: 22.2189118
+Longitude: 73.7751648
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7751648,22.2189118,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>33_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4041
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-22
+Latitude: 22.2190967
+Longitude: 73.7747731
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7747731,22.2190967,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>34_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4040
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-22
+Latitude: 22.218233
+Longitude: 73.7727394
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7727394,22.218233,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>35_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4039
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-22
+Latitude: 22.2159683
+Longitude: 73.7691967
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7691967,22.2159683,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>36_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4038
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-22
+Latitude: 22.214755
+Longitude: 73.7686133
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7686133,22.214755,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>37_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 4037
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-22
+Latitude: 22.2124744
+Longitude: 73.7610726
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7610726,22.2124744,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>38_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3644
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-19
+Latitude: 22.2321578
+Longitude: 73.7382227
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7382227,22.2321578,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>39_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3695
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-19
+Latitude: 22.2340313
+Longitude: 73.7361647
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7361647,22.2340313,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>40_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3693
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-19
+Latitude: 22.2340296
+Longitude: 73.7362597
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7362597,22.2340296,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>41_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3688
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-19
+Latitude: 22.2329367
+Longitude: 73.7347648
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7347648,22.2329367,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>42_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3683
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-19
+Latitude: 22.233715
+Longitude: 73.7337433
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7337433,22.233715,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>43_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3668
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-19
+Latitude: 22.2343717
+Longitude: 73.733205
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.733205,22.2343717,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>44_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3660
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-19
+Latitude: 22.2340814
+Longitude: 73.7327909
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7327909,22.2340814,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>45_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3656
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-19
+Latitude: 22.2316356
+Longitude: 73.7353056
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7353056,22.2316356,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>46_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3647
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-19
+Latitude: 22.2326
+Longitude: 73.7364183
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7364183,22.2326,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>47_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3783
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.22524
+Longitude: 73.7314867
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7314867,22.22524,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>48_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3642
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-19
+Latitude: 22.2322021
+Longitude: 73.7383506
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7383506,22.2322021,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>49_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3634
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-19
+Latitude: 22.2319247
+Longitude: 73.7423497
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7423497,22.2319247,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>50_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3628
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-19
+Latitude: 22.2334045
+Longitude: 73.740817
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.740817,22.2334045,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>51_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3528
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-17
+Latitude: 22.2248575
+Longitude: 73.7667849
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7667849,22.2248575,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>52_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3526
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-17
+Latitude: 22.2206299
+Longitude: 73.7656617
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7656617,22.2206299,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>53_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3525
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-17
+Latitude: 22.2244688
+Longitude: 73.7670233
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7670233,22.2244688,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>54_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3520
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-17
+Latitude: 22.2244376
+Longitude: 73.7666728
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7666728,22.2244376,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>55_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3516
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-17
+Latitude: 22.2253219
+Longitude: 73.764185
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.764185,22.2253219,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>56_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3801
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.2310153
+Longitude: 73.728257
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.728257,22.2310153,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>57_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3819
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.2284646
+Longitude: 73.735356
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.735356,22.2284646,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>58_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3818
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.2284331
+Longitude: 73.735348
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.735348,22.2284331,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>59_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3815
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.2275919
+Longitude: 73.7341351
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7341351,22.2275919,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>60_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3811
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.229297
+Longitude: 73.729257
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.729257,22.229297,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>61_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3809
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.230288
+Longitude: 73.725987
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.725987,22.230288,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>62_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3807
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.2303817
+Longitude: 73.7260733
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7260733,22.2303817,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>63_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3806
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.2303234
+Longitude: 73.7260466
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7260466,22.2303234,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>64_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3803
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.2315357
+Longitude: 73.726968
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.726968,22.2315357,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>65_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3511
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-22
+Latitude: 22.2188615
+Longitude: 73.7424851
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7424851,22.2188615,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>66_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3799
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.2310654
+Longitude: 73.7294158
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7294158,22.2310654,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>67_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3797
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.2312445
+Longitude: 73.7308842
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7308842,22.2312445,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>68_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3795
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.2312658
+Longitude: 73.7309225
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7309225,22.2312658,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>69_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3794
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.2312715
+Longitude: 73.7309081
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7309081,22.2312715,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>70_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3793
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.2295267
+Longitude: 73.7298683
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7298683,22.2295267,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>71_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3791
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.2317181
+Longitude: 73.7307737
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7307737,22.2317181,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>72_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3789
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.2253397
+Longitude: 73.7313783
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.7313783,22.2253397,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+      <Placemark>
+        <name>73_Unknown_Scheme_</name>
+        <styleUrl>#survey-point</styleUrl>
+
+        <description><![CDATA[
+District: Chhotaudepur (668)
+Taluka: Bodeli (6020)
+Village/Ward: Tandalja (520802)
+Form id: 3
+Survey ID: 3787
+Enumerator: S24D668B006020U02
+Submission Date: 2026-09-20
+Latitude: 22.2252149
+Longitude: 73.731472
+        ]]></description>
+
+        <Point>
+          <coordinates>
+            73.731472,22.2252149,0
+          </coordinates>
+        </Point>
+
+      </Placemark>
+    </Folder>
+  </Folder>
+</Folder>
+
+</Document>
+
+</kml>

@@ -1,0 +1,18 @@
+{
+  "job_id": "auto_1790944257",
+  "status": "running",
+  "total_villages": 4,
+  "completed_count": 0,
+  "failed_count": 1,
+  "current_village": "Amipura",
+  "results": [
+    {
+      "village_name": "Amipura",
+      "village_id": 32,
+      "kpi_link": "",
+      "status": "Failed",
+      "error": "Generation timed out after 10 seconds. Review page was not ready."
+    }
+  ],
+  "updated_at": "2026-10-02 18:02:18"
+}

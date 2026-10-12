@@ -1,0 +1,13 @@
+{
+  "timestamp": 1791279556,
+  "village_name": "Khajuri",
+  "village_code": "519641",
+  "step": "03_failure_error",
+  "current_url": "https://generate.snsies.com/?q=519641",
+  "page_title": "Village wells",
+  "page_text_snippet": "Village Well Detector (AI + Human Review)\nHome\nBulk generate\nChange password\nAdmin\nLogout\nGenerate wells from village list\nSelect district \u2192 sub-district \u2192 village (only villages with a boundary), then Generate. You will be asked for imagery and detection method.\nDistrict\n                    Select district\n                                            Ahmedabad\n                                            Amreli\n                                            Anand\n                                            Arvalli\n                                            Banas Kantha\n                                            Bharuch\n                                            Bhavnagar\n                                            Botad\n                                            Chhotaudepur\n              ",
+  "window_handles_count": 1,
+  "error_message": "Automation was stopped by user.",
+  "screenshot": "1791279556_519641_03_failure_error.png",
+  "console_errors": []
+}

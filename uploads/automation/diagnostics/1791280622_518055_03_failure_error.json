@@ -1,0 +1,13 @@
+{
+  "timestamp": 1791280622,
+  "village_name": "Nana Natva",
+  "village_code": "518055",
+  "step": "03_failure_error",
+  "current_url": "https://generate.snsies.com/?q=518055",
+  "page_title": "Village wells",
+  "page_text_snippet": "Village Well Detector (AI + Human Review)\nHome\nBulk generate\nChange password\nAdmin\nLogout\nGenerate wells from village list\nSelect district \u2192 sub-district \u2192 village (only villages with a boundary), then Generate. You will be asked for imagery and detection method.\nDistrict\n                    Select district\n                                            Ahmedabad\n                                            Amreli\n                                            Anand\n                                            Arvalli\n                                            Banas Kantha\n                                            Bharuch\n                                            Bhavnagar\n                                            Botad\n                                            Chhotaudepur\n              ",
+  "window_handles_count": 1,
+  "error_message": "Message: timeout: Timed out receiving message from renderer: 60.000\n  (Session info: chrome=154.0.8037.59)\nStacktrace:\n\tchromedriver!GetHandleVerifier [0x7ff7794b9d55+5a55]\n\tchromedriver!(No symbol) [0x7ff7793df540]\n\tchromedriver!(No symbol) [0x7ff7792045fd]\n\tchromedriver!(No symbol) [0x7ff7791f1639]\n\tchromedriver!(No symbol) [0x7ff7791f1321]\n\tchromedriver!(No symbol) [0x7ff7791eeff0]\n\tchromedriver!(No symbol) [0x7ff7791ef93f]\n\tchromedriver!(No symbol) [0x7ff7791fee3a]\n\tchromedriver!(No symbol) [0x7ff7792156eb]\n\tchromedriver!(No symbol) [0x7ff77921d66a]\n\tchromedriver!(No symbol) [0x7ff7791f0101]\n\tchromedriver!(No symbol) [0x7ff77921531e]\n\tchromedriver!(No symbol) [0x7ff7792afba0]\n\tchromedriver!(No symbol) [0x7ff779251a12]\n\tchromedriver!(No symbol) [0x7ff779252823]\n\tchromedriver!GetHandleVerifier [0x7ff7798d04b1+41c1b1]\n\tchromedriver!GetHandleVerifier [0x7ff7798fe26b+449f6b]\n\tchromedriver!GetHandleVerifier [0x7ff7798f274e+43e44e]\n\tchromedriver!GetHandleVerifier [0x7ff7795b32fe+feffe]\n\tchromedriver!(No symbol) [0x7ff7793ecb55]\n\tchromedriver!(No symbol) [0x7ff7793e7f64]\n\tchromedriver!(No symbol) [0x7ff7793e80f4]\n\tchromedriver!(No symbol) [0x7ff7793d2e4c]\n\tKERNEL32!BaseThreadInitThunk [0x7fffeb3e7374+14]\n\tntdll!RtlUserThreadStart [0x7fffecb3cc91+21]\n",
+  "screenshot": "1791280622_518055_03_failure_error.png",
+  "console_errors": []
+}

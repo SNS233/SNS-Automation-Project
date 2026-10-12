@@ -1,0 +1,2270 @@
+{
+  "village": "Davadra",
+  "slug": "vw13298_v156_google_ocv",
+  "status": "review",
+  "boundary": {
+    "coordinates": [
+      [
+        73.72270273,
+        22.59547633
+      ],
+      [
+        73.72241702,
+        22.59567936
+      ],
+      [
+        73.72155642,
+        22.595934
+      ],
+      [
+        73.72068311,
+        22.59633178
+      ],
+      [
+        73.72047781,
+        22.59682132
+      ],
+      [
+        73.71996844,
+        22.59728857
+      ],
+      [
+        73.71982958,
+        22.59756746
+      ],
+      [
+        73.71952227,
+        22.5982101
+      ],
+      [
+        73.71869744,
+        22.59796109
+      ],
+      [
+        73.7175472,
+        22.59814529
+      ],
+      [
+        73.71704485,
+        22.59785324
+      ],
+      [
+        73.71605294,
+        22.59741212
+      ],
+      [
+        73.71562927,
+        22.59765721
+      ],
+      [
+        73.71559879,
+        22.59790192
+      ],
+      [
+        73.71484847,
+        22.59852465
+      ],
+      [
+        73.71394432,
+        22.59914904
+      ],
+      [
+        73.71270853,
+        22.60014208
+      ],
+      [
+        73.7116608,
+        22.60108884
+      ],
+      [
+        73.71099854,
+        22.60219513
+      ],
+      [
+        73.71080282,
+        22.60239353
+      ],
+      [
+        73.70979254,
+        22.6029409
+      ],
+      [
+        73.70790429,
+        22.6030107
+      ],
+      [
+        73.70701469,
+        22.60360274
+      ],
+      [
+        73.70645683,
+        22.60416069
+      ],
+      [
+        73.70624678,
+        22.6043708
+      ],
+      [
+        73.70519484,
+        22.60508445
+      ],
+      [
+        73.70504243,
+        22.60663984
+      ],
+      [
+        73.70376364,
+        22.60718292
+      ],
+      [
+        73.70247247,
+        22.60786255
+      ],
+      [
+        73.70174991,
+        22.6071829
+      ],
+      [
+        73.70076969,
+        22.60657297
+      ],
+      [
+        73.69965256,
+        22.60724125
+      ],
+      [
+        73.69922081,
+        22.60759489
+      ],
+      [
+        73.69849562,
+        22.60823075
+      ],
+      [
+        73.69696527,
+        22.60798277
+      ],
+      [
+        73.69550802,
+        22.60799009
+      ],
+      [
+        73.69469815,
+        22.60801078
+      ],
+      [
+        73.6938547,
+        22.6075589
+      ],
+      [
+        73.69250984,
+        22.60769626
+      ],
+      [
+        73.69162316,
+        22.60850509
+      ],
+      [
+        73.68990916,
+        22.60830749
+      ],
+      [
+        73.69004146,
+        22.60759963
+      ],
+      [
+        73.6902507,
+        22.60704558
+      ],
+      [
+        73.69070352,
+        22.6055679
+      ],
+      [
+        73.69065297,
+        22.60406336
+      ],
+      [
+        73.69093283,
+        22.6035499
+      ],
+      [
+        73.69099521,
+        22.60228201
+      ],
+      [
+        73.69117781,
+        22.60159226
+      ],
+      [
+        73.69061823,
+        22.60086666
+      ],
+      [
+        73.69077744,
+        22.60027391
+      ],
+      [
+        73.6909183,
+        22.59979003
+      ],
+      [
+        73.69026428,
+        22.59902174
+      ],
+      [
+        73.68960934,
+        22.59851682
+      ],
+      [
+        73.6891578,
+        22.59859795
+      ],
+      [
+        73.68830939,
+        22.59871828
+      ],
+      [
+        73.68784452,
+        22.5985435
+      ],
+      [
+        73.68712643,
+        22.59873869
+      ],
+      [
+        73.68684961,
+        22.59939262
+      ],
+      [
+        73.68618656,
+        22.5993125
+      ],
+      [
+        73.68526008,
+        22.59920285
+      ],
+      [
+        73.68486299,
+        22.59865125
+      ],
+      [
+        73.6846909,
+        22.59790514
+      ],
+      [
+        73.68426922,
+        22.59737212
+      ],
+      [
+        73.68369378,
+        22.59657076
+      ],
+      [
+        73.68320963,
+        22.59587673
+      ],
+      [
+        73.68287211,
+        22.59531252
+      ],
+      [
+        73.68219868,
+        22.59490479
+      ],
+      [
+        73.6816938,
+        22.59441869
+      ],
+      [
+        73.68118195,
+        22.59384744
+      ],
+      [
+        73.6806093,
+        22.59291911
+      ],
+      [
+        73.6802139,
+        22.59160303
+      ],
+      [
+        73.67993191,
+        22.59136858
+      ],
+      [
+        73.67960751,
+        22.59101212
+      ],
+      [
+        73.67919248,
+        22.59029643
+      ],
+      [
+        73.67878239,
+        22.58983711
+      ],
+      [
+        73.67851711,
+        22.58944302
+      ],
+      [
+        73.67835759,
+        22.589117
+      ],
+      [
+        73.67770744,
+        22.58889343
+      ],
+      [
+        73.67718486,
+        22.58887874
+      ],
+      [
+        73.67676902,
+        22.58897322
+      ],
+      [
+        73.67616364,
+        22.58906307
+      ],
+      [
+        73.67510173,
+        22.58976759
+      ],
+      [
+        73.67431937,
+        22.58967948
+      ],
+      [
+        73.67341243,
+        22.59044217
+      ],
+      [
+        73.6734432,
+        22.59024507
+      ],
+      [
+        73.6734459,
+        22.5902273
+      ],
+      [
+        73.67358489,
+        22.58998412
+      ],
+      [
+        73.67384305,
+        22.58962777
+      ],
+      [
+        73.67391094,
+        22.58953656
+      ],
+      [
+        73.67414443,
+        22.5891968
+      ],
+      [
+        73.67425936,
+        22.58890637
+      ],
+      [
+        73.67435336,
+        22.58869877
+      ],
+      [
+        73.67469968,
+        22.58797319
+      ],
+      [
+        73.67484603,
+        22.58774299
+      ],
+      [
+        73.67497891,
+        22.58738542
+      ],
+      [
+        73.6751591,
+        22.58702417
+      ],
+      [
+        73.67558123,
+        22.58632368
+      ],
+      [
+        73.67569005,
+        22.58617266
+      ],
+      [
+        73.67638558,
+        22.58554379
+      ],
+      [
+        73.67675728,
+        22.58531517
+      ],
+      [
+        73.67743427,
+        22.58478288
+      ],
+      [
+        73.67745367,
+        22.58481935
+      ],
+      [
+        73.67792792,
+        22.58409716
+      ],
+      [
+        73.67865025,
+        22.583083
+      ],
+      [
+        73.67945446,
+        22.58189637
+      ],
+      [
+        73.67930503,
+        22.58173708
+      ],
+      [
+        73.67943181,
+        22.58171138
+      ],
+      [
+        73.68103893,
+        22.58151323
+      ],
+      [
+        73.6824049,
+        22.58112368
+      ],
+      [
+        73.68311857,
+        22.58100489
+      ],
+      [
+        73.68513418,
+        22.58113448
+      ],
+      [
+        73.68526778,
+        22.58107768
+      ],
+      [
+        73.68534547,
+        22.58128443
+      ],
+      [
+        73.68558331,
+        22.58124022
+      ],
+      [
+        73.68708711,
+        22.58108479
+      ],
+      [
+        73.6873397,
+        22.58101279
+      ],
+      [
+        73.68794726,
+        22.58077045
+      ],
+      [
+        73.68854048,
+        22.58058381
+      ],
+      [
+        73.6895595,
+        22.57997685
+      ],
+      [
+        73.69040073,
+        22.57948242
+      ],
+      [
+        73.69092263,
+        22.57946265
+      ],
+      [
+        73.6923282,
+        22.57965447
+      ],
+      [
+        73.69247331,
+        22.57974778
+      ],
+      [
+        73.69299368,
+        22.58035401
+      ],
+      [
+        73.69361799,
+        22.58041699
+      ],
+      [
+        73.69428786,
+        22.58050752
+      ],
+      [
+        73.69522981,
+        22.58124534
+      ],
+      [
+        73.69592857,
+        22.58157346
+      ],
+      [
+        73.69732915,
+        22.58122381
+      ],
+      [
+        73.69829096,
+        22.58048075
+      ],
+      [
+        73.69976416,
+        22.58024691
+      ],
+      [
+        73.70066683,
+        22.58024907
+      ],
+      [
+        73.70073131,
+        22.58024923
+      ],
+      [
+        73.70223516,
+        22.5876132
+      ],
+      [
+        73.70253927,
+        22.5894147
+      ],
+      [
+        73.70721364,
+        22.59083082
+      ],
+      [
+        73.71018741,
+        22.59106897
+      ],
+      [
+        73.71196597,
+        22.59110312
+      ],
+      [
+        73.71383151,
+        22.59052853
+      ],
+      [
+        73.71697437,
+        22.59036526
+      ],
+      [
+        73.71866464,
+        22.58983808
+      ],
+      [
+        73.720292,
+        22.58900301
+      ],
+      [
+        73.72133943,
+        22.58847266
+      ],
+      [
+        73.72117899,
+        22.58997274
+      ],
+      [
+        73.72065646,
+        22.59105715
+      ],
+      [
+        73.72022603,
+        22.59233116
+      ],
+      [
+        73.72017368,
+        22.59285968
+      ],
+      [
+        73.72074761,
+        22.59356227
+      ],
+      [
+        73.72147137,
+        22.59424094
+      ],
+      [
+        73.72268441,
+        22.5954387
+      ],
+      [
+        73.72270273,
+        22.59547633
+      ]
+    ]
+  },
+  "wells": [
+    {
+      "id": 28233,
+      "code": "DW_001",
+      "well_type": "dug",
+      "lat": 22.5816263,
+      "lon": 73.695857,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28233/image?p=867d0fa552"
+    },
+    {
+      "id": 28234,
+      "code": "DW_002",
+      "well_type": "dug",
+      "lat": 22.5899284,
+      "lon": 73.6906583,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28234/image?p=6998f7a791"
+    },
+    {
+      "id": 28235,
+      "code": "DW_003",
+      "well_type": "dug",
+      "lat": 22.5931729,
+      "lon": 73.6888396,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28235/image?p=7e6b9b0325"
+    },
+    {
+      "id": 28236,
+      "code": "DW_004",
+      "well_type": "dug",
+      "lat": 22.5951395,
+      "lon": 73.7212065,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28236/image?p=e45a988849"
+    },
+    {
+      "id": 28237,
+      "code": "DW_005",
+      "well_type": "dug",
+      "lat": 22.5971555,
+      "lon": 73.6846012,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28237/image?p=e9252cbe98"
+    },
+    {
+      "id": 28238,
+      "code": "DW_006",
+      "well_type": "dug",
+      "lat": 22.6068545,
+      "lon": 73.7026276,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28238/image?p=c41cf91a10"
+    },
+    {
+      "id": 28239,
+      "code": "DW_007",
+      "well_type": "dug",
+      "lat": 22.579739,
+      "lon": 73.6905349,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28239/image?p=0afcf56346"
+    },
+    {
+      "id": 28240,
+      "code": "DW_008",
+      "well_type": "dug",
+      "lat": 22.5798133,
+      "lon": 73.6898589,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28240/image?p=7fa77e0be7"
+    },
+    {
+      "id": 28241,
+      "code": "DW_009",
+      "well_type": "dug",
+      "lat": 22.5801154,
+      "lon": 73.6916455,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28241/image?p=eed90267b2"
+    },
+    {
+      "id": 28242,
+      "code": "DW_010",
+      "well_type": "dug",
+      "lat": 22.5806554,
+      "lon": 73.6914577,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28242/image?p=5c95c0146e"
+    },
+    {
+      "id": 28243,
+      "code": "DW_011",
+      "well_type": "dug",
+      "lat": 22.5807049,
+      "lon": 73.691903,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28243/image?p=10666bb3cb"
+    },
+    {
+      "id": 28244,
+      "code": "DW_012",
+      "well_type": "dug",
+      "lat": 22.5807792,
+      "lon": 73.6998056,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28244/image?p=4a5a7cf8f5"
+    },
+    {
+      "id": 28245,
+      "code": "DW_013",
+      "well_type": "dug",
+      "lat": 22.5809229,
+      "lon": 73.6995266,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28245/image?p=f0ef365d6d"
+    },
+    {
+      "id": 28246,
+      "code": "DW_014",
+      "well_type": "dug",
+      "lat": 22.5809526,
+      "lon": 73.6991672,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28246/image?p=960163dbbc"
+    },
+    {
+      "id": 28247,
+      "code": "DW_015",
+      "well_type": "dug",
+      "lat": 22.5812894,
+      "lon": 73.692198,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28247/image?p=14e49408c2"
+    },
+    {
+      "id": 28248,
+      "code": "DW_016",
+      "well_type": "dug",
+      "lat": 22.5813736,
+      "lon": 73.6979171,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28248/image?p=8343ec0487"
+    },
+    {
+      "id": 28249,
+      "code": "DW_017",
+      "well_type": "dug",
+      "lat": 22.5814727,
+      "lon": 73.6901164,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28249/image?p=9172e7514b"
+    },
+    {
+      "id": 28250,
+      "code": "DW_018",
+      "well_type": "dug",
+      "lat": 22.5815916,
+      "lon": 73.6955243,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28250/image?p=4b981d2c8e"
+    },
+    {
+      "id": 28251,
+      "code": "DW_019",
+      "well_type": "dug",
+      "lat": 22.5816015,
+      "lon": 73.6905939,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28251/image?p=0d86aec6dd"
+    },
+    {
+      "id": 28252,
+      "code": "DW_020",
+      "well_type": "dug",
+      "lat": 22.5817303,
+      "lon": 73.6819777,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28252/image?p=a9e4428203"
+    },
+    {
+      "id": 28253,
+      "code": "DW_021",
+      "well_type": "dug",
+      "lat": 22.5818393,
+      "lon": 73.6830293,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28253/image?p=02e8d6e983"
+    },
+    {
+      "id": 28254,
+      "code": "DW_022",
+      "well_type": "dug",
+      "lat": 22.5819581,
+      "lon": 73.6947035,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28254/image?p=aab1c48b61"
+    },
+    {
+      "id": 28255,
+      "code": "DW_023",
+      "well_type": "dug",
+      "lat": 22.5819879,
+      "lon": 73.6942636,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28255/image?p=90480f637a"
+    },
+    {
+      "id": 28256,
+      "code": "DW_024",
+      "well_type": "dug",
+      "lat": 22.5820225,
+      "lon": 73.6889522,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28256/image?p=eeff92aaf3"
+    },
+    {
+      "id": 28257,
+      "code": "DW_025",
+      "well_type": "dug",
+      "lat": 22.5820968,
+      "lon": 73.6919298,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28257/image?p=f8b0d0aede"
+    },
+    {
+      "id": 28258,
+      "code": "DW_026",
+      "well_type": "dug",
+      "lat": 22.5822058,
+      "lon": 73.6976113,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28258/image?p=18f562b613"
+    },
+    {
+      "id": 28259,
+      "code": "DW_027",
+      "well_type": "dug",
+      "lat": 22.5825823,
+      "lon": 73.6820153,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28259/image?p=9f03790a6c"
+    },
+    {
+      "id": 28260,
+      "code": "DW_028",
+      "well_type": "dug",
+      "lat": 22.5827458,
+      "lon": 73.693947,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28260/image?p=1f22b35bcc"
+    },
+    {
+      "id": 28261,
+      "code": "DW_029",
+      "well_type": "dug",
+      "lat": 22.58283,
+      "lon": 73.6989096,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28261/image?p=82f45866c5"
+    },
+    {
+      "id": 28262,
+      "code": "DW_030",
+      "well_type": "dug",
+      "lat": 22.5830875,
+      "lon": 73.6986897,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28262/image?p=51db09cb03"
+    },
+    {
+      "id": 28263,
+      "code": "DW_031",
+      "well_type": "dug",
+      "lat": 22.5835284,
+      "lon": 73.679703,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28263/image?p=c63418de53"
+    },
+    {
+      "id": 28264,
+      "code": "DW_032",
+      "well_type": "dug",
+      "lat": 22.5835532,
+      "lon": 73.6926755,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28264/image?p=8d34d27edb"
+    },
+    {
+      "id": 28265,
+      "code": "DW_033",
+      "well_type": "dug",
+      "lat": 22.5835829,
+      "lon": 73.6803414,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28265/image?p=1ee0439e49"
+    },
+    {
+      "id": 28266,
+      "code": "DW_034",
+      "well_type": "dug",
+      "lat": 22.5838355,
+      "lon": 73.6997037,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28266/image?p=8958cd4b27"
+    },
+    {
+      "id": 28267,
+      "code": "DW_035",
+      "well_type": "dug",
+      "lat": 22.5844052,
+      "lon": 73.6830776,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28267/image?p=cb903ffeab"
+    },
+    {
+      "id": 28268,
+      "code": "DW_036",
+      "well_type": "dug",
+      "lat": 22.5845439,
+      "lon": 73.6797459,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28268/image?p=d33348ae40"
+    },
+    {
+      "id": 28269,
+      "code": "DW_037",
+      "well_type": "dug",
+      "lat": 22.5848807,
+      "lon": 73.6785656,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28269/image?p=0ad0aaa578"
+    },
+    {
+      "id": 28270,
+      "code": "DW_038",
+      "well_type": "dug",
+      "lat": 22.584955,
+      "lon": 73.6801322,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28270/image?p=0adc883e32"
+    },
+    {
+      "id": 28271,
+      "code": "DW_039",
+      "well_type": "dug",
+      "lat": 22.5850095,
+      "lon": 73.6891239,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28271/image?p=e095ea598f"
+    },
+    {
+      "id": 28272,
+      "code": "DW_040",
+      "well_type": "dug",
+      "lat": 22.5851284,
+      "lon": 73.6894512,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28272/image?p=c5578a8d75"
+    },
+    {
+      "id": 28273,
+      "code": "DW_041",
+      "well_type": "dug",
+      "lat": 22.5862776,
+      "lon": 73.6863556,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28273/image?p=6156b4ae95"
+    },
+    {
+      "id": 28274,
+      "code": "DW_042",
+      "well_type": "dug",
+      "lat": 22.5862925,
+      "lon": 73.6794938,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28274/image?p=0902d8ac77"
+    },
+    {
+      "id": 28275,
+      "code": "DW_043",
+      "well_type": "dug",
+      "lat": 22.5863569,
+      "lon": 73.6823962,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28275/image?p=1c08138a50"
+    },
+    {
+      "id": 28276,
+      "code": "DW_044",
+      "well_type": "dug",
+      "lat": 22.5864411,
+      "lon": 73.6778467,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28276/image?p=33ec4df217"
+    },
+    {
+      "id": 28277,
+      "code": "DW_045",
+      "well_type": "dug",
+      "lat": 22.5866689,
+      "lon": 73.6930725,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28277/image?p=6bbfe39bc1"
+    },
+    {
+      "id": 28278,
+      "code": "DW_046",
+      "well_type": "dug",
+      "lat": 22.5866987,
+      "lon": 73.6943816,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28278/image?p=50e5e8b2b5"
+    },
+    {
+      "id": 28279,
+      "code": "DW_047",
+      "well_type": "dug",
+      "lat": 22.5868076,
+      "lon": 73.6957711,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28279/image?p=2658a80c67"
+    },
+    {
+      "id": 28280,
+      "code": "DW_048",
+      "well_type": "dug",
+      "lat": 22.5868423,
+      "lon": 73.700605,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28280/image?p=f439617a28"
+    },
+    {
+      "id": 28281,
+      "code": "DW_049",
+      "well_type": "dug",
+      "lat": 22.5870454,
+      "lon": 73.6752179,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28281/image?p=a1fab8c7a9"
+    },
+    {
+      "id": 28282,
+      "code": "DW_050",
+      "well_type": "dug",
+      "lat": 22.5870801,
+      "lon": 73.6929223,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28282/image?p=2322966804"
+    },
+    {
+      "id": 28283,
+      "code": "DW_051",
+      "well_type": "dug",
+      "lat": 22.5870999,
+      "lon": 73.7011415,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28283/image?p=178c4cf65f"
+    },
+    {
+      "id": 28284,
+      "code": "DW_052",
+      "well_type": "dug",
+      "lat": 22.5872931,
+      "lon": 73.6785334,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28284/image?p=b1b281577b"
+    },
+    {
+      "id": 28285,
+      "code": "DW_053",
+      "well_type": "dug",
+      "lat": 22.5874021,
+      "lon": 73.700943,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28285/image?p=34fdc6cd80"
+    },
+    {
+      "id": 28286,
+      "code": "DW_054",
+      "well_type": "dug",
+      "lat": 22.5874665,
+      "lon": 73.6903847,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28286/image?p=4a9ab9c098"
+    },
+    {
+      "id": 28287,
+      "code": "DW_055",
+      "well_type": "dug",
+      "lat": 22.5874764,
+      "lon": 73.6934695,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28287/image?p=90eb70defb"
+    },
+    {
+      "id": 28288,
+      "code": "DW_056",
+      "well_type": "dug",
+      "lat": 22.5875011,
+      "lon": 73.7016082,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28288/image?p=bee3c2e2c8"
+    },
+    {
+      "id": 28289,
+      "code": "DW_057",
+      "well_type": "dug",
+      "lat": 22.5883086,
+      "lon": 73.6777394,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28289/image?p=0a5ef0f8d3"
+    },
+    {
+      "id": 28290,
+      "code": "DW_058",
+      "well_type": "dug",
+      "lat": 22.5886404,
+      "lon": 73.6775892,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28290/image?p=3f3b966b85"
+    },
+    {
+      "id": 28291,
+      "code": "DW_059",
+      "well_type": "dug",
+      "lat": 22.5890169,
+      "lon": 73.6750569,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28291/image?p=f60457282d"
+    },
+    {
+      "id": 28292,
+      "code": "DW_060",
+      "well_type": "dug",
+      "lat": 22.5890714,
+      "lon": 73.6783135,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28292/image?p=e4e2c64bd4"
+    },
+    {
+      "id": 28293,
+      "code": "DW_061",
+      "well_type": "dug",
+      "lat": 22.589116,
+      "lon": 73.6864951,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28293/image?p=c7086e3e4e"
+    },
+    {
+      "id": 28294,
+      "code": "DW_062",
+      "well_type": "dug",
+      "lat": 22.5892646,
+      "lon": 73.6844671,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28294/image?p=227cd58091"
+    },
+    {
+      "id": 28295,
+      "code": "DW_063",
+      "well_type": "dug",
+      "lat": 22.5892695,
+      "lon": 73.6978259,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28295/image?p=a0f482970a"
+    },
+    {
+      "id": 28296,
+      "code": "DW_064",
+      "well_type": "dug",
+      "lat": 22.5896559,
+      "lon": 73.6792201,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28296/image?p=eddb41597c"
+    },
+    {
+      "id": 28297,
+      "code": "DW_065",
+      "well_type": "dug",
+      "lat": 22.5900968,
+      "lon": 73.6907602,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28297/image?p=394be08917"
+    },
+    {
+      "id": 28298,
+      "code": "DW_066",
+      "well_type": "dug",
+      "lat": 22.590181,
+      "lon": 73.6918654,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28298/image?p=aa692a91fd"
+    },
+    {
+      "id": 28299,
+      "code": "DW_067",
+      "well_type": "dug",
+      "lat": 22.5901958,
+      "lon": 73.6985609,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28299/image?p=08208f22bd"
+    },
+    {
+      "id": 28300,
+      "code": "DW_068",
+      "well_type": "dug",
+      "lat": 22.5902602,
+      "lon": 73.6930135,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28300/image?p=fd23b083bc"
+    },
+    {
+      "id": 28301,
+      "code": "DW_069",
+      "well_type": "dug",
+      "lat": 22.5905475,
+      "lon": 73.6913075,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28301/image?p=a6f5b897e9"
+    },
+    {
+      "id": 28302,
+      "code": "DW_070",
+      "well_type": "dug",
+      "lat": 22.5905624,
+      "lon": 73.6949771,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28302/image?p=62ebea4330"
+    },
+    {
+      "id": 28303,
+      "code": "DW_071",
+      "well_type": "dug",
+      "lat": 22.5907358,
+      "lon": 73.6918547,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28303/image?p=46a2ea0bfd"
+    },
+    {
+      "id": 28304,
+      "code": "DW_072",
+      "well_type": "dug",
+      "lat": 22.5909934,
+      "lon": 73.7023218,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28304/image?p=734a8187e8"
+    },
+    {
+      "id": 28305,
+      "code": "DW_073",
+      "well_type": "dug",
+      "lat": 22.5909934,
+      "lon": 73.6895316,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28305/image?p=aa49f12695"
+    },
+    {
+      "id": 28306,
+      "code": "DW_074",
+      "well_type": "dug",
+      "lat": 22.591033,
+      "lon": 73.6998431,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28306/image?p=86dc758405"
+    },
+    {
+      "id": 28307,
+      "code": "DW_075",
+      "well_type": "dug",
+      "lat": 22.5914441,
+      "lon": 73.6806955,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28307/image?p=6db3d0f033"
+    },
+    {
+      "id": 28308,
+      "code": "DW_076",
+      "well_type": "dug",
+      "lat": 22.591563,
+      "lon": 73.6984429,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28308/image?p=6fb6d05b28"
+    },
+    {
+      "id": 28309,
+      "code": "DW_077",
+      "well_type": "dug",
+      "lat": 22.5916918,
+      "lon": 73.6974879,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28309/image?p=ddf312a0e1"
+    },
+    {
+      "id": 28310,
+      "code": "DW_078",
+      "well_type": "dug",
+      "lat": 22.5917116,
+      "lon": 73.6962003,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28310/image?p=8c2bb789f0"
+    },
+    {
+      "id": 28311,
+      "code": "DW_079",
+      "well_type": "dug",
+      "lat": 22.5918355,
+      "lon": 73.6997144,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28311/image?p=fe82e0fd76"
+    },
+    {
+      "id": 28312,
+      "code": "DW_080",
+      "well_type": "dug",
+      "lat": 22.5919742,
+      "lon": 73.6807975,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28312/image?p=27a4911bfc"
+    },
+    {
+      "id": 28313,
+      "code": "DW_081",
+      "well_type": "dug",
+      "lat": 22.5919841,
+      "lon": 73.6993174,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28313/image?p=1393935d7a"
+    },
+    {
+      "id": 28314,
+      "code": "DW_082",
+      "well_type": "dug",
+      "lat": 22.5919841,
+      "lon": 73.6892312,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28314/image?p=17cf3dd78b"
+    },
+    {
+      "id": 28315,
+      "code": "DW_083",
+      "well_type": "dug",
+      "lat": 22.5920584,
+      "lon": 73.7015117,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28315/image?p=6ada3a5c88"
+    },
+    {
+      "id": 28316,
+      "code": "DW_084",
+      "well_type": "dug",
+      "lat": 22.5921772,
+      "lon": 73.6985341,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28316/image?p=76f590ba0f"
+    },
+    {
+      "id": 28317,
+      "code": "DW_085",
+      "well_type": "dug",
+      "lat": 22.5922119,
+      "lon": 73.7062221,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28317/image?p=e68ee743b1"
+    },
+    {
+      "id": 28318,
+      "code": "DW_086",
+      "well_type": "dug",
+      "lat": 22.5922763,
+      "lon": 73.6993871,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28318/image?p=43ad839eb5"
+    },
+    {
+      "id": 28319,
+      "code": "DW_087",
+      "well_type": "dug",
+      "lat": 22.592306,
+      "lon": 73.7002187,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28319/image?p=a2bd277706"
+    },
+    {
+      "id": 28320,
+      "code": "DW_088",
+      "well_type": "dug",
+      "lat": 22.592415,
+      "lon": 73.6932925,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28320/image?p=bef84c8149"
+    },
+    {
+      "id": 28321,
+      "code": "DW_089",
+      "well_type": "dug",
+      "lat": 22.592737,
+      "lon": 73.7054817,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28321/image?p=72e67960f0"
+    },
+    {
+      "id": 28322,
+      "code": "DW_090",
+      "well_type": "dug",
+      "lat": 22.592737,
+      "lon": 73.6936305,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28322/image?p=a7c3c0f76a"
+    },
+    {
+      "id": 28323,
+      "code": "DW_091",
+      "well_type": "dug",
+      "lat": 22.5928113,
+      "lon": 73.6915328,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28323/image?p=34090c33b2"
+    },
+    {
+      "id": 28324,
+      "code": "DW_092",
+      "well_type": "dug",
+      "lat": 22.5928163,
+      "lon": 73.6917742,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28324/image?p=a82a19482a"
+    },
+    {
+      "id": 28325,
+      "code": "DW_093",
+      "well_type": "dug",
+      "lat": 22.5928806,
+      "lon": 73.6921122,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28325/image?p=ac6cc85ee7"
+    },
+    {
+      "id": 28326,
+      "code": "DW_094",
+      "well_type": "dug",
+      "lat": 22.5930094,
+      "lon": 73.6894136,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28326/image?p=7f2ba53eee"
+    },
+    {
+      "id": 28327,
+      "code": "DW_095",
+      "well_type": "dug",
+      "lat": 22.5933314,
+      "lon": 73.6810657,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28327/image?p=a512f04306"
+    },
+    {
+      "id": 28328,
+      "code": "DW_096",
+      "well_type": "dug",
+      "lat": 22.593589,
+      "lon": 73.6925199,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28328/image?p=8a40023c19"
+    },
+    {
+      "id": 28329,
+      "code": "DW_097",
+      "well_type": "dug",
+      "lat": 22.5937079,
+      "lon": 73.6941563,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28329/image?p=4c567b35ed"
+    },
+    {
+      "id": 28330,
+      "code": "DW_098",
+      "well_type": "dug",
+      "lat": 22.5937178,
+      "lon": 73.6934427,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28330/image?p=44eb76cfe3"
+    },
+    {
+      "id": 28331,
+      "code": "DW_099",
+      "well_type": "dug",
+      "lat": 22.5937624,
+      "lon": 73.6979761,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28331/image?p=69d6322061"
+    },
+    {
+      "id": 28332,
+      "code": "DW_100",
+      "well_type": "dug",
+      "lat": 22.5937822,
+      "lon": 73.6999826,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28332/image?p=bd1e77a2d2"
+    },
+    {
+      "id": 28333,
+      "code": "DW_101",
+      "well_type": "dug",
+      "lat": 22.593807,
+      "lon": 73.6888878,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28333/image?p=1f5de6b0d2"
+    },
+    {
+      "id": 28334,
+      "code": "DW_102",
+      "well_type": "dug",
+      "lat": 22.5939011,
+      "lon": 73.6954439,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28334/image?p=a50893341f"
+    },
+    {
+      "id": 28335,
+      "code": "DW_103",
+      "well_type": "dug",
+      "lat": 22.5939754,
+      "lon": 73.6901754,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28335/image?p=3412709076"
+    },
+    {
+      "id": 28336,
+      "code": "DW_104",
+      "well_type": "dug",
+      "lat": 22.5940299,
+      "lon": 73.6858405,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28336/image?p=2f2844cd09"
+    },
+    {
+      "id": 28337,
+      "code": "DW_105",
+      "well_type": "dug",
+      "lat": 22.5940447,
+      "lon": 73.6908514,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28337/image?p=95fa634234"
+    },
+    {
+      "id": 28338,
+      "code": "DW_106",
+      "well_type": "dug",
+      "lat": 22.5940992,
+      "lon": 73.7004172,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28338/image?p=06a1984e08"
+    },
+    {
+      "id": 28339,
+      "code": "DW_107",
+      "well_type": "dug",
+      "lat": 22.5942478,
+      "lon": 73.6932603,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28339/image?p=aa9455eef6"
+    },
+    {
+      "id": 28340,
+      "code": "DW_108",
+      "well_type": "dug",
+      "lat": 22.5942676,
+      "lon": 73.7061738,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28340/image?p=03754a28a7"
+    },
+    {
+      "id": 28341,
+      "code": "DW_109",
+      "well_type": "dug",
+      "lat": 22.5942676,
+      "lon": 73.6947089,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28341/image?p=3f22f9a750"
+    },
+    {
+      "id": 28342,
+      "code": "DW_110",
+      "well_type": "dug",
+      "lat": 22.594332,
+      "lon": 73.6892527,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28342/image?p=e8fd2d8e5c"
+    },
+    {
+      "id": 28343,
+      "code": "DW_111",
+      "well_type": "dug",
+      "lat": 22.5943667,
+      "lon": 73.6941938,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28343/image?p=6f529484c7"
+    },
+    {
+      "id": 28344,
+      "code": "DW_112",
+      "well_type": "dug",
+      "lat": 22.5945698,
+      "lon": 73.6993066,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28344/image?p=bd43e91d8c"
+    },
+    {
+      "id": 28345,
+      "code": "DW_113",
+      "well_type": "dug",
+      "lat": 22.5946441,
+      "lon": 73.6985341,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28345/image?p=14cbc621c1"
+    },
+    {
+      "id": 28346,
+      "code": "DW_114",
+      "well_type": "dug",
+      "lat": 22.5946689,
+      "lon": 73.6996071,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28346/image?p=9ae1b6f9c2"
+    },
+    {
+      "id": 28347,
+      "code": "DW_115",
+      "well_type": "dug",
+      "lat": 22.5946887,
+      "lon": 73.7028797,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28347/image?p=f814d93764"
+    },
+    {
+      "id": 28348,
+      "code": "DW_116",
+      "well_type": "dug",
+      "lat": 22.5947531,
+      "lon": 73.6905242,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28348/image?p=8e890bc4a2"
+    },
+    {
+      "id": 28349,
+      "code": "DW_117",
+      "well_type": "dug",
+      "lat": 22.5948819,
+      "lon": 73.7013829,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28349/image?p=7af91cca66"
+    },
+    {
+      "id": 28350,
+      "code": "DW_118",
+      "well_type": "dug",
+      "lat": 22.5951097,
+      "lon": 73.6941455,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28350/image?p=721a65acf6"
+    },
+    {
+      "id": 28351,
+      "code": "DW_119",
+      "well_type": "dug",
+      "lat": 22.5951741,
+      "lon": 73.7041727,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28351/image?p=18eb6913e6"
+    },
+    {
+      "id": 28352,
+      "code": "DW_120",
+      "well_type": "dug",
+      "lat": 22.5952831,
+      "lon": 73.6866399,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28352/image?p=657359ae43"
+    },
+    {
+      "id": 28353,
+      "code": "DW_121",
+      "well_type": "dug",
+      "lat": 22.595293,
+      "lon": 73.7219254,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28353/image?p=bf70fc5b31"
+    },
+    {
+      "id": 28354,
+      "code": "DW_122",
+      "well_type": "dug",
+      "lat": 22.595293,
+      "lon": 73.6909802,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28354/image?p=6daa36dfed"
+    },
+    {
+      "id": 28355,
+      "code": "DW_123",
+      "well_type": "dug",
+      "lat": 22.5953128,
+      "lon": 73.6875627,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28355/image?p=f270c2cd1c"
+    },
+    {
+      "id": 28356,
+      "code": "DW_124",
+      "well_type": "dug",
+      "lat": 22.5953475,
+      "lon": 73.7066406,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28356/image?p=30a21fe082"
+    },
+    {
+      "id": 28357,
+      "code": "DW_125",
+      "well_type": "dug",
+      "lat": 22.5953574,
+      "lon": 73.6974986,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28357/image?p=927af0b055"
+    },
+    {
+      "id": 28358,
+      "code": "DW_126",
+      "well_type": "dug",
+      "lat": 22.5953574,
+      "lon": 73.6971607,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28358/image?p=68fa363eaa"
+    },
+    {
+      "id": 28359,
+      "code": "DW_127",
+      "well_type": "dug",
+      "lat": 22.5953574,
+      "lon": 73.6886089,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28359/image?p=049df91e59"
+    },
+    {
+      "id": 28360,
+      "code": "DW_128",
+      "well_type": "dug",
+      "lat": 22.5954119,
+      "lon": 73.6881904,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28360/image?p=dd2c0dee0f"
+    },
+    {
+      "id": 28361,
+      "code": "DW_129",
+      "well_type": "dug",
+      "lat": 22.5954218,
+      "lon": 73.6982766,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28361/image?p=5b0c97cc82"
+    },
+    {
+      "id": 28362,
+      "code": "DW_130",
+      "well_type": "dug",
+      "lat": 22.5955754,
+      "lon": 73.7003475,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28362/image?p=afcd33fd14"
+    },
+    {
+      "id": 28363,
+      "code": "DW_131",
+      "well_type": "dug",
+      "lat": 22.5956249,
+      "lon": 73.6994569,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28363/image?p=23176a81c5"
+    },
+    {
+      "id": 28364,
+      "code": "DW_132",
+      "well_type": "dug",
+      "lat": 22.5956695,
+      "lon": 73.6917528,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28364/image?p=7963ce90ef"
+    },
+    {
+      "id": 28365,
+      "code": "DW_133",
+      "well_type": "dug",
+      "lat": 22.5956794,
+      "lon": 73.6991081,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28365/image?p=ffc5e8ad8e"
+    },
+    {
+      "id": 28366,
+      "code": "DW_134",
+      "well_type": "dug",
+      "lat": 22.5956794,
+      "lon": 73.6890434,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28366/image?p=16b00ea66d"
+    },
+    {
+      "id": 28367,
+      "code": "DW_135",
+      "well_type": "dug",
+      "lat": 22.5957141,
+      "lon": 73.7074936,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28367/image?p=8e2a30af59"
+    },
+    {
+      "id": 28368,
+      "code": "DW_136",
+      "well_type": "dug",
+      "lat": 22.5957487,
+      "lon": 73.7027295,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28368/image?p=3323074642"
+    },
+    {
+      "id": 28369,
+      "code": "DW_137",
+      "well_type": "dug",
+      "lat": 22.5959816,
+      "lon": 73.696093,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28369/image?p=de46c08307"
+    },
+    {
+      "id": 28370,
+      "code": "DW_138",
+      "well_type": "dug",
+      "lat": 22.5961648,
+      "lon": 73.692418,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28370/image?p=6282096c95"
+    },
+    {
+      "id": 28371,
+      "code": "DW_139",
+      "well_type": "dug",
+      "lat": 22.596358,
+      "lon": 73.6847783,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28371/image?p=2ebecce7be"
+    },
+    {
+      "id": 28372,
+      "code": "DW_140",
+      "well_type": "dug",
+      "lat": 22.5963729,
+      "lon": 73.7059592,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28372/image?p=a289e65f9e"
+    },
+    {
+      "id": 28373,
+      "code": "DW_141",
+      "well_type": "dug",
+      "lat": 22.5963828,
+      "lon": 73.6852611,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28373/image?p=26b0c88df0"
+    },
+    {
+      "id": 28374,
+      "code": "DW_142",
+      "well_type": "dug",
+      "lat": 22.5964125,
+      "lon": 73.6978098,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28374/image?p=cc894257d7"
+    },
+    {
+      "id": 28375,
+      "code": "DW_143",
+      "well_type": "dug",
+      "lat": 22.5965463,
+      "lon": 73.704618,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28375/image?p=b5c44ddbce"
+    },
+    {
+      "id": 28376,
+      "code": "DW_144",
+      "well_type": "dug",
+      "lat": 22.596576,
+      "lon": 73.7042907,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28376/image?p=bed88b1f29"
+    },
+    {
+      "id": 28377,
+      "code": "DW_145",
+      "well_type": "dug",
+      "lat": 22.5966849,
+      "lon": 73.6947518,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28377/image?p=2b07ff54b5"
+    },
+    {
+      "id": 28378,
+      "code": "DW_146",
+      "well_type": "dug",
+      "lat": 22.5967295,
+      "lon": 73.68451,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28378/image?p=2153a749f1"
+    },
+    {
+      "id": 28379,
+      "code": "DW_147",
+      "well_type": "dug",
+      "lat": 22.5967394,
+      "lon": 73.6956853,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28379/image?p=f0b89f86fd"
+    },
+    {
+      "id": 28380,
+      "code": "DW_148",
+      "well_type": "dug",
+      "lat": 22.5968038,
+      "lon": 73.6951702,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28380/image?p=1efaa87ae2"
+    },
+    {
+      "id": 28381,
+      "code": "DW_149",
+      "well_type": "dug",
+      "lat": 22.5968038,
+      "lon": 73.6877451,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28381/image?p=9969037465"
+    },
+    {
+      "id": 28382,
+      "code": "DW_150",
+      "well_type": "dug",
+      "lat": 22.5968484,
+      "lon": 73.7197633,
+      "confidence": 0.65,
+      "source": "opencv",
+      "reason": "OpenCV-only detection (AI disabled)",
+      "image": "https://generate.snsies.com/villages/156/wells/28382/image?p=c95a89cadb"
+    }
+  ],
+  "counts": {
+    "dug": 150,
+    "tube": 0,
+    "total": 150
+  }
+}

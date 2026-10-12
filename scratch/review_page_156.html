@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="nkpbvvBaUzSeqGMd6FhsSbZKYb4jBLq2u8kiNSb2">
+    <title>Review Davadra</title>
+    <style>
+        :root {
+            --bg: #eef3f0;
+            --ink: #1c2b24;
+            --muted: #5a6b62;
+            --card: #fbfcfb;
+            --line: #c9d5ce;
+            --accent: #1f6b4a;
+            --accent-2: #0f4c81;
+            --danger: #9b2c2c;
+            --ok: #1b5e3b;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 10% 0%, #d9ebe1 0%, transparent 45%),
+                radial-gradient(circle at 90% 10%, #d7e4f2 0%, transparent 40%),
+                var(--bg);
+            min-height: 100vh;
+        }
+        header.app-header {
+            display: flex; justify-content: space-between; align-items: center;
+            gap: 12px; flex-wrap: wrap;
+            padding: 14px 20px;
+            background: linear-gradient(120deg, #163d2e, #1f6b4a 55%, #245f86);
+            color: #fff;
+        }
+        header a { color: #fff; }
+        header h1 { margin: 0; font-size: 1.15rem; letter-spacing: .02em; }
+        main { max-width: 1280px; margin: 0 auto; padding: 24px 16px 40px; }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 24px rgba(28,43,36,.06);
+        }
+        .muted { color: var(--muted); }
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            border: 0;
+            border-radius: 8px;
+            padding: 10px 16px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        .btn:hover { filter: brightness(1.05); }
+        .btn.secondary { background: var(--accent-2); }
+        .btn.danger { background: var(--danger); }
+        .btn.ghost {
+            background: #fff;
+            color: var(--accent-2);
+            border: 1px solid var(--accent-2);
+        }
+        .alert {
+            padding: 12px 14px;
+            border-radius: 8px;
+            margin: 14px 0;
+        }
+        .alert.ok { background: #e7f6ee; color: var(--ok); }
+        .alert.err { background: #fdecea; color: var(--danger); }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); font-size: 14px; }
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 12px;
+            background: #e8efe9;
+        }
+        .badge.pending { background: #e2e3e5; }
+        .badge.review { background: #fff3cd; }
+        .badge.finalized { background: #d1e7dd; }
+        .badge.failed { background: #f8d7da; }
+        .badge.processing { background: #cfe2ff; }
+        .pagination-wrap nav { display: flex; justify-content: flex-start; }
+        .pagination {
+            display: flex; flex-wrap: wrap; gap: 6px; list-style: none;
+            padding: 0; margin: 0; align-items: center;
+        }
+        .pagination li { display: inline-block; }
+        .pagination a, .pagination span {
+            display: inline-block; padding: 6px 10px; border-radius: 6px;
+            border: 1px solid var(--line); text-decoration: none; color: var(--ink);
+            background: #fff; font-size: 13px;
+        }
+        .pagination .active span {
+            background: var(--accent); color: #fff; border-color: var(--accent);
+        }
+        .pagination .disabled span { opacity: .45; }
+    </style>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+    <style>
+        .review-layout { display: grid; grid-template-columns: 1fr 320px; gap: 16px; }
+        @media (max-width: 960px) { .review-layout { grid-template-columns: 1fr; } }
+        #map { height: 70vh; min-height: 420px; border-radius: 12px; border: 1px solid var(--line); }
+        .side-card h3 { margin-top: 0; }
+        .well-list { max-height: 42vh; overflow: auto; }
+        .well-item {
+            display: flex; gap: 8px; align-items: flex-start; justify-content: space-between;
+            padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 13px;
+        }
+        .popup-actions { margin-top: 8px; }
+        .legend span {
+            display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+            margin-right: 4px; vertical-align: middle;
+        }
+        .stats-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0 14px; }
+        .stat {
+            background: #eef6f1; border: 1px solid var(--line);
+            border-radius: 8px; padding: 6px 10px; font-size: 13px;
+        }
+        .mode-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+        .mode-bar .btn.active { outline: 2px solid #0d3b28; outline-offset: 1px; }
+        #map.add-mode { cursor: crosshair; }
+        #map.adjust-mode { cursor: grab; }
+        #map.adjust-mode .leaflet-marker-draggable { cursor: move; }
+        .hint-add { color: #1f6b4a; font-weight: 600; }
+        .hint-add-tube { color: #c62828; font-weight: 600; }
+        .hint-adjust { color: #0f4c81; font-weight: 600; }
+        .btn.tube { background: #c62828; }
+        .stat.total { background: #e8eef7; }
+        .type-tag {
+            display: inline-block; padding: 1px 6px; border-radius: 999px;
+            font-size: 11px; color: #fff; vertical-align: middle;
+        }
+        .type-tag.dug { background: #2e7d32; }
+        .type-tag.tube { background: #c62828; }
+        dialog.export-dialog {
+            border: 1px solid var(--line); border-radius: 12px; padding: 20px;
+            width: min(360px, 92vw); box-shadow: 0 16px 40px rgba(0,0,0,.2);
+        }
+        dialog.export-dialog::backdrop { background: rgba(20,30,25,.45); }
+        dialog.export-dialog h3 { margin: 0 0 6px; }
+        .export-options { display: grid; gap: 8px; margin: 14px 0 18px; }
+        .export-options label {
+            display: flex; align-items: center; gap: 10px; cursor: pointer;
+            border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px;
+        }
+        .export-options label:has(input:checked) { border-color: var(--accent); background: #eef6f1; }
+        .export-options .count { margin-left: auto; color: var(--muted); font-size: 13px; }
+        .dialog-actions { display: flex; justify-content: flex-end; gap: 8px; }
+        .count-box {
+            display: flex; align-items: center; justify-content: space-between; gap: 8px;
+            background: #fff8e1; border: 1px solid #f0d27a; border-radius: 8px;
+            padding: 8px 10px; margin: -4px 0 12px; font-size: 13px;
+        }
+        .geb-box {
+            background: #f3f6fb; border: 1px solid var(--line); border-radius: 8px;
+            padding: 8px 10px; margin: -4px 0 12px; font-size: 13px;
+        }
+        .geb-box .row { display: flex; justify-content: space-between; padding: 1px 0; }
+        .geb-box .row.total { font-weight: 700; border-bottom: 1px solid var(--line); padding-bottom: 4px; margin-bottom: 3px; }
+        .count-tag {
+            display: inline-block; padding: 0 6px; border-radius: 999px; font-size: 11px;
+            background: #ffeb3b; color: #1c2b24; font-weight: 700; vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<header class="app-header">
+    <h1>Village Well Detector (AI + Human Review)</h1>
+    <nav style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+                    <a href="https://generate.snsies.com">Home</a>
+            <a href="https://generate.snsies.com/bulk">Bulk generate</a>
+            <a href="https://generate.snsies.com/password">Change password</a>
+            <span style="opacity:.85;font-size:13px;">Admin</span>
+            <form method="post" action="https://generate.snsies.com/logout" style="display:inline;margin:0;">
+                <input type="hidden" name="_token" value="nkpbvvBaUzSeqGMd6FhsSbZKYb4jBLq2u8kiNSb2" autocomplete="off">                <button type="submit" class="btn ghost" style="padding:6px 12px;font-size:13px;background:transparent;color:#fff;border-color:rgba(255,255,255,.55);">Logout</button>
+            </form>
+            </nav>
+</header>
+<main>
+                <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:12px;">
+        <div>
+            <h2 style="margin:0;">Davadra</h2>
+            <div class="muted">Status: <strong>review</strong>
+                            </div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <a class="btn ghost" href="https://generate.snsies.com">Back</a>
+            <a class="btn secondary" href="https://generate.snsies.com/villages/156/download/kml">Download KML</a>
+            <a class="btn secondary" href="https://generate.snsies.com/villages/156/download/kmz">Download KMZ</a>
+            <button type="button" class="btn secondary" onclick="openExportDialog()">Export Excel</button>
+            <form method="post" action="https://generate.snsies.com/villages/156/finalize" onsubmit="return confirm('Regenerate KML/KMZ with the current dug well and tube well list?');">
+                <input type="hidden" name="_token" value="nkpbvvBaUzSeqGMd6FhsSbZKYb4jBLq2u8kiNSb2" autocomplete="off">                <button class="btn" type="submit">Save review &amp; rebuild KML</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="review-layout">
+        <div>
+            <div class="mode-bar">
+                <button type="button" id="modeNavigate" class="btn secondary active" onclick="setMode('navigate')">Navigate / Delete</button>
+                <button type="button" id="modeAddDug" class="btn" onclick="setMode('add-dug')">Add dug well</button>
+                <button type="button" id="modeAddTube" class="btn tube" onclick="setMode('add-tube')">Add tube well</button>
+                <button type="button" id="modeAdjust" class="btn secondary" onclick="setMode('adjust')">Adjust position</button>
+            </div>
+            <div id="map"></div>
+            <p class="muted" style="margin-top:8px;" id="modeHint">
+                <strong>Click</strong> a marker to count it (click again to remove the number). <strong>Double-click</strong> a marker for details and <strong>delete</strong>.
+            </p>
+        </div>
+        <div class="card side-card">
+            <h3>Human review (wells)</h3>
+            <div class="stats-row" id="stats"></div>
+                                        <div class="geb-box">
+                    <div class="row total"><span>Total GEB Data</span><span>25</span></div>
+                    <div class="row"><span>GEB Dugwell</span><span>21</span></div>
+                    <div class="row"><span>GEB Tubewell</span><span>4</span></div>
+                    <div class="row"><span>MI-6 Dugwell</span><span>21</span></div>
+                    <div class="row"><span>MI-6 Tubewell</span><span>0</span></div>
+                </div>
+                        <div class="count-box">
+                <span id="countSummary">Counted: <strong>0</strong></span>
+                <button type="button" class="btn ghost" style="padding:4px 10px;font-size:12px;" onclick="resetCount()">Reset count</button>
+            </div>
+            <div class="legend muted" style="margin-bottom:10px;line-height:1.9;">
+                <span style="background:#2e7d32;"></span> Dug well
+                <span style="background:#1565c0;margin-left:8px;"></span> Manual dug<br>
+                <span style="background:#c62828;"></span> Tube well
+                <span style="background:#8e24aa;margin-left:8px;"></span> Manual tube<br>
+                <span style="background:#ef6c00;"></span> Adjust mode
+            </div>
+            <div class="well-list" id="wellList"></div>
+        </div>
+    </div>
+
+    <dialog class="export-dialog" id="exportDialog">
+        <form method="get" action="https://generate.snsies.com/villages/156/export" onsubmit="closeExportDialog()">
+            <h3>Export to Excel</h3>
+            <div class="muted" style="font-size:13px;">Choose which wells to export with latitude and longitude.</div>
+            <div class="export-options">
+                <label><input type="radio" name="type" value="dug"> Dug wells <span class="count" id="exportCountDug">0</span></label>
+                <label><input type="radio" name="type" value="tube"> Tube wells <span class="count" id="exportCountTube">0</span></label>
+                <label><input type="radio" name="type" value="both" checked> Both <span class="count" id="exportCountBoth">0</span></label>
+            </div>
+            <div class="dialog-actions">
+                <button type="button" class="btn ghost" onclick="closeExportDialog()">Cancel</button>
+                <button type="submit" class="btn">Export</button>
+            </div>
+        </form>
+    </dialog>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+const villageId = 156;
+const mapDataUrl = "https:\/\/generate.snsies.com\/villages\/156\/map-data";
+const addWellUrl = "https:\/\/generate.snsies.com\/villages\/156\/wells";
+const csrf = document.querySelector('meta[name="csrf-token"]').content;
+let map, boundaryLayer, markersLayer;
+let didFitBounds = false;
+let mapMode = 'navigate'; // navigate | add-dug | add-tube | adjust
+let wellsCache = [];
+let countsCache = { dug: 0, tube: 0, total: 0 };
+const markerById = {};
+// Reference count for the reviewer: well ids in the order they were clicked. Kept in this browser only.
+const countStorageKey = `wellCount:v${villageId}`;
+let countOrder = loadCountOrder();
+const CLICK_DELAY_MS = 260;
+
+function typeLabel(well) {
+    return well.well_type === 'tube' ? 'Tube well' : 'Dug well';
+}
+
+function icon(color, number) {
+    if (number) {
+        const w = Math.max(22, 8 + String(number).length * 8);
+        return L.divIcon({
+            className: '',
+            html: `<span style="display:flex;align-items:center;justify-content:center;width:${w}px;height:22px;border-radius:11px;background:${color};border:2px solid #ffeb3b;box-shadow:0 0 3px rgba(0,0,0,.7);color:#fff;font:700 12px/1 sans-serif;">${number}</span>`,
+            iconSize: [w, 22],
+            iconAnchor: [w / 2, 11]
+        });
+    }
+    return L.divIcon({
+        className: '',
+        html: `<span style="display:block;width:14px;height:14px;border-radius:50%;background:${color};border:2px solid #fff;box-shadow:0 0 2px rgba(0,0,0,.55);"></span>`,
+        iconSize: [14, 14],
+        iconAnchor: [7, 7]
+    });
+}
+
+function loadCountOrder() {
+    try {
+        const ids = JSON.parse(localStorage.getItem(countStorageKey) || '[]');
+        return Array.isArray(ids) ? ids.map(Number).filter(Number.isFinite) : [];
+    } catch (e) {
+        return [];
+    }
+}
+
+function saveCountOrder() {
+    try {
+        if (countOrder.length) localStorage.setItem(countStorageKey, JSON.stringify(countOrder));
+        else localStorage.removeItem(countStorageKey);
+    } catch (e) { /* storage full or disabled: count still works until reload */ }
+}
+
+function countNumber(id) {
+    const i = countOrder.indexOf(Number(id));
+    return i === -1 ? null : i + 1;
+}
+
+function pruneCountOrder() {
+    const ids = new Set(wellsCache.map(w => Number(w.id)));
+    const before = countOrder.length;
+    countOrder = countOrder.filter(id => ids.has(id));
+    if (countOrder.length !== before) saveCountOrder();
+}
+
+function toggleCount(id) {
+    id = Number(id);
+    const i = countOrder.indexOf(id);
+    const renumber = i !== -1 && i < countOrder.length - 1;
+    if (i === -1) countOrder.push(id);
+    else countOrder.splice(i, 1);
+    saveCountOrder();
+
+    if (renumber) {
+        renderMarkers(wellsCache);
+    } else {
+        const well = wellsCache.find(w => Number(w.id) === id);
+        if (well && markerById[id]) markerById[id].setIcon(icon(colorFor(well), countNumber(id)));
+    }
+    renderList(wellsCache, countsCache);
+}
+
+function resetCount() {
+    if (!countOrder.length || !confirm('Clear all count numbers for this village?')) return;
+    countOrder = [];
+    saveCountOrder();
+    renderMarkers(wellsCache);
+    renderList(wellsCache, countsCache);
+}
+
+function renderCountSummary() {
+    const counted = new Set(countOrder);
+    const dugTotal = wellsCache.filter(w => w.well_type !== 'tube');
+    const tubeTotal = wellsCache.filter(w => w.well_type === 'tube');
+    const dugDone = dugTotal.filter(w => counted.has(Number(w.id))).length;
+    const tubeDone = tubeTotal.filter(w => counted.has(Number(w.id))).length;
+    document.getElementById('countSummary').innerHTML =
+        `Counted: <strong>${dugDone + tubeDone}</strong> of ${wellsCache.length}` +
+        `<br><span class="muted">Dug ${dugDone}/${dugTotal.length} · Tube ${tubeDone}/${tubeTotal.length}</span>`;
+}
+
+function colorFor(well) {
+    if (mapMode === 'adjust') return '#ef6c00';
+    const manual = well.source === 'human_added';
+    if (well.well_type === 'tube') return manual ? '#8e24aa' : '#c62828';
+    return manual ? '#1565c0' : '#2e7d32';
+}
+
+function setMode(mode) {
+    mapMode = mode;
+    document.getElementById('modeNavigate').classList.toggle('active', mode === 'navigate');
+    document.getElementById('modeAddDug').classList.toggle('active', mode === 'add-dug');
+    document.getElementById('modeAddTube').classList.toggle('active', mode === 'add-tube');
+    document.getElementById('modeAdjust').classList.toggle('active', mode === 'adjust');
+    const mapEl = document.getElementById('map');
+    const hint = document.getElementById('modeHint');
+    mapEl.classList.toggle('add-mode', mode === 'add-dug' || mode === 'add-tube');
+    mapEl.classList.toggle('adjust-mode', mode === 'adjust');
+
+    if (mode === 'add-dug') {
+        hint.innerHTML = '<span class="hint-add">Add dug well mode:</span> click the map to place dug wells. Switch mode when finished.';
+    } else if (mode === 'add-tube') {
+        hint.innerHTML = '<span class="hint-add-tube">Add tube well mode:</span> click the map to place tube wells. Switch mode when finished.';
+    } else if (mode === 'adjust') {
+        hint.innerHTML = '<span class="hint-adjust">Adjust mode:</span> drag a marker onto the exact well, then drop. The satellite crop updates automatically.';
+    } else {
+        hint.innerHTML = '<strong>Click</strong> a marker to count it (click again to remove the number). <strong>Double-click</strong> a marker for details and <strong>delete</strong>.';
+    }
+
+    // Rebuild markers so draggable state / colors match mode
+    renderMarkers(wellsCache);
+}
+
+async function deleteWell(id) {
+    if (!confirm('Permanently delete this well and its image?')) return;
+    const url = `/villages/${villageId}/wells/${id}`;
+    const res = await fetch(url, {
+        method: 'DELETE',
+        headers: {
+            'X-CSRF-TOKEN': csrf,
+            'Accept': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+        }
+    });
+    if (!res.ok) {
+        alert('Could not delete well');
+        return;
+    }
+    await loadMap();
+}
+
+async function moveWell(id, lat, lon) {
+    const url = `/villages/${villageId}/wells/${id}/move`;
+    const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': csrf,
+            'Accept': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: JSON.stringify({ lat, lon })
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.ok) {
+        alert(data.error || 'Could not move well');
+        await loadMap();
+        return;
+    }
+    await loadMap();
+}
+
+async function addWellAt(lat, lon, wellType) {
+    const res = await fetch(addWellUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': csrf,
+            'Accept': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: JSON.stringify({ lat, lon, well_type: wellType })
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.ok) {
+        alert(data.error || `Could not add ${wellType === 'tube' ? 'tube' : 'dug'} well`);
+        return;
+    }
+    await loadMap();
+}
+
+function popupHtml(well) {
+    const img = well.image ? `<img src="${well.image}" alt="" style="width:100%;border-radius:6px;margin-top:6px;">` : '';
+    const manual = well.source === 'human_added' ? ' · manual' : '';
+    const coords = `${(+well.lat).toFixed(6)}, ${(+well.lon).toFixed(6)}`;
+    if (mapMode === 'adjust') {
+        return `<div style="min-width:200px;max-width:260px;">
+            <strong>${well.code} · ${typeLabel(well)}${manual}</strong>
+            <div style="font-size:12px;margin-top:4px;">Drag this marker to the exact well location.</div>
+            ${img}
+        </div>`;
+    }
+    const n = countNumber(well.id);
+    const countLine = n ? ` <span class="count-tag">#${n}</span>` : '';
+    return `<div style="min-width:200px;max-width:260px;">
+        <strong>${well.code} · ${typeLabel(well)}${manual}</strong>${countLine}
+        <div style="font-size:12px;margin-top:4px;">Lat/Lon: ${coords}<br>Conf: ${well.confidence}<br>${well.reason || ''}<br>${well.source || ''}</div>
+        ${img}
+        <div class="popup-actions">
+            <button class="btn danger" style="padding:6px 10px;font-size:13px;" onclick="deleteWell(${well.id})">Delete ${typeLabel(well).toLowerCase()}</button>
+        </div>
+    </div>`;
+}
+
+function renderList(wells, counts) {
+    const stats = document.getElementById('stats');
+    stats.innerHTML = `
+        <div class="stat">Dug wells: <strong>${counts.dug}</strong></div>
+        <div class="stat">Tube wells: <strong>${counts.tube}</strong></div>
+        <div class="stat total">Total: <strong>${counts.total}</strong></div>`;
+    renderCountSummary();
+    const list = document.getElementById('wellList');
+    list.innerHTML = wells.map(w => `
+        <div class="well-item">
+            <div>
+                <strong>${w.code}</strong>
+                ${countNumber(w.id) ? `<span class="count-tag">#${countNumber(w.id)}</span>` : ''}
+                <span class="type-tag ${w.well_type === 'tube' ? 'tube' : 'dug'}">${typeLabel(w)}</span>
+                ${w.source === 'human_added' ? '<span class="muted">· manual</span>' : ''}
+                <div class="muted">${(+w.lat).toFixed(6)}, ${(+w.lon).toFixed(6)}</div>
+            </div>
+            <button class="btn danger" style="padding:6px 8px;font-size:12px;" onclick="deleteWell(${w.id})">Delete</button>
+        </div>
+    `).join('');
+}
+
+function renderMarkers(wells) {
+    if (!markersLayer) return;
+    markersLayer.clearLayers();
+    Object.keys(markerById).forEach(k => delete markerById[k]);
+
+    wells.forEach(well => {
+        const m = L.marker([well.lat, well.lon], {
+            icon: icon(colorFor(well), countNumber(well.id)),
+            draggable: mapMode === 'adjust',
+            autoPan: true
+        });
+        if (mapMode === 'navigate') {
+            // Single click counts; double click opens details / delete. The delay lets a
+            // double click cancel the pending count.
+            let clickTimer = null;
+            m.on('click', (e) => {
+                if (e.originalEvent && e.originalEvent.detail > 1) {
+                    clearTimeout(clickTimer);
+                    return;
+                }
+                clearTimeout(clickTimer);
+                clickTimer = setTimeout(() => toggleCount(well.id), CLICK_DELAY_MS);
+            });
+            m.on('dblclick', (e) => {
+                clearTimeout(clickTimer);
+                if (e.originalEvent) L.DomEvent.stop(e.originalEvent);
+                L.popup({ offset: [0, -6] })
+                    .setLatLng(m.getLatLng())
+                    .setContent(popupHtml(well))
+                    .openOn(map);
+            });
+        } else {
+            m.bindPopup(popupHtml(well));
+        }
+        if (mapMode === 'adjust') {
+            m.on('dragend', async (e) => {
+                const ll = e.target.getLatLng();
+                await moveWell(well.id, ll.lat, ll.lng);
+            });
+        }
+        m.addTo(markersLayer);
+        markerById[well.id] = m;
+    });
+}
+
+async function loadMap() {
+    const res = await fetch(mapDataUrl, { headers: { 'Accept': 'application/json' }});
+    const data = await res.json();
+    wellsCache = data.wells || [];
+
+    if (!map) {
+        map = L.map('map', {
+            maxZoom: 22,
+            zoomSnap: 0.25,
+            zoomDelta: 0.5,
+            wheelPxPerZoomLevel: 60
+        });
+
+        const googleSat = L.tileLayer('https://mt{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+            subdomains: ['0', '1', '2', '3'],
+            maxZoom: 22,
+            maxNativeZoom: 22,
+            attribution: 'Google Satellite'
+        });
+
+        const esriSat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            maxZoom: 22,
+            maxNativeZoom: 18,
+            attribution: 'Esri World Imagery'
+        });
+
+        googleSat.addTo(map);
+        L.control.layers(
+            { 'Google Satellite (5m)': googleSat, 'Esri (overzoom from 50m)': esriSat },
+            {},
+            { collapsed: false }
+        ).addTo(map);
+        L.control.scale({ imperial: false, maxWidth: 160 }).addTo(map);
+        markersLayer = L.layerGroup().addTo(map);
+
+        map.on('click', async (e) => {
+            if (mapMode === 'add-dug') await addWellAt(e.latlng.lat, e.latlng.lng, 'dug');
+            else if (mapMode === 'add-tube') await addWellAt(e.latlng.lat, e.latlng.lng, 'tube');
+        });
+    }
+
+    if (boundaryLayer) map.removeLayer(boundaryLayer);
+
+    const ring = (data.boundary && data.boundary.coordinates) || [];
+    if (ring.length) {
+        const latlngs = ring.map(c => [c[1], c[0]]);
+        boundaryLayer = L.polygon(latlngs, { color: '#1565c0', weight: 2, fillOpacity: 0.05 }).addTo(map);
+        if (!didFitBounds) {
+            map.fitBounds(boundaryLayer.getBounds(), { padding: [20, 20], maxZoom: 16 });
+            didFitBounds = true;
+        }
+    } else if (!didFitBounds) {
+        // No boundary file: still open the map on dugwell markers (or a sensible default).
+        const pts = wellsCache
+            .filter(w => Number.isFinite(+w.lat) && Number.isFinite(+w.lon))
+            .map(w => L.latLng(+w.lat, +w.lon));
+        if (pts.length >= 2) {
+            map.fitBounds(L.latLngBounds(pts), { padding: [20, 20], maxZoom: 16 });
+            didFitBounds = true;
+        } else if (pts.length === 1) {
+            map.setView(pts[0], 16);
+            didFitBounds = true;
+        } else {
+            map.setView([23.25, 72.45], 12);
+            didFitBounds = true;
+        }
+    }
+
+    const dug = wellsCache.filter(w => w.well_type !== 'tube').length;
+    const tube = wellsCache.length - dug;
+    countsCache = data.counts || { dug, tube, total: dug + tube };
+    pruneCountOrder();
+
+    renderMarkers(wellsCache);
+    renderList(wellsCache, countsCache);
+}
+
+function openExportDialog() {
+    document.getElementById('exportCountDug').textContent = countsCache.dug;
+    document.getElementById('exportCountTube').textContent = countsCache.tube;
+    document.getElementById('exportCountBoth').textContent = countsCache.total;
+    document.getElementById('exportDialog').showModal();
+}
+
+function closeExportDialog() {
+    document.getElementById('exportDialog').close();
+}
+
+loadMap();
+window.deleteWell = deleteWell;
+window.setMode = setMode;
+window.openExportDialog = openExportDialog;
+window.closeExportDialog = closeExportDialog;
+window.resetCount = resetCount;
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+{
+  "job_id": "auto_1791200629",
+  "filename": "test_mini_run.xlsx",
+  "status": "completed",
+  "total_villages": 3,
+  "completed_count": 3,
+  "failed_count": 0,
+  "current_village": "",
+  "current_status": "Completed processing 3 villages! (3 successful, 0 failed).",
+  "results": [
+    {
+      "job_id": "auto_1791200629",
+      "excel_file": "test_mini_run.xlsx",
+      "row_num": 2,
+      "village_name": "Pipariya",
+      "village_code": "511852",
+      "village_id": 30,
+      "review_url": "https://generate.snsies.com/villages/30/review",
+      "generated_page_link": "https://generate.snsies.com/villages/30/review",
+      "kpi_link": "https://generate.snsies.com/villages/30/review",
+      "status": "Success",
+      "error": "",
+      "message": "Review page ready",
+      "started_time": "2026-10-05 17:14:01",
+      "completed_time": "2026-10-05 17:14:04"
+    },
+    {
+      "job_id": "auto_1791200629",
+      "excel_file": "test_mini_run.xlsx",
+      "row_num": 3,
+      "village_name": "Nabhoi",
+      "village_code": "511853",
+      "village_id": 31,
+      "review_url": "https://generate.snsies.com/villages/31/review",
+      "generated_page_link": "https://generate.snsies.com/villages/31/review",
+      "kpi_link": "https://generate.snsies.com/villages/31/review",
+      "status": "Success",
+      "error": "",
+      "message": "Review page ready",
+      "started_time": "2026-10-05 17:14:04",
+      "completed_time": "2026-10-05 17:14:06"
+    },
+    {
+      "job_id": "auto_1791200629",
+      "excel_file": "test_mini_run.xlsx",
+      "row_num": 4,
+      "village_name": "Dhadhoda",
+      "village_code": "511854",
+      "village_id": 32,
+      "review_url": "https://generate.snsies.com/villages/32/review",
+      "generated_page_link": "https://generate.snsies.com/villages/32/review",
+      "kpi_link": "https://generate.snsies.com/villages/32/review",
+      "status": "Success",
+      "error": "",
+      "message": "Review page ready",
+      "started_time": "2026-10-05 17:14:06",
+      "completed_time": "2026-10-05 17:14:08"
+    }
+  ],
+  "updated_at": "2026-10-05 17:14:08"
+}
