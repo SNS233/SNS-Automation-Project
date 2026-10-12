@@ -1,0 +1,13 @@
+{
+  "timestamp": 1791280088,
+  "village_name": "Nagalpar",
+  "village_code": "507007",
+  "step": "03_failure_error",
+  "current_url": "https://generate.snsies.com/?q=507007",
+  "page_title": "Village wells",
+  "page_text_snippet": "Village Well Detector (AI + Human Review)\nHome\nBulk generate\nChange password\nAdmin\nLogout\nGenerate wells from village list\nSelect district \u2192 sub-district \u2192 village (only villages with a boundary), then Generate. You will be asked for imagery and detection method.\nDistrict\n                    Select district\n                                            Ahmedabad\n                                            Amreli\n                                            Anand\n                                            Arvalli\n                                            Banas Kantha\n                                            Bharuch\n                                            Bhavnagar\n                                            Botad\n                                            Chhotaudepur\n              ",
+  "window_handles_count": 1,
+  "error_message": "Message: Could not find Generate action button inside the village row for 'Nagalpar' (Code: 507007).; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception\n",
+  "screenshot": "1791280088_507007_03_failure_error.png",
+  "console_errors": []
+}

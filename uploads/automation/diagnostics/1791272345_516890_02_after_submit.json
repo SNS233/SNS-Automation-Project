@@ -1,0 +1,13 @@
+{
+  "timestamp": 1791272345,
+  "village_name": "Gangapura",
+  "village_code": "516890",
+  "step": "02_after_submit",
+  "current_url": "https://generate.snsies.com/villages/73/review",
+  "page_title": "Review Gangapura",
+  "page_text_snippet": "Village Well Detector (AI + Human Review)\nHome\nBulk generate\nChange password\nAdmin\nLogout\nGenerated detection for Gangapura. Review wells before final download.\nGangapura\nStatus: review\nBack\nDownload KML\nDownload KMZ\nExport Excel\nSave review & rebuild KML\nNavigate / Delete\nAdd dug well\nAdd tube well\nAdjust position\n+\n\u2212\nGoogle Satellite (5m)\nEsri (overzoom from 50m)\n300 m\nLeaflet | Google Satellite\nClick a marker to count it (click again to remove the number). Double-click a marker for details and delete.\nHuman review (wells)\nDug wells: 150\nTube wells: 0\nTotal: 150\nTotal GEB Data\n25\nGEB Dugwell\n7\nGEB Tubewell\n18\nMI-6 Dugwell\n7\nMI-6 Tubewell\n16\nCounted: 0 of 150\nDug 0/150 \u00b7 Tube 0/0\nReset count\nDug well Manual dug\nTube well Manual tube\nAdjust mode\nDW_001 Dug well\n22.661288, 73.076619\nDelete\n",
+  "window_handles_count": 1,
+  "error_message": "",
+  "screenshot": "1791272345_516890_02_after_submit.png",
+  "console_errors": []
+}

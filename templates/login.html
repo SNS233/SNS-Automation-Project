@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTO FINDING AI | Login</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Permanent Light Theme -->
+    <script>
+        try { localStorage.removeItem('app_theme'); } catch (e) {}
+        document.documentElement.setAttribute('data-theme', 'light');
+    </script>
+    <style>
+        body {
+            background: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            color: #0f172a;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .login-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 440px;
+            border-radius: 14px;
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+        .login-header {
+            background: #ffffff;
+            color: #0f172a;
+            padding: 32px 30px 20px 30px;
+            text-align: center;
+            border-bottom: 1px solid #f1f5f9;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+        .login-logo-img {
+            max-width: 250px;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 16px auto;
+        }
+        .login-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 0 0 6px 0;
+            letter-spacing: 0.02em;
+        }
+        .login-subtitle {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin: 0;
+        }
+        .login-body {
+            padding: 28px 30px 32px 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-label {
+            display: block;
+            font-size: 0.825rem;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 7px;
+        }
+        .input-group {
+            position: relative;
+        }
+        .input-group > i,
+        .input-group > svg {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            width: 18px;
+            height: 18px;
+            pointer-events: none;
+        }
+        .form-input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 42px 10px 38px;
+            font-size: 0.9rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.15s, box-shadow 0.15s;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .form-input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+        .password-toggle-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: color 0.15s ease, background-color 0.15s ease;
+            user-select: none;
+            z-index: 5;
+        }
+        .password-toggle-btn:hover {
+            color: #1e293b;
+            background-color: rgba(148, 163, 184, 0.15);
+        }
+        .password-toggle-btn:focus-visible {
+            outline: 2px solid #2563eb;
+        }
+        .password-toggle-btn i,
+        .password-toggle-btn svg {
+            position: static !important;
+            transform: none !important;
+            width: 18px !important;
+            height: 18px !important;
+            color: inherit !important;
+            stroke: currentColor !important;
+            pointer-events: none !important;
+        }
+        input::-ms-reveal,
+        input::-ms-clear {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+            pointer-events: none !important;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: #2563eb;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .btn-submit:hover {
+            background: #1d4ed8;
+        }
+        .alert-error {
+            background: #fef2f2;
+            border: 1px solid #fee2e2;
+            color: #b91c1c;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            margin-bottom: 18px;
+            display: none;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-card">
+    <div class="login-header">
+        <img src="/static/images/logo.png" alt="SNS Infrastructure Engineering Services – Ethical Engineering" class="login-logo-img">
+        <h1 class="login-title">AUTO FINDING AI</h1>
+        <p class="login-subtitle">Ethical Engineering</p>
+    </div>
+
+    <div class="login-body">
+        <div id="errorAlert" class="alert-error">
+            <i data-lucide="alert-circle" style="width: 18px; height: 18px; flex-shrink: 0;"></i>
+            <span id="errorMessage">Invalid credentials</span>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label class="form-label" for="username">Username</label>
+                <div class="input-group">
+                    <i data-lucide="user"></i>
+                    <input type="text" id="username" class="form-input" placeholder="Enter username" required autofocus>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <div class="input-group">
+                    <i data-lucide="lock"></i>
+                    <input type="password" id="password" class="form-input" placeholder="Enter password" required autocomplete="current-password">
+                    <button type="button" class="password-toggle-btn" onclick="PasswordVisibility.toggle('password', this)" title="Show password" aria-label="Show password">
+                        <i data-lucide="eye-off"></i>
+                    </button>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submitBtn">
+                <span>Sign In</span>
+                <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+            </button>
+        </form>
+    </div>
+</div>
+
+<script src="/static/js/password-toggle.js?v=2.1"></script>
+<script>
+    lucide.createIcons();
+
+    const loginForm = document.getElementById('loginForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const errorAlert = document.getElementById('errorAlert');
+    const errorMessage = document.getElementById('errorMessage');
+
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value.trim();
+
+        if (!username || !password) return;
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Verifying...</span>';
+        errorAlert.style.display = 'none';
+
+        try {
+            const resp = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+
+            const data = await resp.json();
+            if (data.success) {
+                window.location.href = '/';
+            } else {
+                errorMessage.textContent = data.error || 'Authentication failed.';
+                errorAlert.style.display = 'flex';
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span>Sign In</span><i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>';
+                lucide.createIcons();
+            }
+        } catch (err) {
+            errorMessage.textContent = 'Server connection error. Please try again later.';
+            errorAlert.style.display = 'flex';
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span>Sign In</span><i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>';
+            lucide.createIcons();
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "timestamp": 1791270904,
+  "village_name": "Kothadiya",
+  "village_code": "511910",
+  "step": "01_before_generate",
+  "current_url": "https://generate.snsies.com/?q=511910",
+  "page_title": "Village wells",
+  "page_text_snippet": "Village Well Detector (AI + Human Review)\nHome\nBulk generate\nChange password\nAdmin\nLogout\nGenerate wells from village list\nSelect district \u2192 sub-district \u2192 village (only villages with a boundary), then Generate. You will be asked for imagery and detection method.\nDistrict\n                    Select district\n                                            Ahmedabad\n                                            Amreli\n                                            Anand\n                                            Arvalli\n                                            Banas Kantha\n                                            Bharuch\n                                            Bhavnagar\n                                            Botad\n                                            Chhotaudepur\n              ",
+  "window_handles_count": 1,
+  "error_message": "",
+  "screenshot": "1791270904_511910_01_before_generate.png",
+  "console_errors": []
+}

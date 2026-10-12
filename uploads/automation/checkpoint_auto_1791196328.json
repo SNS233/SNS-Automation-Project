@@ -1,0 +1,56 @@
+{
+  "job_id": "auto_1791196328",
+  "status": "stopped",
+  "total_villages": 39,
+  "completed_count": 4,
+  "failed_count": 1,
+  "current_village": "Savainagar",
+  "results": [
+    {
+      "village_name": "Dambhaliya",
+      "village_code": "516201",
+      "village_id": 516201,
+      "kpi_link": "https://generate.snsies.com/villages/516201/review",
+      "status": "Success",
+      "error": "",
+      "message": "Review page captured"
+    },
+    {
+      "village_name": "Kachotiya",
+      "village_code": "516364",
+      "village_id": 516364,
+      "kpi_link": "https://generate.snsies.com/villages/516364/review",
+      "status": "Success",
+      "error": "",
+      "message": "Review page captured"
+    },
+    {
+      "village_name": "Kalyanpar",
+      "village_code": "516093",
+      "village_id": 516093,
+      "kpi_link": "https://generate.snsies.com/villages/516093/review",
+      "status": "Success",
+      "error": "",
+      "message": "Review page captured"
+    },
+    {
+      "village_name": "Nana Garajiya",
+      "village_code": "516526",
+      "village_id": 516526,
+      "kpi_link": "https://generate.snsies.com/villages/516526/review",
+      "status": "Success",
+      "error": "",
+      "message": "Review page captured"
+    },
+    {
+      "village_name": "Savainagar",
+      "village_code": "516239",
+      "village_id": 516239,
+      "kpi_link": "",
+      "status": "Failed",
+      "error": "Automation was stopped while polling.",
+      "message": "Automation was stopped while polling."
+    }
+  ],
+  "updated_at": "2026-10-05 16:02:12"
+}

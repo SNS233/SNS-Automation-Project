@@ -1,0 +1,12 @@
+{
+  "job_id": "auto_1791275259",
+  "filename": "25-50.xlsx",
+  "status": "stopped",
+  "total_villages": 2970,
+  "completed_count": 0,
+  "failed_count": 0,
+  "current_village": "",
+  "current_status": "Automation stopped by user.",
+  "results": [],
+  "updated_at": "2026-10-06 13:57:48"
+}

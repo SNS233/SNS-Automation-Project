@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <kml xmlns="http://www.opengis.net/kml/2.2">
+      <Document>
+        <name>Sarsav Village Wells</name>
+        <Placemark>
+          <name>Tubewell 1</name>
+          <description>Borewell 150ft deep</description>
+          <Point><coordinates>73.01234,23.45678,0</coordinates></Point>
+        </Placemark>
+        <Placemark>
+          <name>Dugwell 1</name>
+          <description>Open village community well</description>
+          <Point><coordinates>73.01500,23.45800,0</coordinates></Point>
+        </Placemark>
+        <Placemark>
+          <name>Tubewell 2</name>
+          <description>Farm borewell</description>
+          <Point><coordinates>73.01800,23.46000,0</coordinates></Point>
+        </Placemark>
+        <Placemark>
+          <name>Agricultural Field Zone</name>
+          <Polygon>
+            <outerBoundaryIs>
+              <LinearRing>
+                <coordinates>
+                  73.010,23.450,0 73.020,23.450,0 73.020,23.460,0 73.010,23.460,0 73.010,23.450,0
+                </coordinates>
+              </LinearRing>
+            </outerBoundaryIs>
+          </Polygon>
+        </Placemark>
+      </Document>
+    </kml>
+    

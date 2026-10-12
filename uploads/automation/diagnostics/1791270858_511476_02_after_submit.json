@@ -1,0 +1,13 @@
+{
+  "timestamp": 1791270858,
+  "village_name": "Hathipura",
+  "village_code": "511476",
+  "step": "02_after_submit",
+  "current_url": "https://generate.snsies.com/villages/65/review",
+  "page_title": "Review Hathipura",
+  "page_text_snippet": "Village Well Detector (AI + Human Review)\nHome\nBulk generate\nChange password\nAdmin\nLogout\nGenerated detection for Hathipura. Review wells before final download.\nHathipura\nStatus: review\nBack\nDownload KML\nDownload KMZ\nExport Excel\nSave review & rebuild KML\nNavigate / Delete\nAdd dug well\nAdd tube well\nAdjust position\n+\n\u2212\nGoogle Satellite (5m)\nEsri (overzoom from 50m)\n500 m\nLeaflet | Google Satellite\nClick a marker to count it (click again to remove the number). Double-click a marker for details and delete.\nHuman review (wells)\nDug wells: 150\nTube wells: 0\nTotal: 150\nTotal GEB Data\n25\nGEB Dugwell\n11\nGEB Tubewell\n14\nMI-6 Dugwell\n11\nMI-6 Tubewell\n21\nCounted: 0 of 150\nDug 0/150 \u00b7 Tube 0/0\nReset count\nDug well Manual dug\nTube well Manual tube\nAdjust mode\nDW_001 Dug well\n23.332590, 72.209838\nDelet",
+  "window_handles_count": 1,
+  "error_message": "",
+  "screenshot": "1791270858_511476_02_after_submit.png",
+  "console_errors": []
+}

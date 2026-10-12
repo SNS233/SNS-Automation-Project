@@ -1,0 +1,13 @@
+{
+  "timestamp": 1791270567,
+  "village_name": "Savainagar",
+  "village_code": "516239",
+  "step": "01_before_generate",
+  "current_url": "https://generate.snsies.com/?q=516239",
+  "page_title": "Village wells",
+  "page_text_snippet": "Village Well Detector (AI + Human Review)\nHome\nBulk generate\nChange password\nAdmin\nLogout\nGenerate wells from village list\nSelect district \u2192 sub-district \u2192 village (only villages with a boundary), then Generate. You will be asked for imagery and detection method.\nDistrict\n                    Select district\n                                            Ahmedabad\n                                            Amreli\n                                            Anand\n                                            Arvalli\n                                            Banas Kantha\n                                            Bharuch\n                                            Bhavnagar\n                                            Botad\n                                            Chhotaudepur\n              ",
+  "window_handles_count": 1,
+  "error_message": "",
+  "screenshot": "1791270567_516239_01_before_generate.png",
+  "console_errors": []
+}

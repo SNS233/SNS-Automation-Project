@@ -1,0 +1,39 @@
+{
+  "job_id": "auto_1790944709",
+  "status": "completed",
+  "total_villages": 4,
+  "completed_count": 3,
+  "failed_count": 1,
+  "current_village": "",
+  "results": [
+    {
+      "village_name": "Amipura",
+      "village_id": 32,
+      "kpi_link": "https://generate.snsies.com/villages/32/review",
+      "status": "Success",
+      "error": ""
+    },
+    {
+      "village_name": "Dhankuka",
+      "village_id": 33,
+      "kpi_link": "https://generate.snsies.com/villages/33/review",
+      "status": "Success",
+      "error": ""
+    },
+    {
+      "village_name": "Ashoknagar",
+      "village_id": 34,
+      "kpi_link": "https://generate.snsies.com/villages/34/review",
+      "status": "Success",
+      "error": ""
+    },
+    {
+      "village_name": "NonExistentVillageXYZ",
+      "village_id": "-",
+      "kpi_link": "",
+      "status": "Failed",
+      "error": "Village 'NonExistentVillageXYZ' was not found in portal search."
+    }
+  ],
+  "updated_at": "2026-10-02 18:08:41"
+}
